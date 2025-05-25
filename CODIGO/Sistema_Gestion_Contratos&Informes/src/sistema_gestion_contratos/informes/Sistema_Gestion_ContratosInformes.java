@@ -16,6 +16,10 @@ public class Sistema_Gestion_ContratosInformes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        VISTA_VALIDACION vista1 =new VISTA_VALIDACION();
+        vista1.setVisible(true);
+        vista1.setLocationRelativeTo(null);
+
     }
     
 }
