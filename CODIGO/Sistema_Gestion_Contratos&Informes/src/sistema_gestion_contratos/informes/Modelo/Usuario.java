@@ -46,5 +46,16 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-       
+    public boolean validarCredenciales(String usuarioInput, String contraseñaInput){
+        boolean credencialesCorrectas = this.nombreUsuario.equals(usuarioInput) && 
+                                      this.contraseña.equals(contraseñaInput);
+        
+        if(credencialesCorrectas) {
+            System.out.println("Validación exitosa");
+        } else {
+            System.out.println("Error: Credenciales incorrectas");
+        }
+        
+        return credencialesCorrectas;
+}
 }
