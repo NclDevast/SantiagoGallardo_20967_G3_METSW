@@ -19,8 +19,8 @@ public class Usuario {
  
     public Usuario(int id, String nombreUsuario, String contraseña) {
         this.id = id;
-        this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
+        this.nombreUsuario = "Veronica";
+        this.contraseña = "1234";
     }
 
     public int getId() {

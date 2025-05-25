@@ -79,6 +79,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
             }
         });
 
+        txtMensaje.setEditable(false);
         txtMensaje.setColumns(20);
         txtMensaje.setRows(5);
         jScrollPane1.setViewportView(txtMensaje);
@@ -176,15 +177,15 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnLogin;
+    public javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPasswordField txtContrasena;
+    public javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextArea txtMensaje;
     private javax.swing.JButton txtSalida;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
