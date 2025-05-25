@@ -4,6 +4,7 @@
  */
 package sistema_gestion_contratos.informes.Controlador;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import sistema_gestion_contratos.informes.Modelo.Usuario;
 import sistema_gestion_contratos.informes.Vista.VISTA_VALIDACION;
@@ -20,5 +21,15 @@ public class LoginControlador implements ActionListener{
         this.vista=vista;
         this.modelo=modelo;
         this.vista.btnLogin.addActionListener(this);
+    }
+    public void iniciar()
+    {
+        vista.setTitle("Validación de usuario");
+        vista.setLocationRelativeTo(null);
+    }
+    public void actionPerformed(ActionEvent e){
+        modelo.setNombreUsuario(vista.txtUsuario.getText());
+        modelo.setContraseña(vista.txtContrasena.getText());
+        
     }
 }
