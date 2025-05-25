@@ -4,6 +4,8 @@
  */
 package sistema_gestion_contratos.informes;
 
+import sistema_gestion_contratos.informes.Vista.VISTA_VALIDACION;
+
 /**
  *
  * @author Isabela
@@ -14,7 +16,6 @@ public class Sistema_Gestion_ContratosInformes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
     }
     
 }
