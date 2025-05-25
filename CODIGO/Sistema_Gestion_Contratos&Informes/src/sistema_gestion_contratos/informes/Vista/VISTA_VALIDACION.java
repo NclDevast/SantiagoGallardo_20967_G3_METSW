@@ -4,6 +4,9 @@
  */
 package sistema_gestion_contratos.informes.Vista;
 
+import javax.swing.JOptionPane;
+import sistema_gestion_contratos.informes.Modelo.Usuario;
+
 /**
  *
  * @author Isabela
@@ -34,7 +37,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
-        txtSalida = new javax.swing.JButton();
+        btnSalida = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMensaje = new javax.swing.JTextArea();
 
@@ -62,6 +65,11 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
 
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLimpiar.setText("Limpiar");
@@ -71,11 +79,11 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
             }
         });
 
-        txtSalida.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtSalida.setText("Salir");
-        txtSalida.addActionListener(new java.awt.event.ActionListener() {
+        btnSalida.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSalida.setText("Salir");
+        btnSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSalidaActionPerformed(evt);
+                btnSalidaActionPerformed(evt);
             }
         });
 
@@ -89,30 +97,27 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnLogin)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSalida))
+                        .addComponent(btnSalida))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(41, 41, 41)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                                .addComponent(jLabel2)
+                                .addGap(41, 41, 41)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -135,7 +140,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -171,21 +176,35 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         txtMensaje.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void txtSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalidaActionPerformed
+    private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         this.dispose();
-    }//GEN-LAST:event_txtSalidaActionPerformed
+    }//GEN-LAST:event_btnSalidaActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+
+        Usuario usuario=new Usuario();
+        if(!usuario.ValidarUsuarios(txtUsuario.getText(), new String (txtContrasena.getText()))){
+        JOptionPane.showMessageDialog(null,"usuario o contraseña no valido");
+        txtContrasena.setText("");
+        txtUsuario.setText("");
+        txtUsuario.requestFocusInWindow();
+        return;
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+        Programa prog =new Programa();
+        prog.setVisible(true);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnSalida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JPasswordField txtContrasena;
-    private javax.swing.JTextArea txtMensaje;
-    private javax.swing.JButton txtSalida;
+    public javax.swing.JTextArea txtMensaje;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

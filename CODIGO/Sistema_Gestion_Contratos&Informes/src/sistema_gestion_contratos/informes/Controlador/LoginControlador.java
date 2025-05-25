@@ -31,4 +31,5 @@ public class LoginControlador implements ActionListener{
         modelo.setNombreUsuario(vista.txtUsuario.getText());
         modelo.setContraseña(vista.txtContrasena.getText());
     }
+    
 }
