@@ -46,8 +46,8 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    public boolean ValidarUsuarios(String nombreUsuario, String contraseña ){
-       if(nombreUsuario.equals("Veronica")&&contraseña.equals("1234")){
+    public boolean ValidarUsuarios(){
+       if(this.nombreUsuario.equals("Veronica")&&this.contraseña.equals("1234")){
            return true;
        }else 
            return false;

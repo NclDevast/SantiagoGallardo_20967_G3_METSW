@@ -182,7 +182,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 
-        Usuario usuario=new Usuario();
+        /*Usuario usuario=new Usuario();
         if(!usuario.ValidarUsuarios(txtUsuario.getText(), new String (txtContrasena.getText()))){
         JOptionPane.showMessageDialog(null,"usuario o contraseña no valido");
         txtContrasena.setText("");
@@ -191,8 +191,8 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_btnLoginActionPerformed
 
-        Programa prog =new Programa();
-        prog.setVisible(true);
+        Programa prog = new Programa();
+        prog.setVisible(true);*/
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;

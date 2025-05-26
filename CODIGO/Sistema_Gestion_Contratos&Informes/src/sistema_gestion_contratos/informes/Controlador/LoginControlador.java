@@ -6,30 +6,46 @@ package sistema_gestion_contratos.informes.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import sistema_gestion_contratos.informes.Modelo.Usuario;
-import sistema_gestion_contratos.informes.Vista.VISTA_VALIDACION;
+import sistema_gestion_contratos.informes.Vista.*;
 
 /**
  *
  * @author Isabela
  */
 public class LoginControlador implements ActionListener{
-    private VISTA_VALIDACION vista;
+    private VISTA_VALIDACION vista_validacion;
+    private Programa programa;
     private Usuario modelo;
+    private Boolean LoginEstado;
     
-    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo){
-        this.vista=vista;
+    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa){
+        this.vista_validacion=vista;
         this.modelo=modelo;
-        this.vista.btnLogin.addActionListener(this);
+        this.vista_validacion.btnLogin.addActionListener(this);
+        this.programa = programa;
     }
     public void iniciar()
     {
-        vista.setTitle("Validación de usuario");
-        vista.setLocationRelativeTo(null);
+        vista_validacion.setTitle("Validación de usuario");
+        vista_validacion.setLocationRelativeTo(null);
     }
     public void actionPerformed(ActionEvent e){
-        modelo.setNombreUsuario(vista.txtUsuario.getText());
-        modelo.setContraseña(vista.txtContrasena.getText());
+        modelo.setNombreUsuario(vista_validacion.txtUsuario.getText());
+        modelo.setContraseña(vista_validacion.txtContrasena.getText());
+        this.LoginEstado = modelo.ValidarUsuarios();
+        if(!this.LoginEstado){
+        JOptionPane.showMessageDialog(null,"usuario o contraseña no valido");
+        vista_validacion.txtContrasena.setText("");
+        vista_validacion.txtUsuario.setText("");
+        vista_validacion.txtUsuario.requestFocusInWindow();
+        }
+        else {
+        programa.setVisible(true);
+        programa.setLocationRelativeTo(null);
+        }
+        
     }
     
 }
