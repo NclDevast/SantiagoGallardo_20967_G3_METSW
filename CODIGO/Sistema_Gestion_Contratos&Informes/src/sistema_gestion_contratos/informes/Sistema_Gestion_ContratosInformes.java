@@ -6,7 +6,7 @@ package sistema_gestion_contratos.informes;
 
 import sistema_gestion_contratos.informes.Controlador.LoginControlador;
 import sistema_gestion_contratos.informes.Modelo.Usuario;
-import sistema_gestion_contratos.informes.Vista.VISTA_VALIDACION;
+import sistema_gestion_contratos.informes.Vista.*;
 
 /**
  *
@@ -19,11 +19,11 @@ public class Sistema_Gestion_ContratosInformes {
      */
     public static void main(String[] args) {
         VISTA_VALIDACION vista1 =new VISTA_VALIDACION();
+        Programa programa = new Programa();    
+        Usuario mod= new Usuario();
         vista1.setVisible(true);
         vista1.setLocationRelativeTo(null);
-        
-        Usuario mod= new Usuario();
-        LoginControlador ctrl= new LoginControlador(vista1,mod);
+        LoginControlador ctrl= new LoginControlador(vista1,mod,programa);
         ctrl.iniciar();
 
     }
