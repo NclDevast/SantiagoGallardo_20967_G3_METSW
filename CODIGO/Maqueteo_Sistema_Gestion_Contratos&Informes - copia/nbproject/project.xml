@@ -3,8 +3,9 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>Sistema_Gestion_Contratos&amp;Informes</name>
+            <name>Sistema_Gestion_Contratos&amp;Informes1</name>
             <source-roots>
+                <root id="src.Sources.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>
