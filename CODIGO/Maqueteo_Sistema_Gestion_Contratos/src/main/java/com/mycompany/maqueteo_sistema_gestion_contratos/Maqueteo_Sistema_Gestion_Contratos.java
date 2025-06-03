@@ -2,17 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package sistema_gestion_contratos.informes;
+package com.mycompany.maqueteo_sistema_gestion_contratos;
 
-import sistema_gestion_contratos.informes.Controlador.LoginControlador;
-import sistema_gestion_contratos.informes.Modelo.Usuario;
-import sistema_gestion_contratos.informes.Vista.*;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.LoginControlador;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.Programa;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.VISTA_VALIDACION;
+
+
 
 /**
  *
  * @author Isabela
  */
-public class Sistema_Gestion_ContratosInformes {
+public class Maqueteo_Sistema_Gestion_Contratos {
 
     /**
      * @param args the command line arguments

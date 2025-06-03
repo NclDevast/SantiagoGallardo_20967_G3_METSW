@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sistema_gestion_contratos.informes.Controlador;
+package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.Programa;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.VISTA_VALIDACION;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import sistema_gestion_contratos.informes.Modelo.Usuario;
-import sistema_gestion_contratos.informes.Vista.*;
 
 /**
  *
