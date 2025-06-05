@@ -5,7 +5,6 @@
 package sistema_gestion_contratos.informes.Vista;
 
 import javax.swing.JOptionPane;
-import sistema_gestion_contratos.informes.Modelo.Usuario;
 
 /**
  *
