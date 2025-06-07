@@ -27,7 +27,7 @@ public class Maqueteo_Sistema_Gestion_Contratos {
         vista1.setVisible(true);
         vista1.setLocationRelativeTo(null);
         LoginControlador ctrl= new LoginControlador(vista1,mod,programa);
-        ctrl.iniciar();
+        ctrl.iniciarValidacion();
 
     }
     

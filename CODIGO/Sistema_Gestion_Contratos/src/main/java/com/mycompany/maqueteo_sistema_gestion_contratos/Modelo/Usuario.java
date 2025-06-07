@@ -11,7 +11,7 @@ package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
 public class Usuario {
     private int id;
     private String nombreUsuario;
-    private String contraseña;
+    private String password;
 
     public Usuario(){
         
@@ -20,7 +20,7 @@ public class Usuario {
     public Usuario(int id, String nombreUsuario, String contraseña) {
         this.id = id;
         this.nombreUsuario = "Veronica";
-        this.contraseña = "1234";
+        this.password = "1234";
     }
 
     public int getId() {
@@ -39,17 +39,14 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.password = contraseña;
     }
-    public boolean ValidarUsuarios(){
-       if(this.nombreUsuario.equals("Veronica")&&this.contraseña.equals("1234")){
-           return true;
-       }else 
-           return false;
+    public boolean validarUsuarios(){
+        return this.nombreUsuario.equals("Veronica")&&this.password.equals("1234");
     }
 }

@@ -31,18 +31,31 @@ public class LoginControlador implements ActionListener{
         this.modelo=modelo;
         this.programa = programa;
         this.vista_validacion.btnLogin.addActionListener(this);
+        
     }
-    public void iniciar()
+    public void iniciarValidacion()
     {
         vista_validacion.setTitle("Validación de usuario");
+        vista_validacion.setVisible(true);
         vista_validacion.setLocationRelativeTo(null);
         vista_validacion.setResizable(false);
     }
+    public void iniciarPrograma()
+    {
+        programa.setTitle("Gestion de contratos");
+        programa.setVisible(true);
+        programa.setLocationRelativeTo(null);
+        programa.setResizable(false);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        modelo.setNombreUsuario(vista_validacion.txtUsuario.getText());
-        modelo.setContraseña(vista_validacion.txtContrasena.getText());
-        this.LoginEstado = modelo.ValidarUsuarios();
+        
+        if(e.getSource()==vista_validacion.btnLogin){
+            
+            modelo.setNombreUsuario(vista_validacion.txtUsuario.getText());
+            modelo.setContraseña(vista_validacion.txtContrasena.getText());
+            this.LoginEstado = modelo.validarUsuarios();
 
         if (!this.LoginEstado) {
             intentosFallidos++;
@@ -55,13 +68,17 @@ public class LoginControlador implements ActionListener{
             if (intentosFallidos >= MAX_INTENTOS) {
                 bloquearLogin();
             }
-        } else {
-            programa.setVisible(true);
-            programa.setLocationRelativeTo(null);
-            programa.setResizable(false);
-            vista_validacion.dispose();     
+            
+        }   
+        else{
+            vista_validacion.dispose();
+            iniciarPrograma();
+            System.out.println("Acceso Exitoso");
+            }
         }
+                
     }
+    
 
     private void bloquearLogin() {
         vista_validacion.btnLogin.setEnabled(false);
