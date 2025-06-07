@@ -38,7 +38,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
             }
         });
 
-        BtnSalir.setText("Salir");
+        BtnSalir.setText("Regresar");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSalirActionPerformed(evt);
@@ -52,7 +52,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BtnGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
                 .addComponent(BtnSalir)
                 .addContainerGap())
         );
