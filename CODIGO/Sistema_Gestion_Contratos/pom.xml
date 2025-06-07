@@ -22,4 +22,5 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.maqueteo_sistema_gestion_contratos.Maqueteo_Sistema_Gestion_Contratos</exec.mainClass>
     </properties>
+    <name>Sistema_Gestion_Contratos</name>
 </project>
