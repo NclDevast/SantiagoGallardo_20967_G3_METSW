@@ -5,8 +5,7 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.Programa;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.VISTA_VALIDACION;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -17,20 +16,26 @@ import javax.swing.Timer;
  * @author Isabela
  */
 public class LoginControlador implements ActionListener{
-    private VISTA_VALIDACION vista_validacion;
-    private Programa programa;
-    private Usuario modelo;
+    private final VISTA_VALIDACION vista_validacion;
+    private final Programa programa;
+    private final Usuario modelo;
+    private final FormularioContratoCivil formCivil;
+    private final FormularioContratoLaboral formLab;
     private Boolean LoginEstado;
     
     private int intentosFallidos = 0;
     private final int MAX_INTENTOS = 3;
     private final int TIEMPO_BLOQUEO = 5 * 60 * 1000; 
     
-    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa){
+    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa, FormularioContratoCivil formciv, FormularioContratoLaboral formlab){
         this.vista_validacion=vista;
         this.modelo=modelo;
         this.programa = programa;
+        this.formCivil = formciv;
+        this.formLab = formlab;
         this.vista_validacion.btnLogin.addActionListener(this);
+        this.programa.BtnContratoCivil.addActionListener(this);
+        this.programa.BtnContratoLaboral.addActionListener(this);
         
     }
     public void iniciarValidacion()
@@ -46,6 +51,25 @@ public class LoginControlador implements ActionListener{
         programa.setVisible(true);
         programa.setLocationRelativeTo(null);
         programa.setResizable(false);
+    }
+    private void iniciarContrato(int Tipo){
+        switch (Tipo) {
+            case 0:
+                formCivil.setTitle("Contrato Civil");
+                formCivil.setVisible(true);
+                formCivil.setLocationRelativeTo(null);
+                formCivil.setResizable(false);
+                break;
+            case 1:
+                formLab.setTitle("Contrato Civil");
+                formLab.setVisible(true);
+                formLab.setLocationRelativeTo(null);
+                formLab.setResizable(false);
+                break;
+            default:
+                System.out.println("Error interno");
+                break;
+        }
     }
 
     @Override
@@ -76,10 +100,17 @@ public class LoginControlador implements ActionListener{
             System.out.println("Acceso Exitoso");
             }
         }
-                
+        else if(e.getSource()==programa.BtnContratoCivil){
+               System.out.println("Civil");
+               iniciarContrato(0);
+           }
+        else if(e.getSource()==programa.BtnContratoLaboral){
+               System.out.println("Laboral");
+               iniciarContrato(1);
+           }
     }
-    
 
+    
     private void bloquearLogin() {
         vista_validacion.btnLogin.setEnabled(false);
         JOptionPane.showMessageDialog(null, "🚫 Has excedido el número de intentos. El sistema estará bloqueado por 5 minutos.");
