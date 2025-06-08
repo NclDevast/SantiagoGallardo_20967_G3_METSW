@@ -36,8 +36,8 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        scrollbar1 = new java.awt.Scrollbar();
         jLabel6 = new javax.swing.JLabel();
+        scrollbar1 = new java.awt.Scrollbar();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -143,10 +143,10 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 230, -1));
-        jPanel1.add(scrollbar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, 701));
 
         jLabel6.setText("Representante legal:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanel1.add(scrollbar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, 701));
 
         jTextField2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 200, -1));
@@ -222,10 +222,10 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 240, -1));
 
         jLabel17.setText("Fecha de inicio de contrato:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, -1, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
         jLabel18.setText("Fecha fin de contrato:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
         jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 240, -1));
 
         jLabel19.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -233,7 +233,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
         jLabel20.setText("Valor mensual (dolares):");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
 
         jLabel21.setText("Forma de pago:");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
