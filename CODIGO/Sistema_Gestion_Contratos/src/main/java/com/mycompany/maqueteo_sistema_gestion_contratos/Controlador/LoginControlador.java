@@ -22,21 +22,24 @@ public class LoginControlador implements ActionListener{
     private final FormularioContratoCivil formCivil;
     private final FormularioContratoLaboral formLab;
     private Boolean LoginEstado;
+    private UsuarioControlador userctrl;
+
     
     private int intentosFallidos = 0;
     private final int MAX_INTENTOS = 3;
     private final int TIEMPO_BLOQUEO = 5 * 60 * 1000; 
     
-    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa, FormularioContratoCivil formciv, FormularioContratoLaboral formlab){
+    public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa, FormularioContratoCivil formciv, FormularioContratoLaboral formlab, UsuarioControlador userctrl){
         this.vista_validacion=vista;
         this.modelo=modelo;
         this.programa = programa;
         this.formCivil = formciv;
         this.formLab = formlab;
+        this.userctrl = userctrl;
         this.vista_validacion.btnLogin.addActionListener(this);
         this.programa.BtnContratoCivil.addActionListener(this);
         this.programa.BtnContratoLaboral.addActionListener(this);
-        
+        this.programa.BtnDatosUsuario.addActionListener(this);
     }
     public void iniciarValidacion()
     {
@@ -108,6 +111,10 @@ public class LoginControlador implements ActionListener{
                System.out.println("Laboral");
                iniciarContrato(1);
            }
+        else if(e.getSource()==programa.BtnDatosUsuario){
+            System.out.println("Boton Datos Usuario");
+            userctrl.iniciarVistaDatos();
+        }
     }
 
     

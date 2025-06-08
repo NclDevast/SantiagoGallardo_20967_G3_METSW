@@ -178,7 +178,7 @@ public class Programa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnContratoCivil;
     public javax.swing.JButton BtnContratoLaboral;
-    private javax.swing.JButton BtnDatosUsuario;
+    public javax.swing.JButton BtnDatosUsuario;
     private javax.swing.JButton btnSalida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

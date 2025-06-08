@@ -49,4 +49,8 @@ public class Usuario {
     public boolean validarUsuarios(){
         return this.nombreUsuario.equals("Veronica")&&this.password.equals("1234");
     }
+    
+    public boolean compararPass(String Pass1, String Pass2){
+        return Pass1.equals(Pass2);
+    }
 }
