@@ -65,6 +65,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jTextField24 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jTextField22 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,6 +206,11 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jTextField22.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 170, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jButton1.setText("Enviar");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, -1, 70));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,6 +278,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnSalir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;

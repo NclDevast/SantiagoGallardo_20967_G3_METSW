@@ -84,6 +84,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jTextField20 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jTextField21 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -288,6 +289,11 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 620, -1, -1));
         jPanel1.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 620, 200, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
+        jButton1.setText("Enviar");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 650, -1, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -374,6 +380,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnSalir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
