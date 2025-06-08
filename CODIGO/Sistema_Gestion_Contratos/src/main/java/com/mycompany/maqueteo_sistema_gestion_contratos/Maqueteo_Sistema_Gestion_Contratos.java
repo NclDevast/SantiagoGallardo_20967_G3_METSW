@@ -4,10 +4,9 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos;
 
-import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.LoginControlador;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.*;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.Programa;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.VISTA_VALIDACION;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 
 
 
@@ -22,12 +21,18 @@ public class Maqueteo_Sistema_Gestion_Contratos {
      */
     public static void main(String[] args) {
         VISTA_VALIDACION vista1 =new VISTA_VALIDACION();
+        Confirmacion confirmacion = new Confirmacion();
         Programa programa = new Programa();    
         Usuario mod= new Usuario();
+        FormularioContratoCivil formCivil= new FormularioContratoCivil();
+        FormularioContratoLaboral formLab = new FormularioContratoLaboral();
+        VistaDatosUsuario datosUsuario = new VistaDatosUsuario();
+        UsuarioControlador usuarioctrl = new UsuarioControlador(mod, datosUsuario,confirmacion);
+        LoginControlador ctrl= new LoginControlador(vista1,mod,programa,formCivil,formLab,usuarioctrl);
         vista1.setVisible(true);
         vista1.setLocationRelativeTo(null);
-        LoginControlador ctrl= new LoginControlador(vista1,mod,programa);
-        ctrl.iniciar();
+
+        ctrl.iniciarValidacion();
 
     }
     
