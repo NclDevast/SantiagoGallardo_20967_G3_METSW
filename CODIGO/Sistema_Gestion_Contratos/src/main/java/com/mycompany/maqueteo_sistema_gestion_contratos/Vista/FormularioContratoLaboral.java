@@ -250,19 +250,19 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         jLabel10.setText("DIAS DE TRABAJO:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
 
         jLabel11.setText("HORAS DE JORNADA:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 130, -1));
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 300, -1));
+        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 300, -1));
 
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 100, -1));
+        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 130, -1));
 
         jLabel12.setText("TIPO DE JORNADA");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, -1, -1));
