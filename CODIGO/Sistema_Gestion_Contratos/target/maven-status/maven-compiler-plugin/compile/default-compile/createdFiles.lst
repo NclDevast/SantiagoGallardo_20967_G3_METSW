@@ -7,6 +7,7 @@ com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$3
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\VISTA_VALIDACION.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Confirmacion$1.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral$3.class
+com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral$6.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$2.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$8.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Maqueteo_Sistema_Gestion_Contratos.class
@@ -20,6 +21,7 @@ com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$5
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Confirmacion.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral$2.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$6.class
+com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral$4.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Programa.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Controlador\UsuarioControlador$AccionConfirmacion.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\VistaDatosUsuario$2.class
@@ -31,3 +33,4 @@ com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil$4
 com\mycompany\maqueteo_sistema_gestion_contratos\Controlador\LoginControlador.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Programa$3.class
 com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil.class
+com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral$5.class
