@@ -77,9 +77,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         jMenu3.setText("jMenu3");
 
@@ -257,6 +254,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 130, -1));
         jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 300, -1));
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -266,14 +264,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel12.setText("TIPO DE JORNADA");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, -1, -1));
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -381,12 +371,9 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
