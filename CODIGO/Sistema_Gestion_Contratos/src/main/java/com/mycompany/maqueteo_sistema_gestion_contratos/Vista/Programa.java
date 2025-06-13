@@ -43,7 +43,7 @@ public class Programa extends javax.swing.JFrame {
 
         BtnDatosUsuario.setBackground(new java.awt.Color(204, 255, 255));
         BtnDatosUsuario.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        BtnDatosUsuario.setText("Datos Administratdor");
+        BtnDatosUsuario.setText("Datos Administrador");
         BtnDatosUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BtnDatosUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
