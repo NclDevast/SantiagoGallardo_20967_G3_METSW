@@ -124,7 +124,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        jLabel2.setText("Compadecientes:");
+        jLabel2.setText("Comparacientes:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
