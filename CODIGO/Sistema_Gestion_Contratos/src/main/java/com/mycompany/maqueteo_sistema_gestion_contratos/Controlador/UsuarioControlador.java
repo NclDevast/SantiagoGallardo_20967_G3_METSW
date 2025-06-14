@@ -71,7 +71,7 @@ public class UsuarioControlador implements ActionListener{
                 System.out.println("Usuario cambiado correctamente a " + modelo.getNombreUsuario());
             } 
             else if (accion == AccionConfirmacion.CAMBIO_PASSWORD) {
-                modelo.setContraseña(nuevaPasswordPendiente);
+                modelo.setPassword(nuevaPasswordPendiente);
                 JOptionPane.showMessageDialog(null, "Contraseña cambiada exitosamente");
                 nuevaPasswordPendiente = "";
             }
