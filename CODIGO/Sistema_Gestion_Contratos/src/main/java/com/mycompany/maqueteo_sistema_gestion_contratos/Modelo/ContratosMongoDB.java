@@ -4,10 +4,10 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.LoginControlador;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.UsuarioControlador;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivil;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoLaboral;
+
 
 /**
  *
@@ -16,17 +16,17 @@ import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContrato
 public class ContratosMongoDB {
     
     private final LoginControlador loginControl;
-    private final FormularioContratoCivil formCivil;
-    private final FormularioContratoLaboral formLab;
-    private final Usuario modelUser;
+    private final Usuario userModel;
 
-    public ContratosMongoDB(UsuarioControlador loginControl, FormularioContratoCivil formCivil, FormularioContratoLaboral formLab, Usuario modelUser) {
+    public ContratosMongoDB(LoginControlador loginControl) {
         this.loginControl = loginControl;
-        this.formCivil = formCivil;
-        this.formLab = formLab;
-        this.modelUser = modelUser;
+        this.userModel = loginControl.getModelo();
     }
     
+    private void connectMongo(){
+        MongoClient mongoClient = MongoClients.create(userModel.getMongoURI());
+    }
+
     
     
 }

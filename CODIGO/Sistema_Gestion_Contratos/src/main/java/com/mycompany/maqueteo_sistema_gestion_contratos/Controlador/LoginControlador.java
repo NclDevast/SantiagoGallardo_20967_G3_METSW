@@ -43,8 +43,8 @@ public class LoginControlador implements ActionListener{
         this.programa.BtnDatosUsuario.addActionListener(this);
     }
     
-        public void initDB(){
-        ContratosMongoDB contratosMongoDB = new ContratosMongoDB(this,);
+    public void initDB() {
+        ContratosMongoDB contratosMongoModelo = new ContratosMongoDB(this); 
     }
     
     public void iniciarValidacion()
@@ -141,4 +141,48 @@ public class LoginControlador implements ActionListener{
         timer.setRepeats(false); 
         timer.start();
     }
+
+    public VISTA_VALIDACION getVista_validacion() {
+        return vista_validacion;
+    }
+
+    public Programa getPrograma() {
+        return programa;
+    }
+
+    public Usuario getModelo() {
+        return modelo;
+    }
+
+    public FormularioContratoCivil getFormCivil() {
+        return formCivil;
+    }
+
+    public FormularioContratoLaboral getFormLab() {
+        return formLab;
+    }
+
+    public Boolean getLoginEstado() {
+        return LoginEstado;
+    }
+
+    public UsuarioControlador getUserctrl() {
+        return userctrl;
+    }
+
+    public int getIntentosFallidos() {
+        return intentosFallidos;
+    }
+
+    public int getMAX_INTENTOS() {
+        return MAX_INTENTOS;
+    }
+
+    public int getTIEMPO_BLOQUEO() {
+        return TIEMPO_BLOQUEO;
+    }
+    
+    
 }
+
+
