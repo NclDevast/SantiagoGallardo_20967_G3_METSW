@@ -4,6 +4,7 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratosMongoDB;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 import java.awt.event.ActionEvent;
@@ -41,6 +42,11 @@ public class LoginControlador implements ActionListener{
         this.programa.BtnContratoLaboral.addActionListener(this);
         this.programa.BtnDatosUsuario.addActionListener(this);
     }
+    
+        public void initDB(){
+        ContratosMongoDB contratosMongoDB = new ContratosMongoDB(this,);
+    }
+    
     public void iniciarValidacion()
     {
         vista_validacion.setTitle("Validación de usuario");

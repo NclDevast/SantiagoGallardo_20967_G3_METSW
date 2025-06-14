@@ -34,7 +34,6 @@ public class UsuarioControlador implements ActionListener{
     }
     
     
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vistadatos.jButtonRegresar) {
@@ -101,5 +100,6 @@ public class UsuarioControlador implements ActionListener{
         confirmacion.setTitle("Confirmacion");
         confirmacion.setResizable(false);
     }
+    
     
 }
