@@ -53,7 +53,7 @@ public class MongoDBModel {
                 int temp = random.nextInt(10000000);
                 String tempS = String.valueOf(temp);
                 userModel.setNombreUsuario(tempS);
-                userModel.setPassword(tempS+1);
+                userModel.setPassword(tempS);
             }
 
         } catch (Exception e) {
