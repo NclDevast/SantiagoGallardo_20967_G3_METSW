@@ -11,6 +11,7 @@ import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import static com.mongodb.client.model.Filters.eq;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Controlador.LoginControlador;
+import java.util.Random;
 
 
 
@@ -45,6 +46,13 @@ public class MongoDBModel {
                 userModel.setNombreUsuario(resultado.getString("nombreUsuario"));
                 System.out.println("Busqueda Exitosa: nombre usuario: "+userModel.getNombreUsuario());
                 userModel.setPassword(resultado.getString("password"));
+            }
+            else{
+                Random random = new Random();
+                int temp = random.nextInt(10000000);
+                String tempS = String.valueOf(temp);
+                userModel.setNombreUsuario(tempS);
+                userModel.setPassword(tempS+1);
             }
 
         } catch (Exception e) {
