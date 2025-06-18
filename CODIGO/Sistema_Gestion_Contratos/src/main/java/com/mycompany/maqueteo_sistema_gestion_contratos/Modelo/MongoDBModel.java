@@ -24,6 +24,7 @@ public class MongoDBModel {
 
     private final LoginControlador loginControl;
     private final Usuario userModel;
+    private final static Random random = new Random();
 
     public MongoDBModel(LoginControlador loginControl) {
         this.loginControl = loginControl;
@@ -48,7 +49,7 @@ public class MongoDBModel {
                 userModel.setPassword(resultado.getString("password"));
             }
             else{
-                Random random = new Random();
+                
                 int temp = random.nextInt(10000000);
                 String tempS = String.valueOf(temp);
                 userModel.setNombreUsuario(tempS);
