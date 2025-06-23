@@ -99,6 +99,10 @@ public class LoginControlador implements ActionListener{
                 ((javax.swing.Timer) evt.getSource()).stop(); // detener el timer
 
                 
+                if (intentosFallidos >= MAX_INTENTOS) {
+                        bloquearLogin(); //se termina el algoritmo
+                    }
+                
                 if (!this.LoginEstado) {
                     intentosFallidos++;
 
@@ -110,9 +114,7 @@ public class LoginControlador implements ActionListener{
                     vista_validacion.txtUsuario.setText("");
                     vista_validacion.txtUsuario.requestFocusInWindow();
 
-                    if (intentosFallidos >= MAX_INTENTOS) {
-                        bloquearLogin();
-                    }
+                    
                 } else {
                     vista_validacion.dispose();
                     iniciarPrograma();
