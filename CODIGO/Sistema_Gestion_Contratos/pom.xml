@@ -22,5 +22,33 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.maqueteo_sistema_gestion_contratos.Maqueteo_Sistema_Gestion_Contratos</exec.mainClass>
     </properties>
+    <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>com.mycompany.maqueteo_sistema_gestion_contratos.Maqueteo_Sistema_Gestion_Contratos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+
     <name>Sistema_Gestion_Contratos</name>
 </project>
