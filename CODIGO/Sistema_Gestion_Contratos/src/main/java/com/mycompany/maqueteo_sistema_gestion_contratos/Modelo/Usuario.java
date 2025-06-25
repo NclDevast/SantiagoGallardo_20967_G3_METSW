@@ -9,27 +9,14 @@ package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
  * @author Isabela
  */
 public class Usuario {
-    private int id;
     private String nombreUsuario;
     private String password;
-
-    public Usuario(){
-        
-    }
- 
-    public Usuario(int id, String nombreUsuario, String contraseña) {
-        this.id = id;
-        this.nombreUsuario = "Veronica";
-        this.password = "1234";
+    private String mongoURI;
+            
+    public Usuario() {
+        this.mongoURI = "mongodb+srv://veromongoad:WNmXdUIJqJgRcbdv@cluster1contratos.fj8u3ak.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1Contratos";
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -43,11 +30,21 @@ public class Usuario {
         return password;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setPassword(String contraseña) {
         this.password = contraseña;
     }
-    public boolean validarUsuarios(){
-        return this.nombreUsuario.equals("Veronica")&&this.password.equals("1234");
+
+    public String getMongoURI() {
+        return mongoURI;
+    }
+
+    public void setMongoURI(String mongoURI) {
+        this.mongoURI = mongoURI;
+    }
+    
+    public boolean validarUsuarios(String userTemp, String passTemp){
+        System.out.println("Usuario"+this.nombreUsuario+"pssword:"+this.password);
+        return this.nombreUsuario.equals(userTemp)&&this.password.equals(passTemp);
     }
     
     public boolean compararPass(String Pass1, String Pass2){

@@ -20,6 +20,9 @@ public class Maqueteo_Sistema_Gestion_Contratos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
+        
         VISTA_VALIDACION vista1 =new VISTA_VALIDACION();
         Confirmacion confirmacion = new Confirmacion();
         Programa programa = new Programa();    

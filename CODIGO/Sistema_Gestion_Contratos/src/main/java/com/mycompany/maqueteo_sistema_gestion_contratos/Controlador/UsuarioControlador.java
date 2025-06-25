@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBUpdate;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.VistaDatosUsuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.Confirmacion;
@@ -32,7 +33,6 @@ public class UsuarioControlador implements ActionListener{
         this.vistadatos.BtnCambioUser.addActionListener(this);
         this.vistadatos.jButtonRegresar.addActionListener(this);
     }
-    
     
     
     @Override
@@ -68,11 +68,13 @@ public class UsuarioControlador implements ActionListener{
 
         else if (e.getSource() == confirmacion.jButtonSi) {
             if (accion == AccionConfirmacion.CAMBIO_USER) {
+                initDB(0,vistadatos.jTextUser.getText());
                 modelo.setNombreUsuario(vistadatos.jTextUser.getText());
                 System.out.println("Usuario cambiado correctamente a " + modelo.getNombreUsuario());
             } 
             else if (accion == AccionConfirmacion.CAMBIO_PASSWORD) {
-                modelo.setContraseña(nuevaPasswordPendiente);
+                modelo.setPassword(nuevaPasswordPendiente);
+                initDB(1,nuevaPasswordPendiente);
                 JOptionPane.showMessageDialog(null, "Contraseña cambiada exitosamente");
                 nuevaPasswordPendiente = "";
             }
@@ -101,5 +103,13 @@ public class UsuarioControlador implements ActionListener{
         confirmacion.setTitle("Confirmacion");
         confirmacion.setResizable(false);
     }
+
+    public Usuario getModelo() {
+        return modelo;
+    }
     
+    private void initDB(int tipo, String temp){
+        MongoDBUpdate mongoDBUpdate = new MongoDBUpdate(this);
+        mongoDBUpdate.cambiarDatos(tipo, temp);
+    }
 }

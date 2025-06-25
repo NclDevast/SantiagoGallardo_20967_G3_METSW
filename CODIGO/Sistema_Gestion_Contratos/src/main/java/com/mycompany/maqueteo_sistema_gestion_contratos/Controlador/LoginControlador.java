@@ -4,6 +4,7 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBModel;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 import java.awt.event.ActionEvent;
@@ -41,6 +42,14 @@ public class LoginControlador implements ActionListener{
         this.programa.BtnContratoLaboral.addActionListener(this);
         this.programa.BtnDatosUsuario.addActionListener(this);
     }
+    
+    public void initDB(String nombreUsuario) {
+        MongoDBModel MongoDBmodel = new MongoDBModel(this); 
+        MongoDBmodel.buscarUsuario(nombreUsuario);
+    }
+    
+
+    
     public void iniciarValidacion()
     {
         vista_validacion.setTitle("Validación de usuario");
@@ -77,41 +86,56 @@ public class LoginControlador implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if(e.getSource()==vista_validacion.btnLogin){
-            
-            modelo.setNombreUsuario(vista_validacion.txtUsuario.getText());
-            modelo.setContraseña(vista_validacion.txtContrasena.getText());
-            this.LoginEstado = modelo.validarUsuarios();
 
-        if (!this.LoginEstado) {
-            intentosFallidos++;
+        if (e.getSource() == vista_validacion.btnLogin) {
+            this.LoginEstado = false;
+            String userTemp = vista_validacion.txtUsuario.getText();
+            String passTemp = vista_validacion.txtContrasena.getText();
 
-            JOptionPane.showMessageDialog(null, "❌ Usuario o contraseña no válidos. Intento " + intentosFallidos + " de " + MAX_INTENTOS);
-            vista_validacion.txtContrasena.setText("");
-            vista_validacion.txtUsuario.setText("");
-            vista_validacion.txtUsuario.requestFocusInWindow();
+            initDB(userTemp);  
 
-            if (intentosFallidos >= MAX_INTENTOS) {
-                bloquearLogin();
-            }
-            
-        }   
-        else{
-            vista_validacion.dispose();
-            iniciarPrograma();
-            System.out.println("Acceso Exitoso");
-            }
+            new javax.swing.Timer(5000, evt -> {
+                this.LoginEstado = modelo.validarUsuarios(userTemp, passTemp);
+                ((javax.swing.Timer) evt.getSource()).stop(); // detener el timer
+
+                
+                if (intentosFallidos >= MAX_INTENTOS) {
+                        bloquearLogin(); //se termina el algoritmo
+                    }
+                
+                if (!this.LoginEstado) {
+                    intentosFallidos++;
+
+                    JOptionPane.showMessageDialog(null, 
+                        "❌ Usuario o contraseña no válidos. Intento " 
+                        + intentosFallidos + " de " + MAX_INTENTOS);
+
+                    vista_validacion.txtContrasena.setText("");
+                    vista_validacion.txtUsuario.setText("");
+                    vista_validacion.txtUsuario.requestFocusInWindow();
+
+                    
+                } else {
+                    vista_validacion.dispose();
+                    iniciarPrograma();
+                    System.out.println("Acceso Exitoso");
+                }
+
+            }).start();  
+
         }
-        else if(e.getSource()==programa.BtnContratoCivil){
-               System.out.println("Civil");
-               iniciarContrato(0);
-           }
-        else if(e.getSource()==programa.BtnContratoLaboral){
-               System.out.println("Laboral");
-               iniciarContrato(1);
-           }
-        else if(e.getSource()==programa.BtnDatosUsuario){
+
+        else if (e.getSource() == programa.BtnContratoCivil) {
+            System.out.println("Civil");
+            iniciarContrato(0);
+        }
+
+        else if (e.getSource() == programa.BtnContratoLaboral) {
+            System.out.println("Laboral");
+            iniciarContrato(1);
+        }
+
+        else if (e.getSource() == programa.BtnDatosUsuario) {
             System.out.println("Boton Datos Usuario");
             userctrl.iniciarVistaDatos();
         }
@@ -135,4 +159,48 @@ public class LoginControlador implements ActionListener{
         timer.setRepeats(false); 
         timer.start();
     }
+
+    public VISTA_VALIDACION getVista_validacion() {
+        return vista_validacion;
+    }
+
+    public Programa getPrograma() {
+        return programa;
+    }
+
+    public Usuario getModelo() {
+        return modelo;
+    }
+
+    public FormularioContratoCivil getFormCivil() {
+        return formCivil;
+    }
+
+    public FormularioContratoLaboral getFormLab() {
+        return formLab;
+    }
+
+    public Boolean getLoginEstado() {
+        return LoginEstado;
+    }
+
+    public UsuarioControlador getUserctrl() {
+        return userctrl;
+    }
+
+    public int getIntentosFallidos() {
+        return intentosFallidos;
+    }
+
+    public int getMAX_INTENTOS() {
+        return MAX_INTENTOS;
+    }
+
+    public int getTIEMPO_BLOQUEO() {
+        return TIEMPO_BLOQUEO;
+    }
+    
+    
 }
+
+
