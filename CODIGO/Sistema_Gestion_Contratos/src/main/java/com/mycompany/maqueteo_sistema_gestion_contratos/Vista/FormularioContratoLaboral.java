@@ -122,19 +122,19 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jLabel6.setText("Ciudad de domicilio:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, 20));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, 20));
 
         jTextField1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 500, -1));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 520, -1));
 
         jLabel7.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 170, -1));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 190, -1));
 
         jTextField3.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 200, -1));
+        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 200, -1));
 
         jLabel9.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel9.setText("Trabajador");
@@ -147,7 +147,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel17.setText("Plazo:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 240, -1));
+        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 480, -1));
 
         jLabel18.setText("Fecha de inicio de contrato:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
@@ -157,8 +157,8 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         jLabel22.setText("Forma de pago:");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, -1, -1));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 200, -1));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
+        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 200, -1));
 
         jLabel23.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel23.setText("Remuneración");
@@ -166,7 +166,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
         jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, -1));
-        jPanel2.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 370, -1));
+        jPanel2.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 400, -1));
 
         BtnSalir.setBackground(new java.awt.Color(204, 255, 255));
         BtnSalir.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -198,23 +198,23 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
                 jTextField13ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 310, -1));
+        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 490, -1));
 
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-        jPanel2.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, -1));
+        jPanel2.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel1.setText("Fecha de contrato:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
-        jPanel2.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 140, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+        jPanel2.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 160, 20));
 
         jLabel30.setText("Nombre completo:");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jTextField23.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 500, -1));
+        jPanel2.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 520, -1));
 
         jLabel31.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
@@ -226,7 +226,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, 20));
 
         jTextField22.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 170, -1));
+        jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 190, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
@@ -238,19 +238,19 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 490, -1));
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 500, -1));
 
         jLabel8.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel8.setText("Jornada Laboral:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         jLabel10.setText("DÍAS DE TRABAJO:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
 
         jLabel11.setText("HORAS DE JORNADA:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 130, -1));
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 300, -1));
+        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, -1));
+        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 300, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +261,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 130, -1));
 
         jLabel12.setText("TIPO DE JORNADA");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

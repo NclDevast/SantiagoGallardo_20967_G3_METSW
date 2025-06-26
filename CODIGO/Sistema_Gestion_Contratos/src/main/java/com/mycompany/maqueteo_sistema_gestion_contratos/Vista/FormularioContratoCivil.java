@@ -35,24 +35,17 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreArrendataria = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        scrollbar1 = new java.awt.Scrollbar();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtRucArrendataria = new javax.swing.JTextField();
+        txtRepresentanteArrendataria = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtCargoArrendataria = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtNacionalidadArrendataria = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -135,36 +128,35 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 111, -1, -1));
 
         jLabel5.setText("RUC:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtNombreArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNombreArrendatariaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 230, -1));
+        jPanel1.add(txtNombreArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 230, -1));
 
         jLabel6.setText("Representante legal:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
-        jPanel1.add(scrollbar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, 701));
 
-        jTextField2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 200, -1));
+        txtRucArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel1.add(txtRucArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 220, -1));
 
-        jTextField3.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtRepresentanteArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtRepresentanteArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtRepresentanteArrendatariaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 230, -1));
+        jPanel1.add(txtRepresentanteArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 230, -1));
 
         jLabel7.setText("Cargo:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 200, -1));
+        txtCargoArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel1.add(txtCargoArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 220, -1));
 
         jLabel8.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel8.setText("Arrendador/a:");
@@ -176,36 +168,20 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel10.setText("Representante legal:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 271, -1, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 234, 235, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 268, 235, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 234, 200, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 268, 200, -1));
-
-        jLabel11.setText("RUC:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 237, -1, -1));
-
-        jLabel12.setText("Cargo:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 271, -1, -1));
-
         jLabel13.setText("Nacionalidad:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-        jTextField9.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        txtNacionalidadArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtNacionalidadArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                txtNacionalidadArrendatariaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 230, -1));
+        jPanel1.add(txtNacionalidadArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 230, -1));
 
         jLabel14.setText("Nacionalidad:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 230, -1));
+        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 230, -1));
 
         jLabel15.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel15.setText("Antecedentes:");
@@ -215,7 +191,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 600, 60));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 650, 60));
 
         jLabel16.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel16.setText("Plazo:");
@@ -231,21 +207,21 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel19.setText("Canon de arrendamiento:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
 
         jLabel20.setText("Valor mensual (dolares):");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
 
         jLabel21.setText("Forma de pago:");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
 
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField13ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 230, -1));
-        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 110, -1));
+        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 260, -1));
+        jPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 110, -1));
 
         jLabel22.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel22.setText("Deposito de garantía:");
@@ -265,29 +241,29 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
                 jTextField15ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 234, 235, -1));
-        jPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 268, 235, -1));
-        jPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 234, 191, -1));
-        jPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 268, 191, -1));
+        jPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
+        jPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 230, -1));
+        jPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 220, -1));
+        jPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 220, -1));
 
         jLabel26.setText("RUC:");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 237, -1, -1));
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
 
         jLabel27.setText("Cargo:");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 271, -1, -1));
-        jPanel1.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 230, -1));
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 266, -1, 30));
+        jPanel1.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 260, -1));
 
         jLabel28.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel28.setText("Correos electrónicos");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
 
         jLabel29.setText("Arrendataria: ");
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
-        jPanel1.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 620, 230, -1));
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
+        jPanel1.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, 250, -1));
 
         jLabel30.setText("Arrendador/a:");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 620, -1, -1));
-        jPanel1.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 620, 200, -1));
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
+        jPanel1.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
@@ -298,15 +274,11 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
         );
 
         pack();
@@ -317,21 +289,17 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BtnSalirActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNombreArrendatariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreArrendatariaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNombreArrendatariaActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtNacionalidadArrendatariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacionalidadArrendatariaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtNacionalidadArrendatariaActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void txtRepresentanteArrendatariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRepresentanteArrendatariaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtRepresentanteArrendatariaActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
@@ -383,8 +351,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -415,7 +381,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -426,16 +391,12 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private java.awt.Scrollbar scrollbar1;
+    private javax.swing.JTextField txtCargoArrendataria;
+    private javax.swing.JTextField txtNacionalidadArrendataria;
+    private javax.swing.JTextField txtNombreArrendataria;
+    private javax.swing.JTextField txtRepresentanteArrendataria;
+    private javax.swing.JTextField txtRucArrendataria;
     // End of variables declaration//GEN-END:variables
 }
