@@ -62,7 +62,7 @@ public class VistaDatosUsuario extends javax.swing.JFrame {
 
         jLabel8.setText("Contraseña Nueva");
 
-        jLabel9.setText("Confirmacion Contraseña ");
+        jLabel9.setText("Confirmación Contraseña ");
 
         BtnCambioPassword.setText("Cambiar Contraseña");
         BtnCambioPassword.addActionListener(new java.awt.event.ActionListener() {

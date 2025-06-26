@@ -98,7 +98,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bookman Old Style" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gestion de Contratos"/>
+            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de Contratos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BtnDatosUsuario">

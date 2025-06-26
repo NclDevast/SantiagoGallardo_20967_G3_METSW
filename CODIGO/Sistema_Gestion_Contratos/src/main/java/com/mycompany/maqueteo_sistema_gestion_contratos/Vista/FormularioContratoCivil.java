@@ -278,7 +278,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 230, -1));
 
         jLabel28.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
-        jLabel28.setText("Correos electronicos");
+        jLabel28.setText("Correos electrónicos");
         jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, -1, -1));
 
         jLabel29.setText("Arrendataria: ");

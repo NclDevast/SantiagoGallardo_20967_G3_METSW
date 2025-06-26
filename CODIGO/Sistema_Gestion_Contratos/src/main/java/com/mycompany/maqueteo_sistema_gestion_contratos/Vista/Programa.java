@@ -39,7 +39,7 @@ public class Programa extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jLabel1.setText("Gestion de Contratos");
+        jLabel1.setText("Gestión de Contratos");
 
         BtnDatosUsuario.setBackground(new java.awt.Color(204, 255, 255));
         BtnDatosUsuario.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
