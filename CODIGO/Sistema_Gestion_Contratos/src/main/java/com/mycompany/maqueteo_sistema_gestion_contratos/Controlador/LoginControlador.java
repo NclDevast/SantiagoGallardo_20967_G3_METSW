@@ -91,25 +91,27 @@ public class LoginControlador implements ActionListener{
             this.LoginEstado = false;
             String userTemp = vista_validacion.txtUsuario.getText();
             String passTemp = vista_validacion.txtContrasena.getText();
-
-            initDB(userTemp);  
-
-            new javax.swing.Timer(5000, evt -> {
+            initDB(userTemp);
+            vista_validacion.btnLogin.setEnabled(false);
+            
+            new javax.swing.Timer(1000, evt -> {
                 this.LoginEstado = modelo.validarUsuarios(userTemp, passTemp);
                 ((javax.swing.Timer) evt.getSource()).stop(); // detener el timer
 
                 
-                if (intentosFallidos >= MAX_INTENTOS) {
-                        bloquearLogin(); //se termina el algoritmo
-                    }
-                
                 if (!this.LoginEstado) {
                     intentosFallidos++;
-
+                    vista_validacion.btnLogin.setEnabled(true);
+                    
+                if (intentosFallidos >= MAX_INTENTOS) {
+                        bloquearLogin(); //se termina el algoritmo
+                        return;
+                    }
+                
                     JOptionPane.showMessageDialog(null, 
                         "❌ Usuario o contraseña no válidos. Intento " 
                         + intentosFallidos + " de " + MAX_INTENTOS);
-
+                    
                     vista_validacion.txtContrasena.setText("");
                     vista_validacion.txtUsuario.setText("");
                     vista_validacion.txtUsuario.requestFocusInWindow();
