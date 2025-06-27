@@ -108,7 +108,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
         BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
         BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnGuardar.setText("Guardar");
+        BtnGuardar.setText("Limpiar");
         BtnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 650, -1, -1));
 
@@ -274,8 +274,13 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
         btnVerificar.setBackground(new java.awt.Color(0, 102, 102));
         btnVerificar.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
-        btnVerificar.setText("Enviar");
+        btnVerificar.setText("Guardar");
         btnVerificar.setActionCommand("Verificar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 650, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -320,6 +325,10 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private void txtFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInicioActionPerformed
+
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerificarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -181,7 +181,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
         BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnGuardar.setText("Guardar");
+        BtnGuardar.setText("Limpiar");
         BtnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +260,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         bnVerificar1.setBackground(new java.awt.Color(0, 102, 102));
         bnVerificar1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        bnVerificar1.setText("Verificar");
+        bnVerificar1.setText("Guardar");
         jPanel2.add(bnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,10 +285,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnGuardarActionPerformed
-
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_BtnSalirActionPerformed
@@ -304,6 +300,10 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
  
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
