@@ -384,9 +384,9 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnGuardar;
-    private javax.swing.JButton BtnSalir;
-    private javax.swing.JButton btnVerificar;
+    public javax.swing.JButton BtnGuardar;
+    public javax.swing.JButton BtnSalir;
+    public javax.swing.JButton btnVerificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -418,23 +418,23 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtAntecedentes;
-    private javax.swing.JTextField txtCargoArrendador;
-    private javax.swing.JTextField txtCargoArrendataria;
-    private javax.swing.JTextField txtCorreoArrendador;
-    private javax.swing.JTextField txtCorreoArrendataria;
-    private javax.swing.JTextField txtFechaFin;
-    private javax.swing.JTextField txtFechaInicio;
-    private javax.swing.JTextField txtFormaPago;
-    private javax.swing.JTextField txtGarantia;
-    private javax.swing.JTextField txtNacionalidadArrendador;
-    private javax.swing.JTextField txtNacionalidadArrendataria;
-    private javax.swing.JTextField txtNombreArrendador;
-    private javax.swing.JTextField txtNombreArrendataria;
-    private javax.swing.JTextField txtRepresentanteArrendador;
-    private javax.swing.JTextField txtRepresentanteArrendataria;
-    private javax.swing.JTextField txtRucArrendador;
-    private javax.swing.JTextField txtRucArrendataria;
-    private javax.swing.JTextField txtValorMensual;
+    public javax.swing.JTextArea txtAntecedentes;
+    public javax.swing.JTextField txtCargoArrendador;
+    public javax.swing.JTextField txtCargoArrendataria;
+    public javax.swing.JTextField txtCorreoArrendador;
+    public javax.swing.JTextField txtCorreoArrendataria;
+    public javax.swing.JTextField txtFechaFin;
+    public javax.swing.JTextField txtFechaInicio;
+    public javax.swing.JTextField txtFormaPago;
+    public javax.swing.JTextField txtGarantia;
+    public javax.swing.JTextField txtNacionalidadArrendador;
+    public javax.swing.JTextField txtNacionalidadArrendataria;
+    public javax.swing.JTextField txtNombreArrendador;
+    public javax.swing.JTextField txtNombreArrendataria;
+    public javax.swing.JTextField txtRepresentanteArrendador;
+    public javax.swing.JTextField txtRepresentanteArrendataria;
+    public javax.swing.JTextField txtRucArrendador;
+    public javax.swing.JTextField txtRucArrendataria;
+    public javax.swing.JTextField txtValorMensual;
     // End of variables declaration//GEN-END:variables
 }

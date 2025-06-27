@@ -15,6 +15,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
      */
     public FormularioContratoLaboral() {
         initComponents();
+        btnGuardar.setEnabled(false);
     }
 
     /**
@@ -75,7 +76,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         txtDiasTrabajo = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        bnVerificar1 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
 
         jMenu3.setText("jMenu3");
 
@@ -247,7 +248,8 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(txtJornadasHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, -1));
         jPanel2.add(txtDiasTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 300, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
+        jComboBox2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir Jornada", "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -258,10 +260,10 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel12.setText("TIPO DE JORNADA");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, -1, -1));
 
-        bnVerificar1.setBackground(new java.awt.Color(255, 204, 204));
-        bnVerificar1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        bnVerificar1.setText("Guardar");
-        jPanel2.add(bnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 620, -1, -1));
+        btnGuardar.setBackground(new java.awt.Color(255, 204, 204));
+        btnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        btnGuardar.setText("Guardar");
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 620, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -357,11 +359,11 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnGuardar;
+    public javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnSalir;
-    private javax.swing.JButton bnVerificar1;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -392,20 +394,20 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtCargoTrabajador;
-    private javax.swing.JTextField txtCedulaEmpleador;
-    private javax.swing.JTextField txtCedulaTrabajador;
-    private javax.swing.JTextField txtCiudad;
-    private javax.swing.JTextField txtCiudadEmpleador;
-    private javax.swing.JTextField txtCiudadTrabajador;
-    private javax.swing.JTextField txtDiasTrabajo;
-    private javax.swing.JTextField txtFechaContrato;
-    private javax.swing.JTextField txtFechaInicio;
-    private javax.swing.JTextField txtFormaPago;
-    private javax.swing.JTextField txtJornadasHoras;
-    private javax.swing.JTextField txtLugarTrabajo;
-    private javax.swing.JTextField txtMonto;
-    private javax.swing.JTextField txtNombreEmpleador;
-    private javax.swing.JTextField txtNombreTrabajador;
+    public javax.swing.JTextField txtCargoTrabajador;
+    public javax.swing.JTextField txtCedulaEmpleador;
+    public javax.swing.JTextField txtCedulaTrabajador;
+    public javax.swing.JTextField txtCiudad;
+    public javax.swing.JTextField txtCiudadEmpleador;
+    public javax.swing.JTextField txtCiudadTrabajador;
+    public javax.swing.JTextField txtDiasTrabajo;
+    public javax.swing.JTextField txtFechaContrato;
+    public javax.swing.JTextField txtFechaInicio;
+    public javax.swing.JTextField txtFormaPago;
+    public javax.swing.JTextField txtJornadasHoras;
+    public javax.swing.JTextField txtLugarTrabajo;
+    public javax.swing.JTextField txtMonto;
+    public javax.swing.JTextField txtNombreEmpleador;
+    public javax.swing.JTextField txtNombreTrabajador;
     // End of variables declaration//GEN-END:variables
 }
