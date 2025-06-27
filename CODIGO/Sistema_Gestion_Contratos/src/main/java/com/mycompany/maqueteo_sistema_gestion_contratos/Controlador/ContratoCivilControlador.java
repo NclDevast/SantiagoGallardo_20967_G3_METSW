@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
-
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 /**
  *
  * @author Isabela
  */
 public class ContratoCivilControlador {
+    
     
 }

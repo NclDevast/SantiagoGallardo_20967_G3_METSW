@@ -38,41 +38,41 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreTrabajador = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtCiudadTrabajador = new javax.swing.JTextField();
+        txtCedulaTrabajador = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        txtFechaInicio = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        txtFormaPago = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
+        txtMonto = new javax.swing.JTextField();
         BtnSalir = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        txtCargoTrabajador = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         txtCiudad = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        txtFechaContrato = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
+        txtNombreEmpleador = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
+        txtCedulaEmpleador = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtCiudadEmpleador = new javax.swing.JTextField();
+        txtLugarTrabajo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtJornadasHoras = new javax.swing.JTextField();
+        txtDiasTrabajo = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         bnVerificar1 = new javax.swing.JButton();
@@ -124,17 +124,17 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel6.setText("Ciudad de domicilio:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, 20));
 
-        jTextField1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 520, -1));
+        txtNombreTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtNombreTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 520, -1));
 
         jLabel7.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 190, -1));
+        txtCiudadTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtCiudadTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 190, -1));
 
-        jTextField3.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 200, -1));
+        txtCedulaTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtCedulaTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 200, -1));
 
         jLabel9.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel9.setText("Trabajador");
@@ -147,7 +147,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel17.setText("Plazo:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 480, -1));
+        jPanel2.add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 480, -1));
 
         jLabel18.setText("Fecha de inicio de contrato:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
@@ -158,7 +158,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel22.setText("Forma de pago:");
         jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 200, -1));
+        jPanel2.add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 200, -1));
 
         jLabel23.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel23.setText("Remuneración");
@@ -166,7 +166,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
         jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, -1));
-        jPanel2.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 400, -1));
+        jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 400, -1));
 
         BtnSalir.setBackground(new java.awt.Color(204, 255, 255));
         BtnSalir.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -193,12 +193,12 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel21.setText("Objeto/Cargo del trajador:");
         jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        txtCargoTrabajador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                txtCargoTrabajadorActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 490, -1));
+        jPanel2.add(txtCargoTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 490, -1));
 
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
@@ -208,32 +208,32 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel1.setText("Fecha de contrato:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
-        jPanel2.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 160, 20));
+        jPanel2.add(txtFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 160, 20));
 
         jLabel30.setText("Nombre completo:");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jTextField23.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 520, -1));
+        txtNombreEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtNombreEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 520, -1));
 
         jLabel31.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
-        jTextField24.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 200, -1));
+        txtCedulaEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtCedulaEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 200, -1));
 
         jLabel32.setText("Ciudad de domicilio:");
         jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, 20));
 
-        jTextField22.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 190, -1));
+        txtCiudadEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jPanel2.add(txtCiudadEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 190, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtLugarTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtLugarTrabajoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 500, -1));
+        jPanel2.add(txtLugarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 500, -1));
 
         jLabel8.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel8.setText("Jornada Laboral:");
@@ -244,8 +244,8 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel11.setText("HORAS DE JORNADA:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, -1));
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 300, -1));
+        jPanel2.add(txtJornadasHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, -1));
+        jPanel2.add(txtDiasTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 300, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -289,13 +289,13 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BtnSalirActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtLugarTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLugarTrabajoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtLugarTrabajoActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void txtCargoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoTrabajadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_txtCargoTrabajadorActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
  
@@ -376,20 +376,20 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtCargoTrabajador;
+    private javax.swing.JTextField txtCedulaEmpleador;
+    private javax.swing.JTextField txtCedulaTrabajador;
     private javax.swing.JTextField txtCiudad;
+    private javax.swing.JTextField txtCiudadEmpleador;
+    private javax.swing.JTextField txtCiudadTrabajador;
+    private javax.swing.JTextField txtDiasTrabajo;
+    private javax.swing.JTextField txtFechaContrato;
+    private javax.swing.JTextField txtFechaInicio;
+    private javax.swing.JTextField txtFormaPago;
+    private javax.swing.JTextField txtJornadasHoras;
+    private javax.swing.JTextField txtLugarTrabajo;
+    private javax.swing.JTextField txtMonto;
+    private javax.swing.JTextField txtNombreEmpleador;
+    private javax.swing.JTextField txtNombreTrabajador;
     // End of variables declaration//GEN-END:variables
 }
