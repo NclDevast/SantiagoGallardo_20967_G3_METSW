@@ -58,7 +58,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
+        txtCiudad = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTextField21 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
@@ -67,7 +67,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jTextField24 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jTextField22 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -76,6 +75,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        bnVerificar1 = new javax.swing.JButton();
 
         jMenu3.setText("jMenu3");
 
@@ -203,7 +203,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-        jPanel2.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 270, -1));
+        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel1.setText("Fecha de contrato:");
@@ -227,11 +227,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jTextField22.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 190, -1));
-
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jButton1.setText("Enviar");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, 30));
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,6 +257,11 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel12.setText("TIPO DE JORNADA");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
+
+        bnVerificar1.setBackground(new java.awt.Color(0, 102, 102));
+        bnVerificar1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        bnVerificar1.setText("Verificar");
+        jPanel2.add(bnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -343,7 +343,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnSalir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bnVerificar1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -382,7 +382,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
@@ -391,5 +390,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtCiudad;
     // End of variables declaration//GEN-END:variables
 }
