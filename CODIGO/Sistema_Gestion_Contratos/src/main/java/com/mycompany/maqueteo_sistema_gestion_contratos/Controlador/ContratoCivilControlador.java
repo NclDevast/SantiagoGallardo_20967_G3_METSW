@@ -37,9 +37,9 @@ public class ContratoCivilControlador {
                 || formCivil.txtCorreoArrendataria.getText().isEmpty()
                 || formCivil.txtCorreoArrendador.getText().isEmpty()) {
 
-            formCivil.btnGuardar.setEnabled(false);
+            formCivil.btnGuardar1.setEnabled(false);
         } else {
-            formCivil.btnGuardar.setEnabled(true);
+            formCivil.btnGuardar1.setEnabled(true);
         }
     }
 
