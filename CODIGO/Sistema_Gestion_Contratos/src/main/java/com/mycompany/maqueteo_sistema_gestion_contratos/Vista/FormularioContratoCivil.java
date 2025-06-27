@@ -104,7 +104,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
                 BtnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 650, -1, -1));
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 650, -1, -1));
 
         BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
         BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -273,7 +273,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
         jPanel1.add(txtCorreoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
 
-        btnVerificar.setBackground(new java.awt.Color(0, 102, 102));
+        btnVerificar.setBackground(new java.awt.Color(255, 204, 204));
         btnVerificar.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         btnVerificar.setText("Guardar");
         btnVerificar.setActionCommand("Verificar");
@@ -282,7 +282,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
                 btnVerificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 650, -1, 20));
+        jPanel1.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

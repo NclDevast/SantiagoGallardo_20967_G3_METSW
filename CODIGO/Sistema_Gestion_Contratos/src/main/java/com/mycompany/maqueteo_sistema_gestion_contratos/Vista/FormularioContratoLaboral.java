@@ -177,7 +177,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
                 BtnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 610, -1, -1));
+        jPanel2.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, -1, -1));
 
         BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
         BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -258,10 +258,10 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel12.setText("TIPO DE JORNADA");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
 
-        bnVerificar1.setBackground(new java.awt.Color(0, 102, 102));
+        bnVerificar1.setBackground(new java.awt.Color(255, 204, 204));
         bnVerificar1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         bnVerificar1.setText("Guardar");
-        jPanel2.add(bnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
+        jPanel2.add(bnVerificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 620, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
