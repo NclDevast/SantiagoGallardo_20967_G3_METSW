@@ -6,19 +6,26 @@ package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 /**
  *
  * @author Isabela
  */
 public class ContratoCivilControlador {
     private final FormularioContratoCivil formCivil;
-    
-    public ContratoCivilControlador(FormularioContratoCivil formCivil){
-          this.formCivil = formCivil;
+    private final LoginControlador lgnCtrl;
+
+    public ContratoCivilControlador(FormularioContratoCivil formCivil, LoginControlador lgnCtrl) {
+        this.formCivil = formCivil;
+        this.lgnCtrl = lgnCtrl;
+        agregarValidacionAutomatica();
+        Validacion(); // Verifica al iniciar (los campos estarán vacíos)
     }
 
     public void Validacion() {
-        if (formCivil.txtNombreArrendataria.getText().isEmpty()
+        boolean camposVacios =
+                formCivil.txtNombreArrendataria.getText().isEmpty()
                 || formCivil.txtRucArrendataria.getText().isEmpty()
                 || formCivil.txtRepresentanteArrendataria.getText().isEmpty()
                 || formCivil.txtCargoArrendataria.getText().isEmpty()
@@ -35,12 +42,62 @@ public class ContratoCivilControlador {
                 || formCivil.txtFormaPago.getText().isEmpty()
                 || formCivil.txtGarantia.getText().isEmpty()
                 || formCivil.txtCorreoArrendataria.getText().isEmpty()
-                || formCivil.txtCorreoArrendador.getText().isEmpty()) {
+                || formCivil.txtCorreoArrendador.getText().isEmpty();
 
-            formCivil.btnGuardar1.setEnabled(false);
-        } else {
-            formCivil.btnGuardar1.setEnabled(true);
+        formCivil.btnGuardar1.setEnabled(!camposVacios);
+    }
+
+    private void agregarValidacionAutomatica() {
+        JTextField[] camposTexto = {
+            formCivil.txtNombreArrendataria,
+            formCivil.txtRucArrendataria,
+            formCivil.txtRepresentanteArrendataria,
+            formCivil.txtCargoArrendataria,
+            formCivil.txtNacionalidadArrendataria,
+            formCivil.txtNombreArrendador,
+            formCivil.txtRucArrendador,
+            formCivil.txtRepresentanteArrendador,
+            formCivil.txtCargoArrendador,
+            formCivil.txtNacionalidadArrendador,
+            formCivil.txtFechaInicio,
+            formCivil.txtFechaFin,
+            formCivil.txtValorMensual,
+            formCivil.txtFormaPago,
+            formCivil.txtGarantia,
+            formCivil.txtCorreoArrendataria,
+            formCivil.txtCorreoArrendador
+        };
+
+        for (JTextField campo : camposTexto) {
+            campo.getDocument().addDocumentListener(new DocumentListener() {
+                public void insertUpdate(DocumentEvent e) {
+                    Validacion();
+                }
+
+                public void removeUpdate(DocumentEvent e) {
+                    Validacion();
+                }
+
+                public void changedUpdate(DocumentEvent e) {
+                    Validacion();
+                }
+            });
         }
+
+        // También añadimos el JTextArea "txtAntecedentes"
+        formCivil.txtAntecedentes.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                Validacion();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                Validacion();
+            }
+
+            public void changedUpdate(DocumentEvent e) {
+                Validacion();
+            }
+        });
     }
 
     public FormularioContratoCivil getFormCivil() {

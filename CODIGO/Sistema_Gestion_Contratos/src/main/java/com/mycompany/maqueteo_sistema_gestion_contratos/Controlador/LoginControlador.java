@@ -22,6 +22,8 @@ public class LoginControlador implements ActionListener{
     private final Usuario modelo;
     private final FormularioContratoCivil formCivil;
     private final FormularioContratoLaboral formLab;
+    private final ContratoCivilControlador civCtrl;
+    private final ContratoLaboralControlador labCtrl;
     private Boolean LoginEstado;
     private UsuarioControlador userctrl;
 
@@ -37,6 +39,8 @@ public class LoginControlador implements ActionListener{
         this.formCivil = formciv;
         this.formLab = formlab;
         this.userctrl = userctrl;
+        this.civCtrl = new ContratoCivilControlador(this.formCivil,this);
+        this.labCtrl = new ContratoLaboralControlador(this.formLab,this);
         this.vista_validacion.btnLogin.addActionListener(this);
         this.programa.BtnContratoCivil.addActionListener(this);
         this.programa.BtnContratoLaboral.addActionListener(this);
@@ -71,12 +75,14 @@ public class LoginControlador implements ActionListener{
                 formCivil.setVisible(true);
                 formCivil.setLocationRelativeTo(null);
                 formCivil.setResizable(false);
+                civCtrl.Validacion();
                 break;
             case 1:
                 formLab.setTitle("Contrato Civil");
                 formLab.setVisible(true);
                 formLab.setLocationRelativeTo(null);
                 formLab.setResizable(false);
+                labCtrl.Validacion();
                 break;
             default:
                 System.out.println("Error interno");
