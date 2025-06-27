@@ -243,6 +243,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 271, -1, -1));
 
         txtNombreArrendador.setEditable(false);
+        txtNombreArrendador.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreArrendador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreArrendadorActionPerformed(evt);
