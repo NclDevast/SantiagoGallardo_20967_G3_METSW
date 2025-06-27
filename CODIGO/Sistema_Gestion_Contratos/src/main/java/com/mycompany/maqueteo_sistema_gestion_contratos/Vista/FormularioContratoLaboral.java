@@ -122,19 +122,19 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jLabel6.setText("Ciudad de domicilio:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, 20));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, -1, 20));
 
         txtNombreTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtNombreTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 520, -1));
+        jPanel2.add(txtNombreTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 530, -1));
 
         jLabel7.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         txtCiudadTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtCiudadTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 190, -1));
+        jPanel2.add(txtCiudadTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 190, -1));
 
         txtCedulaTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtCedulaTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 200, -1));
+        jPanel2.add(txtCedulaTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 200, -1));
 
         jLabel9.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel9.setText("Trabajador");
@@ -147,7 +147,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel17.setText("Plazo:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
-        jPanel2.add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 480, -1));
+        jPanel2.add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 500, -1));
 
         jLabel18.setText("Fecha de inicio de contrato:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
@@ -157,8 +157,8 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         jLabel22.setText("Forma de pago:");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, -1, -1));
-        jPanel2.add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 200, -1));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, -1, -1));
+        jPanel2.add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 210, -1));
 
         jLabel23.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel23.setText("Remuneración");
@@ -166,7 +166,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
         jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, -1));
-        jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 400, -1));
+        jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 410, -1));
 
         BtnSalir.setBackground(new java.awt.Color(204, 255, 255));
         BtnSalir.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -198,42 +198,42 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
                 txtCargoTrabajadorActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCargoTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 490, -1));
+        jPanel2.add(txtCargoTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 510, -1));
 
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 270, -1));
+        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel1.setText("Fecha de contrato:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
-        jPanel2.add(txtFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 160, 20));
+        jPanel2.add(txtFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 180, 20));
 
         jLabel30.setText("Nombre completo:");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         txtNombreEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtNombreEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 520, -1));
+        jPanel2.add(txtNombreEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 530, -1));
 
         jLabel31.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         txtCedulaEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtCedulaEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 200, -1));
+        jPanel2.add(txtCedulaEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 200, -1));
 
         jLabel32.setText("Ciudad de domicilio:");
-        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, 20));
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, 20));
 
         txtCiudadEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jPanel2.add(txtCiudadEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 190, -1));
+        jPanel2.add(txtCiudadEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 190, -1));
 
         txtLugarTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLugarTrabajoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtLugarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 500, -1));
+        jPanel2.add(txtLugarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 530, -1));
 
         jLabel8.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel8.setText("Jornada Laboral:");
@@ -253,10 +253,10 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 130, -1));
+        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 150, -1));
 
         jLabel12.setText("TIPO DE JORNADA");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, -1, -1));
 
         bnVerificar1.setBackground(new java.awt.Color(255, 204, 204));
         bnVerificar1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
@@ -303,6 +303,22 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
         // TODO add your handling code here:
+        txtCiudad.setText("");
+        txtFechaContrato.setText("");
+        txtNombreEmpleador.setText("");
+        txtCedulaEmpleador.setText("");
+        txtCiudadEmpleador.setText("");
+        txtNombreTrabajador.setText("");
+        txtCedulaTrabajador.setText("");
+        txtCiudadTrabajador.setText("");
+        txtCargoTrabajador.setText("");
+        txtJornadasHoras.setText("");
+        txtDiasTrabajo.setText("");
+        txtFechaInicio.setText("");
+        txtMonto.setText("");
+        txtFormaPago.setText("");
+        txtFechaInicio.setText("");
+        txtLugarTrabajo.setText("");
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**

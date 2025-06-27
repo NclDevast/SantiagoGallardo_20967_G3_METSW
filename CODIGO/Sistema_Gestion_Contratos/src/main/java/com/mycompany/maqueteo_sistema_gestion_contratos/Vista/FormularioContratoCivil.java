@@ -65,7 +65,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        txtNombreArrendador = new javax.swing.JTextField();
         txtRepresentanteArrendador = new javax.swing.JTextField();
         txtRucArrendador = new javax.swing.JTextField();
         txtCargoArrendador = new javax.swing.JTextField();
@@ -78,6 +77,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         txtCorreoArrendador = new javax.swing.JTextField();
         btnVerificar = new javax.swing.JButton();
+        txtNombreArrendador = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -110,6 +110,11 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         BtnGuardar.setText("Limpiar");
         BtnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 650, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
@@ -241,15 +246,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
         jLabel25.setText("Representante legal:");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 271, -1, -1));
-
-        txtNombreArrendador.setEditable(false);
-        txtNombreArrendador.setBackground(new java.awt.Color(255, 255, 255));
-        txtNombreArrendador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreArrendadorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
         jPanel1.add(txtRepresentanteArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 230, -1));
         jPanel1.add(txtRucArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 220, -1));
         jPanel1.add(txtCargoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 220, -1));
@@ -283,6 +279,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
+        jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -319,10 +316,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorMensualActionPerformed
 
-    private void txtNombreArrendadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreArrendadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreArrendadorActionPerformed
-
     private void txtFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInicioActionPerformed
@@ -330,6 +323,29 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVerificarActionPerformed
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        // TODO add your handling code here:
+        txtNombreArrendataria.setText("");
+        txtRucArrendataria.setText("");
+        txtRepresentanteArrendataria.setText("");
+        txtCargoArrendataria.setText("");
+        txtNacionalidadArrendataria.setText("");
+        txtNombreArrendador.setText("");
+        txtRucArrendador.setText("");
+        txtRepresentanteArrendador.setText("");
+        txtCargoArrendador.setText("");
+        txtNacionalidadArrendador.setText("");
+        txtAntecedentes.setText("");
+        txtFechaInicio.setText("");
+        txtFechaFin.setText("");
+        txtValorMensual.setText("");
+        txtFormaPago.setText("");
+        txtGarantia.setText("");
+        txtCorreoArrendataria.setText("");
+        txtCorreoArrendador.setText("");
+        txtAntecedentes.setText("");
+    }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**
      * @param args the command line arguments

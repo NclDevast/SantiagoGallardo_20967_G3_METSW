@@ -110,7 +110,7 @@ public class VistaDatosUsuario extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 153, 153));
         jSeparator2.setForeground(new java.awt.Color(0, 102, 102));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
