@@ -302,6 +302,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
     private void txtNombreArrendatariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreArrendatariaActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtNombreArrendatariaActionPerformed
 
     private void txtNacionalidadArrendatariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacionalidadArrendatariaActionPerformed
