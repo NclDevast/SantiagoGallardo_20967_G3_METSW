@@ -30,7 +30,7 @@ public class LoginControlador implements ActionListener{
     
     private int intentosFallidos = 0;
     private final int MAX_INTENTOS = 3;
-    private final int TIEMPO_BLOQUEO = 5 * 60 * 1000; 
+    private final int TIEMPO_BLOQUEO =  5*1000/*+5 * 60 * 1000*/; 
     
     public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa, FormularioContratoCivil formciv, FormularioContratoLaboral formlab, UsuarioControlador userctrl){
         this.vista_validacion=vista;
