@@ -76,7 +76,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         txtCorreoArrendataria = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         txtCorreoArrendador = new javax.swing.JTextField();
-        btnVerificar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         txtNombreArrendador = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -269,16 +269,16 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
         jPanel1.add(txtCorreoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
 
-        btnVerificar.setBackground(new java.awt.Color(255, 204, 204));
-        btnVerificar.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
-        btnVerificar.setText("Guardar");
-        btnVerificar.setActionCommand("Verificar");
-        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setBackground(new java.awt.Color(255, 204, 204));
+        btnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setActionCommand("Verificar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerificarActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
         jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -320,9 +320,9 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInicioActionPerformed
 
-    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnVerificarActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
         // TODO add your handling code here:
@@ -386,7 +386,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnGuardar;
     public javax.swing.JButton BtnSalir;
-    public javax.swing.JButton btnVerificar;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;

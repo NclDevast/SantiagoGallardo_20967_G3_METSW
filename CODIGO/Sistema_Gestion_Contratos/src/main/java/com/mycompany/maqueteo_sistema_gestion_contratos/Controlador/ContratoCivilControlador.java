@@ -14,29 +14,36 @@ public class ContratoCivilControlador {
     private final FormularioContratoCivil formCivil;
     
     public ContratoCivilControlador(FormularioContratoCivil formCivil){
-          this.formLab = formlab;
+          this.formCivil = formCivil;
     }
-          
-    
-    
-    public void Validacion(){
-        if (txtNombreArrendataria.getText().isEmpty()||txtRucArrendataria.getText().isEmpty()
-                || txtRepresentanteArrendataria.getText.isEmpty() || txtCargoArrendataria.getText.isEmpty()||
-                txtNacionalidadArrendataria.getText.isEmpty()||txtNombreArrendador.getText.isEmpty() || 
-                txtRucArrendador.getText.isEmpty()|| txtRepresentanteArrendador.getText.isEmpty()|| txtCargoArrendador.getText().isEmpty()||
-                txtNacionalidadArrendador.getText.isEmpty()||txtAntecedentes.getText.isEmpty()||txtFechaInicio.getText.isEmpty()||
-                txtFechaFin.getText.isEmpty()||txtValorMensual.getText.isEmpty()||txtFormaPago.getText.isEmpty()||
-                txtGarantia.getText.isEmpty()||txtCorreoArrendataria.getText.isEmpty()||txtCorreoArrendador.getText.isEmpty()||
-                txtAntecedentes.getText.isEmpty()){
-            
-             btnGuardar.setEnabled(false);
-}
-    else
-        {
-            btnGuardar.setEnabled(true);
+
+    public void Validacion() {
+        if (formCivil.txtNombreArrendataria.getText().isEmpty()
+                || formCivil.txtRucArrendataria.getText().isEmpty()
+                || formCivil.txtRepresentanteArrendataria.getText().isEmpty()
+                || formCivil.txtCargoArrendataria.getText().isEmpty()
+                || formCivil.txtNacionalidadArrendataria.getText().isEmpty()
+                || formCivil.txtNombreArrendador.getText().isEmpty()
+                || formCivil.txtRucArrendador.getText().isEmpty()
+                || formCivil.txtRepresentanteArrendador.getText().isEmpty()
+                || formCivil.txtCargoArrendador.getText().isEmpty()
+                || formCivil.txtNacionalidadArrendador.getText().isEmpty()
+                || formCivil.txtAntecedentes.getText().isEmpty()
+                || formCivil.txtFechaInicio.getText().isEmpty()
+                || formCivil.txtFechaFin.getText().isEmpty()
+                || formCivil.txtValorMensual.getText().isEmpty()
+                || formCivil.txtFormaPago.getText().isEmpty()
+                || formCivil.txtGarantia.getText().isEmpty()
+                || formCivil.txtCorreoArrendataria.getText().isEmpty()
+                || formCivil.txtCorreoArrendador.getText().isEmpty()) {
+
+            formCivil.btnGuardar.setEnabled(false);
+        } else {
+            formCivil.btnGuardar.setEnabled(true);
         }
     }
-     public FormularioContratoCivil getFormCivil() {
+
+    public FormularioContratoCivil getFormCivil() {
         return formCivil;
     }
 }

@@ -12,23 +12,31 @@ public class ContratoLaboralControlador {
     private final FormularioContratoLaboral formLab;
     
      public ContratoLaboralControlador(FormularioContratoLaboral formlab){
-          this.formCivil = formciv;
+          this.formLab = formlab;
     }
-     public void Validacion(){
-        if (txtCiudad.getText().isEmpty()|txtFechaContrato.getText().isEmpty()|| txtNombreEmpleador.getText.isEmpty() || 
-                txtCedulaEmpleador.getText.isEmpty()||txtCiudadEmpleador.getText.isEmpty()||txtNombreTrabajador.getText.isEmpty() || 
-                txtCedulaTrabajador.getText.isEmpty()|| txtCiudadTrabajador.getText.isEmpty()|| txtCargoTrabajador.getText().isEmpty()||
-                txtJornadasHoras.getText.isEmpty()||txtDiasTrabajo.getText.isEmpty()||txtFechaInicio.getText.isEmpty()||
-                txtMonto.getText.isEmpty()||txtFormaPago.getText.isEmpty()||txtFechaInicio.getText.isEmpty()||
-                txtLugarTrabajo.getText.isEmpty()){
-            
-             btnGuardar.setEnabled(false);
-}
-    else
-        {
-            btnGuardar.setEnabled(true);
+    public void Validacion() {
+        if (formLab.txtCiudad.getText().isEmpty()
+                || formLab.txtFechaContrato.getText().isEmpty()
+                || formLab.txtNombreEmpleador.getText().isEmpty()
+                || formLab.txtCedulaEmpleador.getText().isEmpty()
+                || formLab.txtCiudadEmpleador.getText().isEmpty()
+                || formLab.txtNombreTrabajador.getText().isEmpty()
+                || formLab.txtCedulaTrabajador.getText().isEmpty()
+                || formLab.txtCiudadTrabajador.getText().isEmpty()
+                || formLab.txtCargoTrabajador.getText().isEmpty()
+                || formLab.txtJornadasHoras.getText().isEmpty()
+                || formLab.txtDiasTrabajo.getText().isEmpty()
+                || formLab.txtFechaInicio.getText().isEmpty()
+                || formLab.txtMonto.getText().isEmpty()
+                || formLab.txtFormaPago.getText().isEmpty()
+                || formLab.txtLugarTrabajo.getText().isEmpty()) {
+
+            formLab.btnGuardar.setEnabled(false);
+        } else {
+            formLab.btnGuardar.setEnabled(true);
         }
     }
+
       public FormularioContratoLaboral getFormLab() {
         return formLab;
     }
