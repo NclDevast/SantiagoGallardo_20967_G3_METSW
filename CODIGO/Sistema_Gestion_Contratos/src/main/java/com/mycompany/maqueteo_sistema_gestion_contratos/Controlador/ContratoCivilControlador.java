@@ -100,6 +100,29 @@ public class ContratoCivilControlador {
         });
     }
 
+        public String[] obtenerTextosCamposCivil() {
+        return new String[] {
+            formCivil.txtNombreArrendataria.getText(),
+            formCivil.txtRucArrendataria.getText(),
+            formCivil.txtRepresentanteArrendataria.getText(),
+            formCivil.txtCargoArrendataria.getText(),
+            formCivil.txtNacionalidadArrendataria.getText(),
+            formCivil.txtNombreArrendador.getText(),
+            formCivil.txtRucArrendador.getText(),
+            formCivil.txtRepresentanteArrendador.getText(),
+            formCivil.txtCargoArrendador.getText(),
+            formCivil.txtNacionalidadArrendador.getText(),
+            formCivil.txtAntecedentes.getText(),
+            formCivil.txtFechaInicio.getText(),
+            formCivil.txtFechaFin.getText(),
+            formCivil.txtValorMensual.getText(),
+            formCivil.txtFormaPago.getText(),
+            formCivil.txtGarantia.getText(),
+            formCivil.txtCorreoArrendataria.getText(),
+            formCivil.txtCorreoArrendador.getText()
+        };
+    }
+        
     public FormularioContratoCivil getFormCivil() {
         return formCivil;
     }

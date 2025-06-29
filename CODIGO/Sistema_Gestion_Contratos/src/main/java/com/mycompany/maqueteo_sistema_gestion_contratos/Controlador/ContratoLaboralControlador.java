@@ -82,4 +82,24 @@ public class ContratoLaboralControlador {
     public FormularioContratoLaboral getFormLab() {
         return formLab;
     }
+    
+        public String[] obtenerTextosCampos() {
+        return new String[] {
+            formLab.txtCiudad.getText(),
+            formLab.txtFechaContrato.getText(),
+            formLab.txtNombreEmpleador.getText(),
+            formLab.txtCedulaEmpleador.getText(),
+            formLab.txtCiudadEmpleador.getText(),
+            formLab.txtNombreTrabajador.getText(),
+            formLab.txtCedulaTrabajador.getText(),
+            formLab.txtCiudadTrabajador.getText(),
+            formLab.txtCargoTrabajador.getText(),
+            formLab.txtJornadasHoras.getText(),
+            formLab.txtDiasTrabajo.getText(),
+            formLab.txtFechaInicio.getText(),
+            formLab.txtMonto.getText(),
+            formLab.txtFormaPago.getText(),
+            formLab.txtLugarTrabajo.getText()
+        };
+    }
 }
