@@ -6,14 +6,16 @@ package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 /**
- *
+ *TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
  * @author Isabela
  */
-public class ContratoLaboralControlador extends MongoDBContratos{
+public class ContratoLaboralControlador extends MongoDBContratos implements ActionListener{
     private final FormularioContratoLaboral formLab;
     private final LoginControlador lgnCtrl;
 
@@ -104,5 +106,10 @@ public class ContratoLaboralControlador extends MongoDBContratos{
             formLab.txtFormaPago.getText(),
             formLab.txtLugarTrabajo.getText()
         };
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
