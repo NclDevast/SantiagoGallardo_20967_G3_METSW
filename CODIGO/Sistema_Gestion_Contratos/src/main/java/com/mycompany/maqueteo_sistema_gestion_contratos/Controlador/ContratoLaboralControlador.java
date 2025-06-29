@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -11,11 +13,12 @@ import javax.swing.event.DocumentListener;
  *
  * @author Isabela
  */
-public class ContratoLaboralControlador {
+public class ContratoLaboralControlador extends MongoDBContratos{
     private final FormularioContratoLaboral formLab;
     private final LoginControlador lgnCtrl;
 
-    public ContratoLaboralControlador(FormularioContratoLaboral formLab, LoginControlador lgnCtrl) {
+    public ContratoLaboralControlador(FormularioContratoLaboral formLab, LoginControlador lgnCtrl, Usuario userModel) {
+        super(userModel);
         this.formLab = formLab;
         this.lgnCtrl = lgnCtrl;
         agregarValidacionAutomatica();

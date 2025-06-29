@@ -39,8 +39,8 @@ public class LoginControlador implements ActionListener{
         this.formCivil = formciv;
         this.formLab = formlab;
         this.userctrl = userctrl;
-        this.civCtrl = new ContratoCivilControlador(this.formCivil,this);
-        this.labCtrl = new ContratoLaboralControlador(this.formLab,this);
+        this.civCtrl = new ContratoCivilControlador(this.formCivil,this,modelo);
+        this.labCtrl = new ContratoLaboralControlador(this.formLab,this,modelo);
         this.vista_validacion.btnLogin.addActionListener(this);
         this.programa.BtnContratoCivil.addActionListener(this);
         this.programa.BtnContratoLaboral.addActionListener(this);

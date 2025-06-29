@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
@@ -12,16 +14,25 @@ import javax.swing.event.DocumentListener;
  *
  * @author Isabela
  */
-public class ContratoCivilControlador {
+public class ContratoCivilControlador extends MongoDBContratos{
     private final FormularioContratoCivil formCivil;
     private final LoginControlador lgnCtrl;
 
-    public ContratoCivilControlador(FormularioContratoCivil formCivil, LoginControlador lgnCtrl) {
+    public ContratoCivilControlador(FormularioContratoCivil formCivil, LoginControlador lgnCtrl, Usuario userModel) {
+        super(userModel);
         this.formCivil = formCivil;
         this.lgnCtrl = lgnCtrl;
         agregarValidacionAutomatica();
-        Validacion(); // Verifica al iniciar (los campos estarán vacíos)
+        Validacion();
     }
+
+
+    
+    public void insertarContratos(){
+        String[] Datos = obtenerTextosCamposCivil();
+        
+    }
+
 
     public void Validacion() {
         boolean camposVacios =
