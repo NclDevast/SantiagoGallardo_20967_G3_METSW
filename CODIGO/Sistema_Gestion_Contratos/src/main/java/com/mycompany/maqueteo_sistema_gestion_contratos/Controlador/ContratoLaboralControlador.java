@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+import com.mongodb.client.MongoCollection;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
@@ -11,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import org.bson.Document;
 /**
  *TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
  * @author Isabela
@@ -106,6 +108,9 @@ public class ContratoLaboralControlador extends MongoDBContratos implements Acti
             formLab.txtFormaPago.getText(),
             formLab.txtLugarTrabajo.getText()
         };
+    }
+        private void insertarContrato(String [] datos, MongoCollection<Document> collection){
+        
     }
 
     @Override

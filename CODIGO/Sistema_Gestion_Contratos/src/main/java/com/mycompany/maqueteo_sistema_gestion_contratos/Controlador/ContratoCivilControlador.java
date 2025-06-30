@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+import com.mongodb.client.MongoCollection;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import javax.swing.JOptionPane;
@@ -12,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import org.bson.Document;
 /**
  * TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
  * @author Isabela
@@ -139,7 +141,10 @@ public class ContratoCivilControlador extends MongoDBContratos implements Action
     }
     
     
-
+    private void insertarContrato(String [] datos, MongoCollection<Document> collection){
+        
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
