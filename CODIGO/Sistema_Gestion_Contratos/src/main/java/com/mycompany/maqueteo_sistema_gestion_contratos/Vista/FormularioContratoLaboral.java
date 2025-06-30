@@ -55,7 +55,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
         BtnSalir = new javax.swing.JButton();
-        BtnGuardar = new javax.swing.JButton();
+        BtnLimpiar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         txtCargoTrabajador = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
@@ -180,16 +180,16 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         });
         jPanel2.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, -1, -1));
 
-        BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
-        BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnGuardar.setText("Limpiar");
-        BtnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        BtnLimpiar.setBackground(new java.awt.Color(204, 255, 255));
+        BtnLimpiar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        BtnLimpiar.setText("Limpiar");
+        BtnLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarActionPerformed(evt);
+                BtnLimpiarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
+        jPanel2.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
 
         jLabel21.setText("Objeto/Cargo del trajador:");
         jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
@@ -263,6 +263,11 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         btnGuardar.setBackground(new java.awt.Color(255, 204, 204));
         btnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 620, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -303,7 +308,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
  
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+    private void BtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimpiarActionPerformed
         // TODO add your handling code here:
         txtCiudad.setText("");
         txtFechaContrato.setText("");
@@ -321,7 +326,11 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         txtFormaPago.setText("");
         txtFechaInicio.setText("");
         txtLugarTrabajo.setText("");
-    }//GEN-LAST:event_BtnGuardarActionPerformed
+    }//GEN-LAST:event_BtnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -359,7 +368,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BtnGuardar;
+    public javax.swing.JButton BtnLimpiar;
     private javax.swing.JButton BtnSalir;
     public javax.swing.JButton btnGuardar;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;

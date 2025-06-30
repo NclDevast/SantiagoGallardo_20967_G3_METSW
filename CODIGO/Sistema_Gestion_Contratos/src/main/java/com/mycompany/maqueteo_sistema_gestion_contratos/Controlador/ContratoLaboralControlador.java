@@ -3,16 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
-import com.mongodb.client.MongoCollection;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCLaboral;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoLaboral;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import org.bson.Document;
+
 /**
  *TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
  * @author Isabela
@@ -20,11 +20,14 @@ import org.bson.Document;
 public class ContratoLaboralControlador extends MongoDBContratos implements ActionListener{
     private final FormularioContratoLaboral formLab;
     private final LoginControlador lgnCtrl;
+    private final MongoDBCLaboral mongoClab;
 
     public ContratoLaboralControlador(FormularioContratoLaboral formLab, LoginControlador lgnCtrl, Usuario userModel) {
         super(userModel);
         this.formLab = formLab;
         this.lgnCtrl = lgnCtrl;
+        this.mongoClab = new MongoDBCLaboral (userModel);
+        this.formLab.btnGuardar.addActionListener(this);
         agregarValidacionAutomatica();
         Validacion(); // Verifica al iniciar (los campos estarán vacíos)
     }
@@ -109,12 +112,21 @@ public class ContratoLaboralControlador extends MongoDBContratos implements Acti
             formLab.txtLugarTrabajo.getText()
         };
     }
-        private void insertarContrato(String [] datos, MongoCollection<Document> collection){
+
         
-    }
+        public void iniciarContrato(){
+            formLab.setTitle("Contrato Civil");
+                formLab.setVisible(true);
+                formLab.setLocationRelativeTo(null);
+                formLab.setResizable(false);
+                Validacion();
+        }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(e.getSource()==formLab.btnGuardar){
+            mongoClab.conectarMongo(obtenerTextosCampos(), 1);
+            System.out.println("Enviando datos");
+        }
     }
 }

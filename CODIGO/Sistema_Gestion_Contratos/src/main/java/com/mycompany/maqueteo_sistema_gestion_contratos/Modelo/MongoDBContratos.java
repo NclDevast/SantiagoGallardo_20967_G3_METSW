@@ -18,17 +18,19 @@ public abstract class MongoDBContratos {
     
     private Usuario usermodel;
     private String MongoURI;
+    private MongoClient mongoClient;
 
     public MongoDBContratos(Usuario usermodel) {
         this.usermodel = usermodel;
         this.MongoURI = usermodel.getMongoURI();
+        this.mongoClient = MongoClients.create(this.MongoURI);
     }
 
     
     
     public void conectarMongo (String [] Datos, int tipo){
         
-        try (MongoClient mongoClient = MongoClients.create(this.MongoURI)) {
+        try {
             MongoDatabase database = mongoClient.getDatabase("DataContratos");
             MongoCollection<Document> collection;
             
@@ -50,7 +52,7 @@ public abstract class MongoDBContratos {
         }
     }
     
-    private void insertarContrato(String [] datos, MongoCollection<Document> collection){
+    protected void insertarContrato(String [] datos, MongoCollection<Document> collection){
         
     }
 }

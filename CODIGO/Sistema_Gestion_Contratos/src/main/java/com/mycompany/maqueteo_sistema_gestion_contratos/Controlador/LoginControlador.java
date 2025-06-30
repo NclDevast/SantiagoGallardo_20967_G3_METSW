@@ -78,11 +78,7 @@ public class LoginControlador implements ActionListener{
                 civCtrl.Validacion();
                 break;
             case 1:
-                formLab.setTitle("Contrato Civil");
-                formLab.setVisible(true);
-                formLab.setLocationRelativeTo(null);
-                formLab.setResizable(false);
-                labCtrl.Validacion();
+                labCtrl.iniciarContrato();
                 break;
             default:
                 System.out.println("Error interno");
@@ -132,20 +128,22 @@ public class LoginControlador implements ActionListener{
             }).start();  
 
         }
-
-        else if (e.getSource() == programa.BtnContratoCivil) {
+        if (e.getSource() == programa.BtnContratoCivil) {
             System.out.println("Civil");
             iniciarContrato(0);
         }
 
-        else if (e.getSource() == programa.BtnContratoLaboral) {
+        if (e.getSource() == programa.BtnContratoLaboral) {
             System.out.println("Laboral");
             iniciarContrato(1);
         }
 
-        else if (e.getSource() == programa.BtnDatosUsuario) {
+        if (e.getSource() == programa.BtnDatosUsuario) {
             System.out.println("Boton Datos Usuario");
             userctrl.iniciarVistaDatos();
+        }
+        if (e.getSource()== formLab.btnGuardar){
+            System.out.println("Prueba");
         }
     }
 

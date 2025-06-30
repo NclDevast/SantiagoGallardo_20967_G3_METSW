@@ -29,7 +29,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         BtnSalir = new javax.swing.JButton();
-        BtnGuardar = new javax.swing.JButton();
+        BtnLimpiar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -76,7 +76,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         txtCorreoArrendataria = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         txtCorreoArrendador = new javax.swing.JTextField();
-        btnGuardar1 = new javax.swing.JButton();
+        BtnGuardar = new javax.swing.JButton();
         txtNombreArrendador = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -106,16 +106,16 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         });
         jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 650, -1, -1));
 
-        BtnGuardar.setBackground(new java.awt.Color(204, 255, 255));
-        BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnGuardar.setText("Limpiar");
-        BtnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        BtnLimpiar.setBackground(new java.awt.Color(204, 255, 255));
+        BtnLimpiar.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        BtnLimpiar.setText("Limpiar");
+        BtnLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarActionPerformed(evt);
+                BtnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 650, -1, -1));
+        jPanel1.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 650, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
         jLabel1.setText("Contrato Civil");
@@ -269,16 +269,16 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
         jPanel1.add(txtCorreoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
 
-        btnGuardar1.setBackground(new java.awt.Color(255, 204, 204));
-        btnGuardar1.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
-        btnGuardar1.setText("Guardar");
-        btnGuardar1.setActionCommand("Verificar");
-        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+        BtnGuardar.setBackground(new java.awt.Color(255, 204, 204));
+        BtnGuardar.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
+        BtnGuardar.setText("Guardar");
+        BtnGuardar.setActionCommand("Verificar");
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardar1ActionPerformed(evt);
+                BtnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
+        jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
         jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -321,11 +321,11 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInicioActionPerformed
 
-    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar1ActionPerformed
-
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void BtnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimpiarActionPerformed
         // TODO add your handling code here:
         txtNombreArrendataria.setText("");
         txtRucArrendataria.setText("");
@@ -346,7 +346,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         txtCorreoArrendataria.setText("");
         txtCorreoArrendador.setText("");
         txtAntecedentes.setText("");
-    }//GEN-LAST:event_BtnGuardarActionPerformed
+    }//GEN-LAST:event_BtnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,8 +386,8 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnGuardar;
+    public javax.swing.JButton BtnLimpiar;
     public javax.swing.JButton BtnSalir;
-    public javax.swing.JButton btnGuardar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
