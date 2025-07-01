@@ -26,8 +26,6 @@ public abstract class MongoDBContratos {
         this.mongoClient = MongoClients.create(this.MongoURI);
     }
 
-    
-    
     public void conectarMongo (String [] Datos, int tipo){
         
         try {

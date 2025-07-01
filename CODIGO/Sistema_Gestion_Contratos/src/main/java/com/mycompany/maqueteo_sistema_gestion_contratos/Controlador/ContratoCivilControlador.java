@@ -27,7 +27,7 @@ public class ContratoCivilControlador implements ActionListener{
         
         this.formCivil = formCivil;
         this.lgnCtrl = lgnCtrl;
-        this.mongoCiv = new MongoDBCCivil (this.lgnCtrl.getModelo());
+        this.mongoCiv = new MongoDBCCivil(userModel);
         this.formCivil.BtnGuardar.addActionListener(this);
         agregarValidacionAutomatica();
         Validacion();
@@ -151,6 +151,6 @@ public class ContratoCivilControlador implements ActionListener{
             mongoCiv.conectarMongo(obtenerTextosCamposCivil(), 0);
             System.out.println("Boton Guardar");
         }
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }
