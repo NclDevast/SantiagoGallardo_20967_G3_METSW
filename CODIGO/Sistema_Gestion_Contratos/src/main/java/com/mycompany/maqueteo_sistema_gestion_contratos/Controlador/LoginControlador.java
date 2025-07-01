@@ -71,6 +71,7 @@ public class LoginControlador implements ActionListener{
     private void iniciarContrato(int Tipo){
         switch (Tipo) {
             case 0:
+
                 civCtrl.iniciarContrato();
                 break;
             case 1:
