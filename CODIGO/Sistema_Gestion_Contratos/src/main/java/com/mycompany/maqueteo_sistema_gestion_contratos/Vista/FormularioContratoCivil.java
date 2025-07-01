@@ -345,7 +345,6 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         txtGarantia.setText("");
         txtCorreoArrendataria.setText("");
         txtCorreoArrendador.setText("");
-        txtAntecedentes.setText("");
     }//GEN-LAST:event_BtnLimpiarActionPerformed
 
     /**

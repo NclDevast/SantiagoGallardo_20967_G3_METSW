@@ -23,7 +23,7 @@ public class MongoDBCLaboral extends MongoDBContratos{
             nombresCampos[1] = "FechaContrato";
             nombresCampos[2] = "NombreEmpleado";
             nombresCampos[3] = "CedulaEmpleador";
-            nombresCampos[4] = "CiudadTrabajador";
+            nombresCampos[4] = "CiudadEmpleador";
             nombresCampos[5] = "NombreTrabajador";
             nombresCampos[6] = "CedulaTrabajador";
             nombresCampos[7] = "CiudadTrabajador";

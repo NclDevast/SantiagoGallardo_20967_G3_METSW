@@ -71,11 +71,7 @@ public class LoginControlador implements ActionListener{
     private void iniciarContrato(int Tipo){
         switch (Tipo) {
             case 0:
-                formCivil.setTitle("Contrato Civil");
-                formCivil.setVisible(true);
-                formCivil.setLocationRelativeTo(null);
-                formCivil.setResizable(false);
-                civCtrl.Validacion();
+                civCtrl.iniciarContrato();
                 break;
             case 1:
                 labCtrl.iniciarContrato();
@@ -131,6 +127,9 @@ public class LoginControlador implements ActionListener{
         if (e.getSource() == programa.BtnContratoCivil) {
             System.out.println("Civil");
             iniciarContrato(0);
+        }
+        if (e.getSource()== formCivil.BtnGuardar){
+            System.out.println("Prueba");
         }
 
         if (e.getSource() == programa.BtnContratoLaboral) {

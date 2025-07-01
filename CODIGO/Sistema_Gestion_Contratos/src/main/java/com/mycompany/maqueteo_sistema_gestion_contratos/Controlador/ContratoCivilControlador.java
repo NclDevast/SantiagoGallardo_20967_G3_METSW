@@ -4,6 +4,7 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCCivil;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCLaboral;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import javax.swing.JTextField;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
@@ -27,6 +28,7 @@ public class ContratoCivilControlador implements ActionListener{
         this.formCivil = formCivil;
         this.lgnCtrl = lgnCtrl;
         this.mongoCiv = new MongoDBCCivil (this.lgnCtrl.getModelo());
+        this.formCivil.BtnGuardar.addActionListener(this);
         agregarValidacionAutomatica();
         Validacion();
     }
@@ -109,6 +111,10 @@ public class ContratoCivilControlador implements ActionListener{
         });
     }
 
+    public FormularioContratoCivil getFormCivil() {
+        return formCivil;
+    }
+    
         public String[] obtenerTextosCamposCivil() {
         return new String[] {
             formCivil.txtNombreArrendataria.getText(),
@@ -132,14 +138,16 @@ public class ContratoCivilControlador implements ActionListener{
         };
     }
         
-    public FormularioContratoCivil getFormCivil() {
-        return formCivil;
-    }
-    
-    
+            public void iniciarContrato(){
+            formCivil.setTitle("Contrato Civil");
+                formCivil.setVisible(true);
+                formCivil.setLocationRelativeTo(null);
+                formCivil.setResizable(false);
+                Validacion();
+            }    
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==formCivil.BtnLimpiar){
+        if(e.getSource()==formCivil.BtnGuardar){
             mongoCiv.conectarMongo(obtenerTextosCamposCivil(), 0);
             System.out.println("Boton Guardar");
         }
