@@ -126,7 +126,7 @@ public class ContratoLaboralControlador extends MongoDBContratos implements Acti
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==formLab.btnGuardar){
             mongoClab.conectarMongo(obtenerTextosCampos(), 1);
-            System.out.println("Enviando datos");
+            System.out.println("Contrato Laboral guardado en MongoDB");
         }
     }
 }
