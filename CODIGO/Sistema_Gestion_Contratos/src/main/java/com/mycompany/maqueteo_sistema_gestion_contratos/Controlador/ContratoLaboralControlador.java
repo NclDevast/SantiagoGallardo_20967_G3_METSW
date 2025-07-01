@@ -115,7 +115,7 @@ public class ContratoLaboralControlador extends MongoDBContratos implements Acti
 
         
         public void iniciarContrato(){
-            formLab.setTitle("Contrato Civil");
+            formLab.setTitle("Contrato Laboral");
                 formLab.setVisible(true);
                 formLab.setLocationRelativeTo(null);
                 formLab.setResizable(false);

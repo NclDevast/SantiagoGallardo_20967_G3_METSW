@@ -3,28 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
+
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCCivil;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCLaboral;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
-import javax.swing.JTextField;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.*;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-/**
- * TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
- * @author Isabela
- */
-public class ContratoCivilControlador implements ActionListener{
+public class ContratoCivilControlador implements ActionListener {
     private final FormularioContratoCivil formCivil;
     private final LoginControlador lgnCtrl;
     private final MongoDBCCivil mongoCiv;
-    
 
     public ContratoCivilControlador(FormularioContratoCivil formCivil, LoginControlador lgnCtrl, Usuario userModel) {
-        
         this.formCivil = formCivil;
         this.lgnCtrl = lgnCtrl;
         this.mongoCiv = new MongoDBCCivil(userModel);
@@ -32,7 +26,6 @@ public class ContratoCivilControlador implements ActionListener{
         agregarValidacionAutomatica();
         Validacion();
     }
-    
 
     public void Validacion() {
         boolean camposVacios =
@@ -81,41 +74,33 @@ public class ContratoCivilControlador implements ActionListener{
 
         for (JTextField campo : camposTexto) {
             campo.getDocument().addDocumentListener(new DocumentListener() {
-                public void insertUpdate(DocumentEvent e) {
-                    Validacion();
+                public void insertUpdate(DocumentEvent e) { 
+                    Validacion(); 
                 }
-
-                public void removeUpdate(DocumentEvent e) {
-                    Validacion();
+                public void removeUpdate(DocumentEvent e) { 
+                    Validacion(); 
                 }
-
-                public void changedUpdate(DocumentEvent e) {
-                    Validacion();
+                public void changedUpdate(DocumentEvent e) { 
+                    Validacion(); 
                 }
             });
         }
 
-        // También añadimos el JTextArea "txtAntecedentes"
+
         formCivil.txtAntecedentes.getDocument().addDocumentListener(new DocumentListener() {
-            public void insertUpdate(DocumentEvent e) {
-                Validacion();
+            public void insertUpdate(DocumentEvent e) { 
+                Validacion(); }
+
+            public void removeUpdate(DocumentEvent e) { Validacion(); 
             }
 
-            public void removeUpdate(DocumentEvent e) {
-                Validacion();
-            }
-
-            public void changedUpdate(DocumentEvent e) {
-                Validacion();
+            public void changedUpdate(DocumentEvent e) { 
+                Validacion(); 
             }
         });
     }
 
-    public FormularioContratoCivil getFormCivil() {
-        return formCivil;
-    }
-    
-        public String[] obtenerTextosCamposCivil() {
+    public String[] obtenerTextosCampos() {
         return new String[] {
             formCivil.txtNombreArrendataria.getText(),
             formCivil.txtRucArrendataria.getText(),
@@ -137,20 +122,20 @@ public class ContratoCivilControlador implements ActionListener{
             formCivil.txtCorreoArrendador.getText()
         };
     }
-        
-            public void iniciarContrato(){
-            formCivil.setTitle("Contrato Civil");
-                formCivil.setVisible(true);
-                formCivil.setLocationRelativeTo(null);
-                formCivil.setResizable(false);
-                Validacion();
-            }    
+
+    public void iniciarContrato() {
+        formCivil.setTitle("Contrato Civil");
+        formCivil.setVisible(true);
+        formCivil.setLocationRelativeTo(null);
+        formCivil.setResizable(false);
+        Validacion();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==formCivil.BtnGuardar){
-            mongoCiv.conectarMongo(obtenerTextosCamposCivil(), 0);
-            System.out.println("Boton Guardar");
+        if (e.getSource() == formCivil.BtnGuardar) {
+            mongoCiv.conectarMongo(obtenerTextosCampos(), 0); 
+            System.out.println("Contrato Civil guardado en MongoDB");
         }
-        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }
