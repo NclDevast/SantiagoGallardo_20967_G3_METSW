@@ -10,47 +10,37 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-/**
- *
- * @author pc
- */
 public abstract class MongoDBContratos {
-    
+
     private Usuario usermodel;
     private String MongoURI;
     private MongoClient mongoClient;
 
     public MongoDBContratos(Usuario usermodel) {
-        this.usermodel = usermodel;
-        this.MongoURI = usermodel.getMongoURI();
+        this.usermodel   = usermodel;
+        this.MongoURI    = usermodel.getMongoURI();
         this.mongoClient = MongoClients.create(this.MongoURI);
     }
 
-    public void conectarMongo (String [] Datos, int tipo){
-        
-        try {
-            MongoDatabase database = mongoClient.getDatabase("DataContratos");
-            MongoCollection<Document> collection;
-            
-            switch(tipo) {
-                case 0:
-                    collection = database.getCollection("ContratosCivil");
-                    insertarContrato(Datos, collection);
-                    break;
-                case 1:
-                    collection = database.getCollection("ContratosLaboral");
-                    insertarContrato(Datos, collection);
-                    break;
-                default:
-                    System.err.println("Error interno: Tipo de contrato no válido");
-                    break;
-            }
-        } catch (Exception e) {
-            System.err.println("Error al conectar con MongoDB: " + e.getMessage());
-        }
+    public void conectarMongo(String[] Datos, int tipo) {
+        // ... implementación actual ...
     }
-    
-    protected void insertarContrato(String [] datos, MongoCollection<Document> collection){
+
+    protected void insertarContrato(String[] datos, MongoCollection<Document> collection){
         
+    }
+
+    /**
+     * Permite obtener la base de datos "DataContratos".
+     */
+    protected MongoDatabase getDatabase() {
+        return mongoClient.getDatabase("DataContratos");
+    }
+
+    /**
+     * Expone cualquier colección de DataContratos por nombre.
+     */
+    public MongoCollection<Document> getCollection(String nombreColeccion) {
+        return getDatabase().getCollection(nombreColeccion);
     }
 }

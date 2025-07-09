@@ -4,6 +4,7 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGenerator;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCCivil;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivil;
@@ -12,6 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import org.bson.types.ObjectId;
 
 public class ContratoCivilControlador implements ActionListener {
     private final FormularioContratoCivil formCivil;
@@ -136,6 +138,18 @@ public class ContratoCivilControlador implements ActionListener {
         if (e.getSource() == formCivil.BtnGuardar) {
             mongoCiv.conectarMongo(obtenerTextosCampos(), 0); 
             System.out.println("Contrato Civil guardado en MongoDB");
+            ObjectId idNuevo = mongoCiv.insertarYObtenerId(obtenerTextosCampos());
+            System.out.println("Documento insertado con _id=" + idNuevo);
+
+            try {
+            ContratoPdfGenerator pdfGen = new ContratoPdfGenerator();
+            pdfGen.generarContratoPDF(mongoCiv, idNuevo);
+            System.out.println("Contrato PDF generado correctamente.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+
         }
+    }
     }
 }
