@@ -5,7 +5,9 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class MongoDBCCivil extends MongoDBContratos {
 
@@ -13,32 +15,28 @@ public class MongoDBCCivil extends MongoDBContratos {
         super(usermodel);
     }
 
-    @Override
-    protected void insertarContrato(String[] datos, MongoCollection<Document> collection) {
-        String[] nombresCampos = new String[datos.length];
-        nombresCampos[0] = "NombreArrendataria";
-        nombresCampos[1] = "RucArrendataria";
-        nombresCampos[2] = "RepresentanteArrendataria";
-        nombresCampos[3] = "CargoArrendataria";
-        nombresCampos[4] = "NacionalidadArrendataria";
-        nombresCampos[5] = "NombreArrendador";
-        nombresCampos[6] = "RucArrendador";
-        nombresCampos[7] = "RepresentanteArrendador";
-        nombresCampos[8] = "CargoArrendador";
-        nombresCampos[9] = "NacionalidadArrendador";
-        nombresCampos[10] = "Antecedentes";
-        nombresCampos[11] = "FechaInicio";
-        nombresCampos[12] = "FechaFin";
-        nombresCampos[13] = "ValorMensual";
-        nombresCampos[14] = "FormaPago";
-        nombresCampos[15] = "Garantia";
-        nombresCampos[16] = "CorreoArrendataria";
-        nombresCampos[17] = "CorreoArrendador";
+    /**
+     * Inserta el contrato en la colección "ContratosCivil"
+     * y retorna el ObjectId del nuevo documento.
+     */
+    public ObjectId insertarYObtenerId(String[] datos) {
+        MongoCollection<Document> coll = getCollection("ContratosCivil");
+
+        String[] campos = {
+            "NombreArrendataria","RucArrendataria","RepresentanteArrendataria",
+            "CargoArrendataria","NacionalidadArrendataria","NombreArrendador",
+            "RucArrendador","RepresentanteArrendador","CargoArrendador",
+            "NacionalidadArrendador","Antecedentes","FechaInicio","FechaFin",
+            "ValorMensual","FormaPago","Garantia","CorreoArrendataria",
+            "CorreoArrendador"
+        };
 
         Document doc = new Document();
-        for (int i = 0; i < nombresCampos.length; i++) {
-            doc.append(nombresCampos[i], datos[i]);
+        for (int i = 0; i < campos.length; i++) {
+            doc.append(campos[i], datos[i]);
         }
-        collection.insertOne(doc);
+
+        InsertOneResult result = coll.insertOne(doc);
+        return result.getInsertedId().asObjectId().getValue();
     }
 }
