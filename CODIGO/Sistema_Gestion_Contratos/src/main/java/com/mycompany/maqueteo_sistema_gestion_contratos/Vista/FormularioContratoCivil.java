@@ -135,7 +135,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel5.setText("RUC:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
-        txtNombreArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtNombreArrendataria.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNombreArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreArrendatariaActionPerformed(evt);
@@ -146,10 +146,10 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
         jLabel6.setText("Representante legal:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        txtRucArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtRucArrendataria.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(txtRucArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 220, -1));
 
-        txtRepresentanteArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        txtRepresentanteArrendataria.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtRepresentanteArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRepresentanteArrendatariaActionPerformed(evt);

@@ -75,6 +75,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         txtCorreoArrendador = new javax.swing.JTextField();
         txtNombreArrendador = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -245,6 +246,14 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jPanel1.add(txtCorreoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
         jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 650, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -279,6 +288,12 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
     private void txtFechaInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaInicioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,6 +338,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;

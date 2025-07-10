@@ -104,6 +104,7 @@ private void cambiarCampos(String[] campos, int tipo) {
     public void iniciarBusqueda(){
         this.menuBusqueda.setVisible(true);
         this.menuBusqueda.setResizable(false);
+        this.menuBusqueda.setLocationRelativeTo(null);
     }
     
 }

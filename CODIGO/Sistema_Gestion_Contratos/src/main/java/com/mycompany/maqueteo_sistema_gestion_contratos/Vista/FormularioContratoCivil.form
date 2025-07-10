@@ -177,7 +177,7 @@
         <Component class="javax.swing.JTextField" name="txtNombreArrendataria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Book Antiqua" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -205,7 +205,7 @@
         <Component class="javax.swing.JTextField" name="txtRucArrendataria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Book Antiqua" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -220,7 +220,7 @@
         <Component class="javax.swing.JTextField" name="txtRepresentanteArrendataria">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Book Antiqua" size="12" style="0"/>
+              <Font name="Arial" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
