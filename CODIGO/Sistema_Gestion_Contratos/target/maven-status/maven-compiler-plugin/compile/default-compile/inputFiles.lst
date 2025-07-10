@@ -4,6 +4,7 @@ C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Controlador\UsuarioControlador.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Maqueteo_Sistema_Gestion_Contratos.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Modelo\ContratoPdfGenerator.java
+C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Modelo\MongoDBBusqueda.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Modelo\MongoDBCCivil.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Modelo\MongoDBCLaboral.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Modelo\MongoDBContratos.java
@@ -13,6 +14,7 @@ C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Confirmacion.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoCivil.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\FormularioContratoLaboral.java
+C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\MenuBusqueda.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\Programa.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\VISTA_VALIDACION.java
 C:\MDS\REPO\SantiagoGallardo_20967_G3_METSW\CODIGO\Sistema_Gestion_Contratos\src\main\java\com\mycompany\maqueteo_sistema_gestion_contratos\Vista\VistaDatosUsuario.java

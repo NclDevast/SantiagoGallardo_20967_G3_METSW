@@ -62,7 +62,12 @@ public class ContratoPdfGenerator {
             stamper = new PdfStamper(reader, new FileOutputStream(output));
             
             AcroFields form = stamper.getAcroFields();
-
+            System.out.println("Campos detectados en el PDF:");
+            for (String campo : form.getFields().keySet()) {
+            System.out.println("si " + campo);
+            }
+            
+            stamper.setFormFlattening(false);
             // Rellenar campos del arrendatario
             form.setField("NOMBREARRENDATARIA", nombreArrendataria);
             form.setField("RUCARRENDATARIA", rucArrendataria);
@@ -87,9 +92,12 @@ public class ContratoPdfGenerator {
             // Rellenar información de contacto
             form.setField("CORREOARRENDATARIA", correoArrendataria);
             form.setField("CORREOARRENDADOR", correoArrendador);
+            
+            
 
             // Aplanar campos para hacer el PDF no editable
-            stamper.setFormFlattening(true);
+            //stamper.setFormFlattening(true);
+            stamper.close();
 
             System.out.println("✅ Contrato generado exitosamente en: " + output);
             
