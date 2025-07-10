@@ -31,10 +31,10 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtRuc = new javax.swing.JTextField();
+        txtNumCed = new javax.swing.JTextField();
+        BtnCivilBuscar = new javax.swing.JButton();
+        BtnBusquedaLab = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,17 +52,27 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jLabel4.setText("numRUC");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jTextField1.setText("jTextField1");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 160, 40));
+        txtRuc.setText("jTextField1");
+        txtRuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRucActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 170, 50));
 
-        jTextField2.setText("jTextField2");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 180, 50));
+        txtNumCed.setText("jTextField2");
+        jPanel1.add(txtNumCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 180, 50));
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        BtnCivilBuscar.setText("jButton1");
+        BtnCivilBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCivilBuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnCivilBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+        BtnBusquedaLab.setText("jButton2");
+        jPanel1.add(BtnBusquedaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,6 +87,14 @@ public class MenuBusqueda extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnCivilBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCivilBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnCivilBuscarActionPerformed
+
+    private void txtRucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRucActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRucActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,14 +132,14 @@ public class MenuBusqueda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton BtnBusquedaLab;
+    public javax.swing.JButton BtnCivilBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField txtNumCed;
+    public javax.swing.JTextField txtRuc;
     // End of variables declaration//GEN-END:variables
 }

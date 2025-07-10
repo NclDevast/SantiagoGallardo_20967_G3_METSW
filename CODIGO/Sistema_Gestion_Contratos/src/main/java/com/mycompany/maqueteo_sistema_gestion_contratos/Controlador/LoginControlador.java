@@ -24,6 +24,7 @@ public class LoginControlador implements ActionListener{
     private final FormularioContratoLaboral formLab;
     private final ContratoCivilControlador civCtrl;
     private final ContratoLaboralControlador labCtrl;
+    private final BusquedaContratosControlador busCtrl;
     private Boolean LoginEstado;
     private UsuarioControlador userctrl;
 
@@ -42,9 +43,11 @@ public class LoginControlador implements ActionListener{
         this.civCtrl = new ContratoCivilControlador(this.formCivil,this,modelo);
         this.labCtrl = new ContratoLaboralControlador(this.formLab,this,modelo);
         this.vista_validacion.btnLogin.addActionListener(this);
+        this.busCtrl = new BusquedaContratosControlador(this.modelo);
         this.programa.BtnContratoCivil.addActionListener(this);
         this.programa.BtnContratoLaboral.addActionListener(this);
         this.programa.BtnDatosUsuario.addActionListener(this);
+        this.programa.BtnBusqueda.addActionListener(this);
     }
     
     public void initDB(String nombreUsuario) {
@@ -144,6 +147,9 @@ public class LoginControlador implements ActionListener{
         }
         if (e.getSource()== formLab.btnGuardar){
             System.out.println("Prueba");
+        }
+        if (e.getSource()==programa.BtnBusqueda){
+            this.busCtrl.iniciarBusqueda();
         }
     }
 
