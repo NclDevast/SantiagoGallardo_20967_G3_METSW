@@ -4,7 +4,7 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
 
-import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGenerator;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGeneratoCiv;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCCivil;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivil;
@@ -142,7 +142,7 @@ public class ContratoCivilControlador implements ActionListener {
             System.out.println("Documento insertado con _id=" + idNuevo);
 
             try {
-            ContratoPdfGenerator pdfGen = new ContratoPdfGenerator();
+            ContratoPdfGeneratoCiv pdfGen = new ContratoPdfGeneratoCiv();
             pdfGen.generarContratoPDF(mongoCiv, idNuevo);
             System.out.println("Contrato PDF generado correctamente.");
         } catch (Exception ex) {

@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-public class ContratoPdfGenerator {
+public class ContratoPdfGeneratoLab {
 
     private static final String TEMPLATE = "src/main/resources/CONTRATO CIVIL.pdf";
 
