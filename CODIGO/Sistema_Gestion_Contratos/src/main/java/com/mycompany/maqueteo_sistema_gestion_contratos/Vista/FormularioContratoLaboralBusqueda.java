@@ -75,6 +75,8 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        BtnEditar = new javax.swing.JButton();
+        BtnEliminar = new javax.swing.JButton();
 
         jMenu3.setText("jMenu3");
 
@@ -242,7 +244,13 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 610, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, -1, -1));
+
+        BtnEditar.setText("EDITAR");
+        jPanel2.add(BtnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
+
+        BtnEliminar.setText("ELIMINAR");
+        jPanel2.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -323,6 +331,8 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnEditar;
+    private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public javax.swing.JComboBox<String> jComboBox2;
