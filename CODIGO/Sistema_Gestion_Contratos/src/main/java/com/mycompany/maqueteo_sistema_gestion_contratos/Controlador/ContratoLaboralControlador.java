@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Controlador;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGeneratoCiv;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGeneratoLab;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCLaboral;
-import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBContratos;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoLaboral;
 import java.awt.event.ActionEvent;
@@ -15,17 +14,17 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import org.bson.types.ObjectId;
 
+
 /**
  *TERMINAR DE IMPLEMENTAR METODOS ABSTRACTOS
  * @author Isabela
  */
-public class ContratoLaboralControlador extends MongoDBContratos implements ActionListener{
+public class ContratoLaboralControlador implements ActionListener{
     private final FormularioContratoLaboral formLab;
     private final LoginControlador lgnCtrl;
     private final MongoDBCLaboral mongoClab;
 
     public ContratoLaboralControlador(FormularioContratoLaboral formLab, LoginControlador lgnCtrl, Usuario userModel) {
-        super(userModel);
         this.formLab = formLab;
         this.lgnCtrl = lgnCtrl;
         this.mongoClab = new MongoDBCLaboral (userModel);
@@ -127,18 +126,17 @@ public class ContratoLaboralControlador extends MongoDBContratos implements Acti
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==formLab.btnGuardar){
+            
             ObjectId idNuevo = mongoClab.insertarYObtenerId(obtenerTextosCampos());
             System.out.println("Documento insertado con _id=" + idNuevo);
 
-            /*try {
-            ContratoPdfGenerator pdfGen = new ContratoPdfGenerator();
+            try {
+            ContratoPdfGeneratoLab pdfGen = new ContratoPdfGeneratoLab();
             pdfGen.generarContratoPDF(mongoClab, idNuevo);
             System.out.println("Contrato PDF generado correctamente.");
         } catch (Exception ex) {
             ex.printStackTrace();
-
-
-        }*/
+        }
         }
     }
 }

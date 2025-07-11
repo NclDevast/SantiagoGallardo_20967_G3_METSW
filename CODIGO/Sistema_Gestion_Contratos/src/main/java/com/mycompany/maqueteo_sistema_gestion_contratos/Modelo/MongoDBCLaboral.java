@@ -9,25 +9,24 @@ import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-/**
- *
- * @author pc
- */
-public class MongoDBCLaboral extends MongoDBContratos{
+public class MongoDBCLaboral extends MongoDBContratos {
 
     public MongoDBCLaboral(Usuario usermodel) {
         super(usermodel);
     }
-            public ObjectId insertarYObtenerId(String[] datos) {
-        MongoCollection<Document> coll = getCollection("ContratosCivil");
 
+    /**
+     * Inserta el contrato en "ContratosLaboral" y devuelve el ObjectId.
+     */
+    public ObjectId insertarYObtenerId(String[] datos) {
+        MongoCollection<Document> coll = getCollection("ContratosLaboral");
+
+        // Usa el array 'datos' y el array de campos que definiste
         String[] campos = {
-            "NombreArrendataria","RucArrendataria","RepresentanteArrendataria",
-            "CargoArrendataria","NacionalidadArrendataria","NombreArrendador",
-            "RucArrendador","RepresentanteArrendador","CargoArrendador",
-            "NacionalidadArrendador","Antecedentes","FechaInicio","FechaFin",
-            "ValorMensual","FormaPago","Garantia","CorreoArrendataria",
-            "CorreoArrendador"
+            "Ciudad","FechaContrato","NombreEmpleado","CedulaEmpleado",
+            "CiudadTrabajador","NombreTrabajador","CedulaTrabajador",
+            "CargoTrabajador","JornadasHoras","DiasTrabajo",
+            "FechaInicio","Monto","FormaPago","LugarTrabajo"
         };
 
         Document doc = new Document();
@@ -35,8 +34,12 @@ public class MongoDBCLaboral extends MongoDBContratos{
             doc.append(campos[i], datos[i]);
         }
 
-        InsertOneResult result = coll.insertOne(doc);
-        return result.getInsertedId().asObjectId().getValue();
+        InsertOneResult res = coll.insertOne(doc);
+        ObjectId id = res.getInsertedId().asObjectId().getValue();
+        System.out.println("✅ Insertado en MongoDB ContratosLaboral con _id=" + id);
+        return id;
     }
     
+    //METODOS LEGACY ABSTRACTOS NO IMPLEMENTADOS
+
 }

@@ -147,8 +147,6 @@ public class ContratoCivilControlador implements ActionListener {
             System.out.println("Contrato PDF generado correctamente.");
         } catch (Exception ex) {
             ex.printStackTrace();
-
-
         }
     }
     }
