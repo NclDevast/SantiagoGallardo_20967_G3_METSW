@@ -5,47 +5,41 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
-/**
- *
- * @author pc
- */
-public class MongoDBCLaboral extends MongoDBContratos{
+public class MongoDBCLaboral extends MongoDBContratos {
 
     public MongoDBCLaboral(Usuario usermodel) {
         super(usermodel);
     }
-            protected void insertarContrato(String [] datos, MongoCollection<Document> collection){
-        
-            String[]nombresCampos = new String[datos.length];
-            nombresCampos[0] = "Ciudad";
-            nombresCampos[1] = "FechaContrato";
-            nombresCampos[2] = "NombreEmpleado";
-            nombresCampos[3] = "CedulaEmpleador";
-            nombresCampos[4] = "CiudadEmpleador";
-            nombresCampos[5] = "NombreTrabajador";
-            nombresCampos[6] = "CedulaTrabajador";
-            nombresCampos[7] = "CiudadTrabajador";
-            nombresCampos[8] = "CargoTrabajador";
-            nombresCampos[9] = "JornadasHoras";
-            nombresCampos[10] = "DiasTrabajo";
-            nombresCampos[11] = "FechaInicio";
-            nombresCampos[12] = "Monto";
-            nombresCampos[13] = "FormaPago";
-            nombresCampos[14] = "LugarTrabajo";
-            
-            Document doc = new Document();
-            
-            for(int i=0;i<nombresCampos.length;i++){
-                doc.append(nombresCampos[i], datos[i]);
-    }
-            collection.insertOne(doc);
-            
-            
-            
-            
-            
+
+    /**
+     * Inserta el contrato en "ContratosLaboral" y devuelve el ObjectId.
+     */
+    public ObjectId insertarYObtenerId(String[] datos) {
+        MongoCollection<Document> coll = getCollection("ContratosLaboral");
+
+        // Usa el array 'datos' y el array de campos que definiste
+        String[] campos = {
+            "Ciudad","FechaContrato","NombreEmpleado","CedulaEmpleado",
+            "CiudadTrabajador","NombreTrabajador","CedulaTrabajador",
+            "CargoTrabajador","JornadasHoras","DiasTrabajo",
+            "FechaInicio","Monto","FormaPago","LugarTrabajo"
+        };
+
+        Document doc = new Document();
+        for (int i = 0; i < campos.length; i++) {
+            doc.append(campos[i], datos[i]);
+        }
+
+        InsertOneResult res = coll.insertOne(doc);
+        ObjectId id = res.getInsertedId().asObjectId().getValue();
+        System.out.println("✅ Insertado en MongoDB ContratosLaboral con _id=" + id);
+        return id;
     }
     
+    //METODOS LEGACY ABSTRACTOS NO IMPLEMENTADOS
+
 }
