@@ -11,6 +11,7 @@ import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContrato
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.MenuBusqueda;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,24 +35,40 @@ public class BusquedaContratosControlador implements ActionListener{
         this.menuBusqueda.BtnCivilBuscar.addActionListener(this);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.menuBusqueda.BtnCivilBuscar) {
-            String[] nombresCampos = this.mongoDBbusqueda
-                .buscarContrato(this.menuBusqueda.txtRuc.getText(), 0);
+@Override
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == this.menuBusqueda.BtnCivilBuscar) {
+        String[] nombresCampos = this.mongoDBbusqueda
+            .buscarContrato(this.menuBusqueda.txtRuc.getText(), 0);
+
+        if (nombresCampos == null) {
+            JOptionPane.showMessageDialog(null,
+                "No se ha encontrado ningún contrato civil con ese RUC.",
+                "Contrato no registrado",
+                JOptionPane.WARNING_MESSAGE);
+        } else {
             this.cambiarCampos(nombresCampos, 0);
             this.formCivBus.setVisible(true);
             this.formCivBus.setResizable(false);
-
         }
-        if (e.getSource() == this.menuBusqueda.BtnBusquedaLab) {
-            String[] nombresCampos = this.mongoDBbusqueda
-                .buscarContrato(this.menuBusqueda.txtNumCed.getText(), 1);
+    }
+
+    if (e.getSource() == this.menuBusqueda.BtnBusquedaLab) {
+        String[] nombresCampos = this.mongoDBbusqueda
+            .buscarContrato(this.menuBusqueda.txtNumCed.getText(), 1);
+
+        if (nombresCampos == null) {
+            JOptionPane.showMessageDialog(null,
+                "No se ha encontrado ningún contrato laboral con esa cédula.",
+                "Contrato no registrado",
+                JOptionPane.WARNING_MESSAGE);
+        } else {
             this.cambiarCampos(nombresCampos, 1);
             this.formLabBus.setVisible(true);
             this.formLabBus.setResizable(false);
         }
     }
+}
 
 private void cambiarCampos(String[] campos, int tipo) {
     switch (tipo) {
