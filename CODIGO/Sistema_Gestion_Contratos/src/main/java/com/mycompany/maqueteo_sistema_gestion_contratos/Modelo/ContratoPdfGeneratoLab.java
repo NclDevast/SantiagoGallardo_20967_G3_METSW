@@ -77,6 +77,7 @@ public class ContratoPdfGeneratoLab {
             form.setField("FECHACONTRATO",     fechaContrato);
             form.setField("NOMBREEMPLEADO",    nombreEmpleado);
             form.setField("CEDULAEMPLEADO",    cedulaEmpleado);
+            form.setField("CIUDADEMPLEADO",    ciudadEmpleado);
             form.setField("CIUDADTRABAJADOR",  ciudadTrabajador);
             form.setField("NOMBRETRABAJADOR",  nombreTrabajador);
             form.setField("CEDULATRABAJADOR",  cedulaTrabajador);
