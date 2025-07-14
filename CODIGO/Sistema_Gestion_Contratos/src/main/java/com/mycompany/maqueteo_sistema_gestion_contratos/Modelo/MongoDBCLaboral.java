@@ -23,10 +23,10 @@ public class MongoDBCLaboral extends MongoDBContratos {
 
         // Usa el array 'datos' y el array de campos que definiste
         String[] campos = {
-            "Ciudad","FechaContrato","NombreEmpleado","CedulaEmpleado", "CiudadEmpleado",
-            "CiudadTrabajador","NombreTrabajador","CedulaTrabajador",
-            "CargoTrabajador","JornadasHoras","DiasTrabajo",
-            "FechaInicio","Monto","FormaPago","LugarTrabajo"
+        "Ciudad", "FechaContrato", "NombreEmpleado", "CedulaEmpleado", "CiudadEmpleado",
+        "NombreTrabajador", "CedulaTrabajador", "CiudadTrabajador",  // Fixed order here
+        "CargoTrabajador", "JornadasHoras", "DiasTrabajo",
+        "FechaInicio", "Monto", "FormaPago", "LugarTrabajo"
         };
 
         Document doc = new Document();

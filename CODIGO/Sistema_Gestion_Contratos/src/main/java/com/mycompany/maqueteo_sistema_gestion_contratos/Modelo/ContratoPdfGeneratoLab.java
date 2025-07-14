@@ -77,9 +77,10 @@ public class ContratoPdfGeneratoLab {
             form.setField("FECHACONTRATO",     fechaContrato);
             form.setField("NOMBREEMPLEADO",    nombreEmpleado);
             form.setField("CEDULAEMPLEADO",    cedulaEmpleado);
-            form.setField("CIUDADTRABAJADOR",  ciudadTrabajador);
+            form.setField("CIUDADEMPLEADO",    ciudadEmpleado);
             form.setField("NOMBRETRABAJADOR",  nombreTrabajador);
             form.setField("CEDULATRABAJADOR",  cedulaTrabajador);
+            form.setField("CIUDADTRABAJADOR",  ciudadTrabajador);
             form.setField("CARGOTRABAJADOR",   cargoTrabajador);
             form.setField("JORNADASHORAS",     jornadasHoras);
             form.setField("DIASTRABAJO",       diasTrabajo);

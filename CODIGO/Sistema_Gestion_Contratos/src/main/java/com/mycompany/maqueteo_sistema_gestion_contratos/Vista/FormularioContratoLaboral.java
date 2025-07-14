@@ -166,7 +166,7 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, -1));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
         jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 410, -1));
 
         BtnSalir.setBackground(new java.awt.Color(204, 255, 255));
@@ -204,12 +204,6 @@ public class FormularioContratoLaboral extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        txtCiudad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCiudadActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N

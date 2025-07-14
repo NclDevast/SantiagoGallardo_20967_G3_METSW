@@ -166,7 +166,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, -1));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
         jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 410, -1));
 
         jLabel21.setText("Objeto/Cargo del trajador:");
