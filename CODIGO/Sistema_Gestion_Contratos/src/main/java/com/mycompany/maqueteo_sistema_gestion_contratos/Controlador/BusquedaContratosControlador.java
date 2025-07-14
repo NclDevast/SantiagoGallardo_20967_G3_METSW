@@ -54,16 +54,16 @@ public void actionPerformed(ActionEvent e) {
     }
 
     if (e.getSource() == this.menuBusqueda.BtnBusquedaLab) {
-        String[] nombresCampos = this.mongoDBbusqueda
+        String[] nombresCamposLab = this.mongoDBbusqueda
             .buscarContrato(this.menuBusqueda.txtNumCed.getText(), 1);
 
-        if (nombresCampos == null) {
+        if (nombresCamposLab == null) {
             JOptionPane.showMessageDialog(null,
                 "No se ha encontrado ningún contrato laboral con esa cédula.",
                 "Contrato no registrado",
                 JOptionPane.WARNING_MESSAGE);
         } else {
-            this.cambiarCampos(nombresCampos, 1);
+            this.cambiarCampos(nombresCamposLab, 1);
             this.formLabBus.setVisible(true);
             this.formLabBus.setResizable(false);
         }
@@ -99,6 +99,10 @@ private void cambiarCampos(String[] campos, int tipo) {
 
         case 1: // laboral
             if (campos != null && campos.length >= 15) {
+                                System.out.println("Resultado Busqueda:");
+                        for(int i=0;i<campos.length;i++){
+                            System.out.println(campos[i]);
+                        }
                 formLabBus.txtCiudad.setText(campos[0]);
                 formLabBus.txtFechaContrato.setText(campos[1]);
                 formLabBus.txtNombreEmpleador.setText(campos[2]);

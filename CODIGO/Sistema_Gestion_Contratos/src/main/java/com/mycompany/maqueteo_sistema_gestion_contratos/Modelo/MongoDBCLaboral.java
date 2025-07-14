@@ -23,15 +23,17 @@ public class MongoDBCLaboral extends MongoDBContratos {
 
         // Usa el array 'datos' y el array de campos que definiste
         String[] campos = {
-            "Ciudad","FechaContrato","NombreEmpleado","CedulaEmpleado",
+            "Ciudad","FechaContrato","NombreEmpleado","CedulaEmpleado", "CiudadEmpleado",
             "CiudadTrabajador","NombreTrabajador","CedulaTrabajador",
             "CargoTrabajador","JornadasHoras","DiasTrabajo",
             "FechaInicio","Monto","FormaPago","LugarTrabajo"
         };
 
         Document doc = new Document();
+        System.out.println("Datos insertados");
         for (int i = 0; i < campos.length; i++) {
             doc.append(campos[i], datos[i]);
+            System.out.println(campos[i] + " : " + datos[i]);
         }
 
         InsertOneResult res = coll.insertOne(doc);

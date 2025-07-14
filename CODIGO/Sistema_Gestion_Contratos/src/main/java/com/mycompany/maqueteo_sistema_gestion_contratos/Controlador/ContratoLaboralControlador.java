@@ -112,6 +112,7 @@ public class ContratoLaboralControlador implements ActionListener{
             formLab.txtFormaPago.getText(),
             formLab.txtLugarTrabajo.getText()
         };
+        
     }
 
         
