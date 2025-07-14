@@ -39,9 +39,10 @@ public class ContratoPdfGeneratoLab {
         String fechaContrato      = doc.getString("FechaContrato");
         String nombreEmpleado     = doc.getString("NombreEmpleado");
         String cedulaEmpleado     = doc.getString("CedulaEmpleado");
-        String ciudadTrabajador   = doc.getString("CiudadTrabajador");
+        String ciudadEmpleado     = doc.getString("CiudadEmpleado");
         String nombreTrabajador   = doc.getString("NombreTrabajador");
         String cedulaTrabajador   = doc.getString("CedulaTrabajador");
+        String ciudadTrabajador   = doc.getString("CiudadTrabajador");
         String cargoTrabajador    = doc.getString("CargoTrabajador");
         String jornadasHoras      = doc.getString("JornadasHoras");
         String diasTrabajo        = doc.getString("DiasTrabajo");
