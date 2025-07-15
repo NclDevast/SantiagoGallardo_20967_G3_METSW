@@ -8,6 +8,7 @@ import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGenera
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCCivil;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivil;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
@@ -29,29 +30,32 @@ public class ContratoCivilControlador implements ActionListener {
         Validacion();
     }
 
-    public void Validacion() {
-        boolean camposVacios =
-                formCivil.txtNombreArrendataria.getText().isEmpty()
-                || formCivil.txtRucArrendataria.getText().isEmpty()
-                || formCivil.txtRepresentanteArrendataria.getText().isEmpty()
-                || formCivil.txtCargoArrendataria.getText().isEmpty()
-                || formCivil.txtNacionalidadArrendataria.getText().isEmpty()
-                || formCivil.txtNombreArrendador.getText().isEmpty()
-                || formCivil.txtRucArrendador.getText().isEmpty()
-                || formCivil.txtRepresentanteArrendador.getText().isEmpty()
-                || formCivil.txtCargoArrendador.getText().isEmpty()
-                || formCivil.txtNacionalidadArrendador.getText().isEmpty()
-                || formCivil.txtAntecedentes.getText().isEmpty()
-                || formCivil.txtFechaInicio.getText().isEmpty()
-                || formCivil.txtFechaFin.getText().isEmpty()
-                || formCivil.txtValorMensual.getText().isEmpty()
-                || formCivil.txtFormaPago.getText().isEmpty()
-                || formCivil.txtGarantia.getText().isEmpty()
-                || formCivil.txtCorreoArrendataria.getText().isEmpty()
-                || formCivil.txtCorreoArrendador.getText().isEmpty();
+public void Validacion() {
+    boolean camposVacios =
+        formCivil.txtNombreArrendataria.getText().isEmpty()
+        || formCivil.txtRucArrendataria.getText().isEmpty()
+        || formCivil.txtRepresentanteArrendataria.getText().isEmpty()
+        || formCivil.txtCargoArrendataria.getText().isEmpty()
+        || formCivil.txtNacionalidadArrendataria.getText().isEmpty()
+        || formCivil.txtNombreArrendador.getText().isEmpty()
+        || formCivil.txtRucArrendador.getText().isEmpty()
+        || formCivil.txtRepresentanteArrendador.getText().isEmpty()
+        || formCivil.txtCargoArrendador.getText().isEmpty()
+        || formCivil.txtNacionalidadArrendador.getText().isEmpty()
+        || formCivil.txtAntecedentes.getText().isEmpty()
+        || formCivil.txtFechaInicio.getText().isEmpty()
+        || formCivil.txtFechaFin.getText().isEmpty()
+        || formCivil.txtValorMensual.getText().isEmpty()
+        || formCivil.txtFormaPago.getText().isEmpty()
+        || formCivil.txtGarantia.getText().isEmpty()
+        || formCivil.txtCorreoArrendataria.getText().isEmpty()
+        || formCivil.txtCorreoArrendador.getText().isEmpty()
+        || !esRucValido(formCivil.txtRucArrendataria.getText())
+        || !esRucValido(formCivil.txtRucArrendador.getText());
 
-        formCivil.BtnGuardar.setEnabled(!camposVacios);
-    }
+    formCivil.BtnGuardar.setEnabled(!camposVacios);
+    resaltarCampoRuc(); // Llama al resaltador después de validar
+}
 
     private void agregarValidacionAutomatica() {
         JTextField[] camposTexto = {
@@ -150,4 +154,20 @@ public class ContratoCivilControlador implements ActionListener {
         }
     }
     }
+    private boolean esRucValido(String ruc) {
+    return ruc.matches("^\\d{10}001$");
+}
+    private void resaltarCampoRuc() {
+    if (!esRucValido(formCivil.txtRucArrendataria.getText())) {
+        formCivil.txtRucArrendataria.setBackground(Color.PINK);
+    } else {
+        formCivil.txtRucArrendataria.setBackground(Color.WHITE);
+    }
+
+    if (!esRucValido(formCivil.txtRucArrendador.getText())) {
+        formCivil.txtRucArrendador.setBackground(Color.PINK);
+    } else {
+        formCivil.txtRucArrendador.setBackground(Color.WHITE);
+    }
+}
 }
