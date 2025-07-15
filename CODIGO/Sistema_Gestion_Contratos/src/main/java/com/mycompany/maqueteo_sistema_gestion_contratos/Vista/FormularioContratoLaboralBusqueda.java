@@ -72,8 +72,6 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         txtJornadasHoras = new javax.swing.JTextField();
         txtDiasTrabajo = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         BtnEditar = new javax.swing.JButton();
         BtnEliminar = new javax.swing.JButton();
@@ -218,25 +216,13 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel8.setText("Jornada Laboral:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
-        jLabel10.setText("DÍAS DE TRABAJO:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
+        jLabel10.setText("HORAS DE DESCANSO");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
 
         jLabel11.setText("HORAS DE JORNADA:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
-        jPanel2.add(txtJornadasHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, -1));
-        jPanel2.add(txtDiasTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 300, -1));
-
-        jComboBox2.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir Jornada", "Ordinaria", "Parcial", "Nocturna", "Mixta" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 150, -1));
-
-        jLabel12.setText("TIPO DE JORNADA");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, -1, -1));
+        jPanel2.add(txtJornadasHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
+        jPanel2.add(txtDiasTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 300, -1));
 
         jButton1.setText("SALIR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -281,10 +267,6 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
     private void txtCargoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoTrabajadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCargoTrabajadorActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
- 
-    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -335,11 +317,9 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    public javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
