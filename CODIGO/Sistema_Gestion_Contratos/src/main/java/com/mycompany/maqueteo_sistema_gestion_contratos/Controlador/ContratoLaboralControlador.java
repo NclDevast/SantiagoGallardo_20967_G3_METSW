@@ -7,6 +7,7 @@ import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.ContratoPdfGenera
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.MongoDBCLaboral;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoLaboral;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
@@ -51,7 +52,8 @@ public class ContratoLaboralControlador implements ActionListener{
                 || formLab.txtFormaPago.getText().isEmpty()
                 || formLab.txtLugarTrabajo.getText().isEmpty();
 
-        formLab.btnGuardar.setEnabled(!camposVacios);
+       formLab.btnGuardar.setEnabled(!camposVacios);
+       resaltarCampoCedulas();
     }
 
     private void agregarValidacionAutomatica() {
@@ -140,4 +142,20 @@ public class ContratoLaboralControlador implements ActionListener{
         }
         }
     }
+    private boolean esCedulaValida(String cedula) {
+    return cedula.matches("^\\d{10}$");
+}
+    private void resaltarCampoCedulas() {
+    if (!esCedulaValida(formLab.txtCedulaEmpleador.getText())) {
+        formLab.txtCedulaEmpleador.setBackground(Color.PINK);
+    } else {
+        formLab.txtCedulaEmpleador.setBackground(Color.WHITE);
+    }
+
+    if (!esCedulaValida(formLab.txtCedulaTrabajador.getText())) {
+        formLab.txtCedulaTrabajador.setBackground(Color.PINK);
+    } else {
+        formLab.txtCedulaTrabajador.setBackground(Color.WHITE);
+    }
+}
 }
