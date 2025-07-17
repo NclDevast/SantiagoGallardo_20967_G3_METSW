@@ -164,6 +164,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnSalidaActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed

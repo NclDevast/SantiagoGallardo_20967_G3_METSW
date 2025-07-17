@@ -22,13 +22,16 @@ public class LoginControlador implements ActionListener{
     private final Usuario modelo;
     private final FormularioContratoCivil formCivil;
     private final FormularioContratoLaboral formLab;
+    private final ContratoCivilControlador civCtrl;
+    private final ContratoLaboralControlador labCtrl;
+    private final BusquedaContratosControlador busCtrl;
     private Boolean LoginEstado;
     private UsuarioControlador userctrl;
 
     
     private int intentosFallidos = 0;
     private final int MAX_INTENTOS = 3;
-    private final int TIEMPO_BLOQUEO = 5 * 60 * 1000; 
+    private final int TIEMPO_BLOQUEO =  5*1000/*+5 * 60 * 1000*/; 
     
     public LoginControlador (VISTA_VALIDACION vista, Usuario modelo, Programa programa, FormularioContratoCivil formciv, FormularioContratoLaboral formlab, UsuarioControlador userctrl){
         this.vista_validacion=vista;
@@ -37,10 +40,14 @@ public class LoginControlador implements ActionListener{
         this.formCivil = formciv;
         this.formLab = formlab;
         this.userctrl = userctrl;
+        this.civCtrl = new ContratoCivilControlador(this.formCivil,this,modelo);
+        this.labCtrl = new ContratoLaboralControlador(this.formLab,this,modelo);
         this.vista_validacion.btnLogin.addActionListener(this);
+        this.busCtrl = new BusquedaContratosControlador(this.modelo);
         this.programa.BtnContratoCivil.addActionListener(this);
         this.programa.BtnContratoLaboral.addActionListener(this);
         this.programa.BtnDatosUsuario.addActionListener(this);
+        this.programa.BtnBusqueda.addActionListener(this);
     }
     
     public void initDB(String nombreUsuario) {
@@ -67,16 +74,11 @@ public class LoginControlador implements ActionListener{
     private void iniciarContrato(int Tipo){
         switch (Tipo) {
             case 0:
-                formCivil.setTitle("Contrato Civil");
-                formCivil.setVisible(true);
-                formCivil.setLocationRelativeTo(null);
-                formCivil.setResizable(false);
+
+                civCtrl.iniciarContrato();
                 break;
             case 1:
-                formLab.setTitle("Contrato Civil");
-                formLab.setVisible(true);
-                formLab.setLocationRelativeTo(null);
-                formLab.setResizable(false);
+                labCtrl.iniciarContrato();
                 break;
             default:
                 System.out.println("Error interno");
@@ -91,25 +93,27 @@ public class LoginControlador implements ActionListener{
             this.LoginEstado = false;
             String userTemp = vista_validacion.txtUsuario.getText();
             String passTemp = vista_validacion.txtContrasena.getText();
-
-            initDB(userTemp);  
-
-            new javax.swing.Timer(5000, evt -> {
+            initDB(userTemp);
+            vista_validacion.btnLogin.setEnabled(false);
+            
+            new javax.swing.Timer(1000, evt -> {
                 this.LoginEstado = modelo.validarUsuarios(userTemp, passTemp);
                 ((javax.swing.Timer) evt.getSource()).stop(); // detener el timer
 
                 
-                if (intentosFallidos >= MAX_INTENTOS) {
-                        bloquearLogin(); //se termina el algoritmo
-                    }
-                
                 if (!this.LoginEstado) {
                     intentosFallidos++;
-
+                    vista_validacion.btnLogin.setEnabled(true);
+                    
+                if (intentosFallidos >= MAX_INTENTOS) {
+                        bloquearLogin(); //se termina el algoritmo
+                        return;
+                    }
+                
                     JOptionPane.showMessageDialog(null, 
                         "❌ Usuario o contraseña no válidos. Intento " 
                         + intentosFallidos + " de " + MAX_INTENTOS);
-
+                    
                     vista_validacion.txtContrasena.setText("");
                     vista_validacion.txtUsuario.setText("");
                     vista_validacion.txtUsuario.requestFocusInWindow();
@@ -124,20 +128,28 @@ public class LoginControlador implements ActionListener{
             }).start();  
 
         }
-
-        else if (e.getSource() == programa.BtnContratoCivil) {
+        if (e.getSource() == programa.BtnContratoCivil) {
             System.out.println("Civil");
             iniciarContrato(0);
         }
+        if (e.getSource()== formCivil.BtnGuardar){
+            System.out.println("Prueba");
+        }
 
-        else if (e.getSource() == programa.BtnContratoLaboral) {
+        if (e.getSource() == programa.BtnContratoLaboral) {
             System.out.println("Laboral");
             iniciarContrato(1);
         }
 
-        else if (e.getSource() == programa.BtnDatosUsuario) {
+        if (e.getSource() == programa.BtnDatosUsuario) {
             System.out.println("Boton Datos Usuario");
             userctrl.iniciarVistaDatos();
+        }
+        if (e.getSource()== formLab.btnGuardar){
+            System.out.println("Prueba");
+        }
+        if (e.getSource()==programa.BtnBusqueda){
+            this.busCtrl.iniciarBusqueda();
         }
     }
 
