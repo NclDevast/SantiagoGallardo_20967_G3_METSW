@@ -5,6 +5,8 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
 import javax.swing.*;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.FileIO;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -12,12 +14,17 @@ import javax.swing.*;
  * @author Isabela
  */
 public class VISTA_VALIDACION extends javax.swing.JFrame {
+    private final FileIO fileIO;
 
     /**
      * Creates new form VISTA_VALIDACION
      */
     public VISTA_VALIDACION() {
         initComponents();
+        this.fileIO = new FileIO();
+        BufferedImage icono = fileIO.readImageFile(this, "/imagenes/USUARIO.png"); //seguir ejemplo con nuevos iconos
+        BufferedImage icono1 = fileIO.readImageFile(this, "/imagenes/USUARIOINICIO.png");
+        BufferedImage icono2 = fileIO.readImageFile(this, "/imagenes/PASSWORD.png");
     }
 
     /**
@@ -29,16 +36,25 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtContrasena = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnSalida = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        ICONO = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+
+        jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,18 +67,13 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         jLabel1.setText("LOGIN");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setName(""); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 120, -1, 33));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 33));
 
         jLabel2.setBackground(new java.awt.Color(204, 255, 204));
         jLabel2.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
         jLabel2.setText("Usuario:");
         jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 164, -1, 25));
-
-        jLabel3.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
-        jLabel3.setText("Contraseña:");
-        jLabel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, 25));
 
         txtUsuario.setBackground(new java.awt.Color(204, 204, 255));
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -75,12 +86,12 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
                 txtUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 201, 351, -1));
+        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 360, -1));
 
         txtContrasena.setBackground(new java.awt.Color(204, 204, 255));
         txtContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtContrasena.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 255), java.awt.Color.white, null, null));
-        jPanel2.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 297, 351, -1));
+        jPanel2.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 360, -1));
 
         btnLogin.setBackground(new java.awt.Color(204, 255, 204));
         btnLogin.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
@@ -114,31 +125,75 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
                 btnSalidaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 386, 66, -1));
+        jPanel2.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 66, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/USUARIOINICIO.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ICONO)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(ICONO)
+                .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/USUARIO.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PASSWORD.png"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+
+        jLabel3.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
+        jLabel3.setText("Contraseña:");
+        jLabel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel3)
+                .addContainerGap(229, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(61, 61, 61))
+        );
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 380, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,14 +237,21 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         prog.setVisible(true);*/
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel ICONO;
     private javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSalida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
     public javax.swing.JPasswordField txtContrasena;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
