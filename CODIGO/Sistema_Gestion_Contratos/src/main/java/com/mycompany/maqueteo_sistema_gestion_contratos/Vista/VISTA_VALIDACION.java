@@ -5,78 +5,14 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
 import javax.swing.*;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import javax.imageio.ImageIO;
+
 
 public class VISTA_VALIDACION extends javax.swing.JFrame {
 
     public VISTA_VALIDACION() {
         initComponents();
-        cargarImagenes();
+        
     }
-
-private void cargarImagenes() {
-    // Para DEBUG - Imprime la ubicación real del proyecto
-    System.out.println("Directorio actual: " + System.getProperty("user.dir"));
-    
-    // Carga las imágenes con el método a prueba de fallos
-    USUARIOINICIO.setIcon(cargarImagenAPruebaDeFallos("USUARIO INICIO.png", 30));
-    USUARIO.setIcon(cargarImagenAPruebaDeFallos("USUARIO.png", 24));
-    CONTRASENA.setIcon(cargarImagenAPruebaDeFallos("CONTRASENA.png", 24));
-}
-
-private ImageIcon cargarImagenAPruebaDeFallos(String nombreArchivo, int tamaño) {
-    // Método 1: Intenta cargar desde recursos (para JAR)
-    try {
-        URL imgUrl = getClass().getResource("/Imagenes/" + nombreArchivo);
-        if (imgUrl != null) {
-            System.out.println("Encontrado en JAR: " + imgUrl);
-            ImageIcon icon = new ImageIcon(imgUrl);
-            return redimensionarIcono(icon, tamaño);
-        }
-    } catch (Exception e) {
-        System.out.println("Error al cargar desde JAR: " + e.getMessage());
-    }
-
-    // Método 2: Intenta cargar desde sistema de archivos (para desarrollo)
-    try {
-        String rutaBase = System.getProperty("user.dir") + "/src/main/resources/Imagenes/";
-        File imgFile = new File(rutaBase + nombreArchivo);
-        if (imgFile.exists()) {
-            System.out.println("Encontrado en FS: " + imgFile.getAbsolutePath());
-            ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath());
-            return redimensionarIcono(icon, tamaño);
-        }
-    } catch (Exception e) {
-        System.out.println("Error al cargar desde FS: " + e.getMessage());
-    }
-
-    // Método 3: Intenta cargar desde el classpath raíz (último intento)
-    try {
-        InputStream is = getClass().getClassLoader().getResourceAsStream("Imagenes/" + nombreArchivo);
-        if (is != null) {
-            System.out.println("Encontrado en Classpath");
-            BufferedImage image = ImageIO.read(is);
-            return new ImageIcon(image.getScaledInstance(tamaño, tamaño, Image.SCALE_SMOOTH));
-        }
-    } catch (Exception e) {
-        System.out.println("Error al cargar desde Classpath: " + e.getMessage());
-    }
-
-    System.err.println("NO SE PUDO CARGAR LA IMAGEN: " + nombreArchivo);
-    return null;
-}
-
-private ImageIcon redimensionarIcono(ImageIcon iconoOriginal, int tamaño) {
-    if (iconoOriginal == null) return null;
-    return new ImageIcon(iconoOriginal.getImage().getScaledInstance(tamaño, tamaño, Image.SCALE_SMOOTH));
-}
-    // ... (el resto de tu código existente)
-
 
     /**
      * This method is called from within the constructor to initialize the form.
