@@ -31,15 +31,16 @@ public class BusquedaContratosControlador implements ActionListener{
         this.mongoDBbusqueda = new MongoDBBusqueda(userModel);
         this.formCivBus = new FormularioContratoCivilBusqueda();
         this.formLabBus = new FormularioContratoLaboralBusqueda();
-        this.menuBusqueda.BtnBusquedaLab.addActionListener(this);
-        this.menuBusqueda.BtnCivilBuscar.addActionListener(this);
+        this.menuBusqueda.BtnBusqueda.addActionListener(this);
+        this.menuBusqueda.BtnRadioRUC.addActionListener(this);
+        this.menuBusqueda.BtnRadioCedula.addActionListener(this);
     }
 
 @Override
 public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == this.menuBusqueda.BtnCivilBuscar) {
+    if (e.getSource() == this.menuBusqueda.BtnBusqueda && this.menuBusqueda.BtnRadioRUC.isSelected()) {
         String[] nombresCampos = this.mongoDBbusqueda
-            .buscarContrato(this.menuBusqueda.txtRuc.getText(), 0);
+            .buscarContrato(this.menuBusqueda.txtBusqueda.getText(), 0);
 
         if (nombresCampos == null) {
             JOptionPane.showMessageDialog(null,
@@ -53,9 +54,9 @@ public void actionPerformed(ActionEvent e) {
         }
     }
 
-    if (e.getSource() == this.menuBusqueda.BtnBusquedaLab) {
+    if (e.getSource() == this.menuBusqueda.BtnBusqueda && this.menuBusqueda.BtnRadioCedula.isSelected()) {
         String[] nombresCamposLab = this.mongoDBbusqueda
-            .buscarContrato(this.menuBusqueda.txtNumCed.getText(), 1);
+            .buscarContrato(this.menuBusqueda.txtBusqueda.getText(), 1);
 
         if (nombresCamposLab == null) {
             JOptionPane.showMessageDialog(null,
