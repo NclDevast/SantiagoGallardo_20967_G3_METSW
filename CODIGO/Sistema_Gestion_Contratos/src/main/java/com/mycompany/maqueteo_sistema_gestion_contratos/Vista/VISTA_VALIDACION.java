@@ -5,6 +5,8 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
 import javax.swing.*;
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.FileIO;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -12,12 +14,15 @@ import javax.swing.*;
  * @author Isabela
  */
 public class VISTA_VALIDACION extends javax.swing.JFrame {
+    private final FileIO fileIO;
 
     /**
      * Creates new form VISTA_VALIDACION
      */
     public VISTA_VALIDACION() {
         initComponents();
+        this.fileIO = new FileIO();
+        BufferedImage img = fileIO.readImageFile(this, "/imagenes/USUARIO.png");
     }
 
     /**
@@ -39,6 +44,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         btnLimpiar = new javax.swing.JButton();
         btnSalida = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        ICONO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,15 +124,23 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
+        ICONO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/USUARIO.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addComponent(ICONO)
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(ICONO)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -182,6 +196,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
         prog.setVisible(true);*/
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel ICONO;
     private javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSalida;
