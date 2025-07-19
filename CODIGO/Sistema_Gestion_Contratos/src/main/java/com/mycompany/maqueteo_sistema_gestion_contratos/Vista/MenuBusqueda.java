@@ -83,6 +83,7 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 70));
 
         GrupoBusquedaTipo.add(BtnRadioRUC);
+        BtnRadioRUC.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         BtnRadioRUC.setText("RUC");
         BtnRadioRUC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +93,9 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jPanel1.add(BtnRadioRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         GrupoBusquedaTipo.add(BtnRadioCedula);
+        BtnRadioCedula.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         BtnRadioCedula.setText("Cédula");
-        jPanel1.add(BtnRadioCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+        jPanel1.add(BtnRadioCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
