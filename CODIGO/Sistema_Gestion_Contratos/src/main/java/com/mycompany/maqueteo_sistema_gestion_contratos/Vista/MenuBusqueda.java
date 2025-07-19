@@ -36,35 +36,38 @@ public class MenuBusqueda extends javax.swing.JFrame {
         BtnCivilBuscar = new javax.swing.JButton();
         BtnBusquedaLab = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
         jLabel1.setText("Civil");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
         jLabel2.setText("Laboral");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jLabel3.setText("Número de Cédula");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jLabel4.setText("Número de RUC");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         txtRuc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRucActionPerformed(evt);
             }
         });
-        jPanel1.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, 40));
-        jPanel1.add(txtNumCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 190, 40));
+        jPanel1.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 200, 40));
+        jPanel1.add(txtNumCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 40));
 
+        BtnCivilBuscar.setBackground(new java.awt.Color(204, 255, 255));
         BtnCivilBuscar.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
         BtnCivilBuscar.setText("Buscar");
         BtnCivilBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,20 +75,37 @@ public class MenuBusqueda extends javax.swing.JFrame {
                 BtnCivilBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnCivilBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 130, 50));
+        jPanel1.add(BtnCivilBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 130, 50));
 
+        BtnBusquedaLab.setBackground(new java.awt.Color(204, 255, 255));
         BtnBusquedaLab.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
         BtnBusquedaLab.setText("Buscar");
-        BtnBusquedaLab.setActionCommand("Buscar");
-        jPanel1.add(BtnBusquedaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 130, 50));
+        jPanel1.add(BtnBusquedaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 130, 50));
 
+        jButton1.setBackground(new java.awt.Color(102, 255, 204));
+        jButton1.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
         jButton1.setText("REGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 140, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 140, 30));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,6 +182,7 @@ this.dispose();
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField txtNumCed;
     public javax.swing.JTextField txtRuc;
     // End of variables declaration//GEN-END:variables
