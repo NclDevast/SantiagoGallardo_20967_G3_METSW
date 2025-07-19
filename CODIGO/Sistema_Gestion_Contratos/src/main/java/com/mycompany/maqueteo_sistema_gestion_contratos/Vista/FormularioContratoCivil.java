@@ -135,7 +135,7 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
                 BtnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 650, -1, -1));
+        jPanel1.add(BtnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, 20));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
         jLabel1.setText("Contrato Civil");
@@ -298,13 +298,13 @@ public class FormularioContratoCivil extends javax.swing.JFrame {
                 BtnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 660, -1, 20));
+        jPanel1.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 650, -1, 20));
         jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 102, 102));
         jLabel12.setText("* Campo obligatorio");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 140, -1));
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 102, 102));

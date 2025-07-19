@@ -4,17 +4,24 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.FileIO;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author pc
  */
 public class MenuBusqueda extends javax.swing.JFrame {
-
+private final FileIO fileIO;
     /**
      * Creates new form MenuBusqueda
      */
     public MenuBusqueda() {
         initComponents();
+        this.fileIO = new FileIO();
+        BufferedImage icono = fileIO.readImageFile(this, "/imagenes/CIVIL.png");
+        BufferedImage icono1 = fileIO.readImageFile(this, "/imagenes/LABORAL.png");
+        BufferedImage icono2 = fileIO.readImageFile(this, "/imagenes/BUSQUEDA.png");
     }
 
     /**
@@ -35,6 +42,9 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         BtnRadioRUC = new javax.swing.JRadioButton();
         BtnRadioCedula = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +52,7 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
-        jLabel1.setText("Buscar por");
+        jLabel1.setText("Buscar por:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -50,22 +60,22 @@ public class MenuBusqueda extends javax.swing.JFrame {
                 txtBusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 400, 40));
+        jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 380, 30));
 
         BtnBusqueda.setBackground(new java.awt.Color(204, 255, 255));
-        BtnBusqueda.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
+        BtnBusqueda.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         BtnBusqueda.setText("Buscar");
-        jPanel1.add(BtnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 50));
+        jPanel1.add(BtnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 40));
 
         jButton1.setBackground(new java.awt.Color(102, 255, 204));
-        jButton1.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Book Antiqua", 1, 18)); // NOI18N
         jButton1.setText("REGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 140, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 140, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -95,7 +105,16 @@ public class MenuBusqueda extends javax.swing.JFrame {
         GrupoBusquedaTipo.add(BtnRadioCedula);
         BtnRadioCedula.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         BtnRadioCedula.setText("Cédula");
-        jPanel1.add(BtnRadioCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+        jPanel1.add(BtnRadioCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/BUSQUEDA.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CIVIL.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LABORAL.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +127,7 @@ public class MenuBusqueda extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
         );
 
         pack();
@@ -169,6 +188,9 @@ this.dispose();
     private javax.swing.ButtonGroup GrupoBusquedaTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField txtBusqueda;
