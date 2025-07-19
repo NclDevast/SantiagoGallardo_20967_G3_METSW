@@ -22,7 +22,7 @@ public class VISTA_VALIDACION extends javax.swing.JFrame {
     public VISTA_VALIDACION() {
         initComponents();
         this.fileIO = new FileIO();
-        BufferedImage img = fileIO.readImageFile(this, "/imagenes/USUARIO.png");
+        BufferedImage icono = fileIO.readImageFile(this, "/imagenes/USUARIO.png"); //seguir ejemplo con nuevos iconos
     }
 
     /**
