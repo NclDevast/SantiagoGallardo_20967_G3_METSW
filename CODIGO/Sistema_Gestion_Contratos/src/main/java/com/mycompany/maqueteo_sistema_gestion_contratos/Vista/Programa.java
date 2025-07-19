@@ -4,17 +4,23 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
+import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.FileIO;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Isabela
  */
 public class Programa extends javax.swing.JFrame {
-
+private final FileIO fileIO;
     /**
      * Creates new form Programa
      */
     public Programa() {
         initComponents();
+        this.fileIO = new FileIO();
+        BufferedImage icono = fileIO.readImageFile(this, "/imagenes/CIVIL.png");
+        
     }
 
     /**
@@ -26,6 +32,7 @@ public class Programa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BtnDatosUsuario = new javax.swing.JButton();
@@ -34,35 +41,39 @@ public class Programa extends javax.swing.JFrame {
         BtnContratoLaboral = new javax.swing.JButton();
         btnSalida = new javax.swing.JButton();
         BtnBusqueda = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jLabel1.setText("Gestión de Contratos");
+        jLabel1.setText("GESTIÓN DE CONTRATOS");
 
         BtnDatosUsuario.setBackground(new java.awt.Color(204, 255, 255));
         BtnDatosUsuario.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         BtnDatosUsuario.setText("Datos Administrador");
         BtnDatosUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnDatosUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnDatosUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnDatosUsuarioActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
-        jLabel2.setText("Nuevo Contrato");
+        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel2.setText("Crear nuevo contrato:");
 
         BtnContratoCivil.setBackground(new java.awt.Color(204, 255, 255));
         BtnContratoCivil.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnContratoCivil.setText("Civil");
+        BtnContratoCivil.setText("CIVIL");
         BtnContratoCivil.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         BtnContratoLaboral.setBackground(new java.awt.Color(204, 255, 255));
         BtnContratoLaboral.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        BtnContratoLaboral.setText("Laboral");
+        BtnContratoLaboral.setText("LABORAL");
         BtnContratoLaboral.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnSalida.setBackground(new java.awt.Color(204, 255, 204));
@@ -77,54 +88,59 @@ public class Programa extends javax.swing.JFrame {
 
         BtnBusqueda.setBackground(new java.awt.Color(204, 255, 255));
         BtnBusqueda.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        BtnBusqueda.setText("BUSQUEDA");
+        BtnBusqueda.setText("Búsqueda");
+        BtnBusqueda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnBusqueda.setVerifyInputWhenFocusTarget(false);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CIVIL.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnContratoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                                .addComponent(BtnContratoLaboral, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BtnBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnDatosUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2)
-                        .addGap(90, 90, 90)
-                        .addComponent(BtnContratoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(BtnContratoLaboral)))
-                .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnDatosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(btnSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(192, 192, 192))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(BtnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(20, 20, 20)))))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(8, 8, 8)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnContratoCivil)
-                    .addComponent(BtnContratoLaboral))
-                .addGap(34, 34, 34)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BtnContratoCivil)
+                        .addComponent(BtnContratoLaboral))
+                    .addComponent(jLabel3))
+                .addGap(36, 36, 36)
                 .addComponent(BtnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(BtnDatosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(btnSalida)
-                .addGap(54, 54, 54))
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,6 +210,8 @@ public class Programa extends javax.swing.JFrame {
     private javax.swing.JButton btnSalida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
