@@ -4,8 +4,8 @@
  */
 package com.mycompany.maqueteo_sistema_gestion_contratos.Vista;
 
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
+
 
 /**
  *
