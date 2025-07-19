@@ -26,17 +26,15 @@ public class MenuBusqueda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GrupoBusquedaTipo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtRuc = new javax.swing.JTextField();
-        txtNumCed = new javax.swing.JTextField();
-        BtnCivilBuscar = new javax.swing.JButton();
-        BtnBusquedaLab = new javax.swing.JButton();
+        txtBusqueda = new javax.swing.JTextField();
+        BtnBusqueda = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        BtnRadioRUC = new javax.swing.JRadioButton();
+        BtnRadioCedula = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,43 +42,20 @@ public class MenuBusqueda extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
-        jLabel1.setText("Civil");
+        jLabel1.setText("Buscar por");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Book Antiqua", 1, 24)); // NOI18N
-        jLabel2.setText("Laboral");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jLabel3.setText("Número de Cédula");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jLabel4.setText("Número de RUC");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-
-        txtRuc.addActionListener(new java.awt.event.ActionListener() {
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRucActionPerformed(evt);
+                txtBusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtRuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 200, 40));
-        jPanel1.add(txtNumCed, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 40));
+        jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 400, 40));
 
-        BtnCivilBuscar.setBackground(new java.awt.Color(204, 255, 255));
-        BtnCivilBuscar.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
-        BtnCivilBuscar.setText("Buscar");
-        BtnCivilBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCivilBuscarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BtnCivilBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 130, 50));
-
-        BtnBusquedaLab.setBackground(new java.awt.Color(204, 255, 255));
-        BtnBusquedaLab.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
-        BtnBusquedaLab.setText("Buscar");
-        jPanel1.add(BtnBusquedaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 130, 50));
+        BtnBusqueda.setBackground(new java.awt.Color(204, 255, 255));
+        BtnBusqueda.setFont(new java.awt.Font("Bookman Old Style", 0, 24)); // NOI18N
+        BtnBusqueda.setText("Buscar");
+        jPanel1.add(BtnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 50));
 
         jButton1.setBackground(new java.awt.Color(102, 255, 204));
         jButton1.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
@@ -90,7 +65,7 @@ public class MenuBusqueda extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 140, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 140, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -107,36 +82,50 @@ public class MenuBusqueda extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 70));
 
+        GrupoBusquedaTipo.add(BtnRadioRUC);
+        BtnRadioRUC.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        BtnRadioRUC.setText("RUC");
+        BtnRadioRUC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRadioRUCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnRadioRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        GrupoBusquedaTipo.add(BtnRadioCedula);
+        BtnRadioCedula.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        BtnRadioCedula.setText("Cédula");
+        jPanel1.add(BtnRadioCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnCivilBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCivilBuscarActionPerformed
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnCivilBuscarActionPerformed
-
-    private void txtRucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRucActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRucActionPerformed
+    }//GEN-LAST:event_txtBusquedaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BtnRadioRUCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRadioRUCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRadioRUCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,16 +163,14 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BtnBusquedaLab;
-    public javax.swing.JButton BtnCivilBuscar;
+    public javax.swing.JButton BtnBusqueda;
+    public javax.swing.JRadioButton BtnRadioCedula;
+    public javax.swing.JRadioButton BtnRadioRUC;
+    private javax.swing.ButtonGroup GrupoBusquedaTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField txtNumCed;
-    public javax.swing.JTextField txtRuc;
+    public javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
 }
