@@ -10,6 +10,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class MongoDBBusqueda {
     private final Usuario userModel;
@@ -23,11 +24,15 @@ public class MongoDBBusqueda {
         return mongoClient.getDatabase(databaseName);
     }
 
+    /**
+     * Busca un contrato por clave y tipo (0: civil, 1: laboral)
+     * y retorna sus campos como arreglo de Strings.
+     */
     public String[] buscarContrato(String key, int tipo) {
         MongoDatabase db = connectMongo("DataContratos");
 
         switch (tipo) {
-            case 0: {  // Civil
+            case 0: { // Civil
                 MongoCollection<Document> col = db.getCollection("ContratosCivil");
                 Document doc = col.find(eq("RucArrendataria", key)).first();
                 if (doc == null) {
@@ -36,7 +41,8 @@ public class MongoDBBusqueda {
                 if (doc == null) {
                     return null;
                 }
-                String[] resultado = new String[] {
+
+                return new String[] {
                     doc.getString("NombreArrendataria"),
                     doc.getString("RucArrendataria"),
                     doc.getString("RepresentanteArrendataria"),
@@ -56,25 +62,19 @@ public class MongoDBBusqueda {
                     doc.getString("FormaPago"),
                     doc.getString("Garantia")
                 };
-                return resultado;
             }
 
-            case 1: {  // Laboral
+            case 1: { // Laboral
                 MongoCollection<Document> col = db.getCollection("ContratosLaboral");
-
-                // Busco primero por cédula del trabajador
                 Document doc = col.find(eq("CedulaTrabajador", key)).first();
-
-                // Si no lo encuentro, pruebo por cédula del empleado (empleador)
                 if (doc == null) {
                     doc = col.find(eq("CedulaEmpleado", key)).first();
                 }
-
                 if (doc == null) {
                     return null;
                 }
 
-                String[] resultado = new String[] {
+                return new String[] {
                     doc.getString("Ciudad"),
                     doc.getString("FechaContrato"),
                     doc.getString("NombreEmpleado"),
@@ -91,13 +91,41 @@ public class MongoDBBusqueda {
                     doc.getString("FormaPago"),
                     doc.getString("LugarTrabajo")
                 };
-
-                return resultado;
             }
 
             default:
                 return null;
         }
     }
-    
+
+    /**
+     * Busca el ObjectId del contrato según la clave y tipo.
+     * Requerido para generar el PDF original desde MongoDB.
+     */
+    public ObjectId obtenerIdContrato(String key, int tipo) {
+        MongoDatabase db = connectMongo("DataContratos");
+
+        switch (tipo) {
+            case 0: { // Civil
+                MongoCollection<Document> col = db.getCollection("ContratosCivil");
+                Document doc = col.find(eq("RucArrendataria", key)).first();
+                if (doc == null) {
+                    doc = col.find(eq("RucArrendador", key)).first();
+                }
+                return (doc != null) ? doc.getObjectId("_id") : null;
+            }
+
+            case 1: { // Laboral
+                MongoCollection<Document> col = db.getCollection("ContratosLaboral");
+                Document doc = col.find(eq("CedulaTrabajador", key)).first();
+                if (doc == null) {
+                    doc = col.find(eq("CedulaEmpleado", key)).first();
+                }
+                return (doc != null) ? doc.getObjectId("_id") : null;
+            }
+
+            default:
+                return null;
+        }
+    }
 }
