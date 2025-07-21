@@ -74,7 +74,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         txtDiasTrabajo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         BtnEditar = new javax.swing.JButton();
-        BtnEliminar = new javax.swing.JButton();
+        btnEliminarLaboral = new javax.swing.JButton();
 
         jMenu3.setText("jMenu3");
 
@@ -235,8 +235,8 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         BtnEditar.setText("EDITAR");
         jPanel2.add(BtnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
 
-        BtnEliminar.setText("ELIMINAR");
-        jPanel2.add(BtnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
+        btnEliminarLaboral.setText("ELIMINAR");
+        jPanel2.add(btnEliminarLaboral, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,7 +314,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEditar;
-    private javax.swing.JButton BtnEliminar;
+    public javax.swing.JButton btnEliminarLaboral;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
