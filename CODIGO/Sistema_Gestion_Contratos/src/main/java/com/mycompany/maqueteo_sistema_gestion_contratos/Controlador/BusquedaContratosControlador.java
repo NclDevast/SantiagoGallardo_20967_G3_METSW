@@ -59,12 +59,12 @@ public class BusquedaContratosControlador implements ActionListener {
             if (camposCivil == null || idCivilBuscado == null) {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún contrato civil con ese RUC.",
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
-                this.mongoDBbusqueda.closeMongoConnection();
+                //this.mongoDBbusqueda.closeMongoConnection();
             } else {
                 cambiarCampos(camposCivil, 0);
                 formCivBus.setVisible(true);
                 formCivBus.setResizable(false);
-                this.mongoDBbusqueda.closeMongoConnection();
+                //this.mongoDBbusqueda.closeMongoConnection();
                 try {
                     MongoDBCCivil servicio = new MongoDBCCivil(userModel);
                     new ContratoPdfGeneratoCiv().generarContratoPDF(servicio, idCivilBuscado);
@@ -84,12 +84,12 @@ public class BusquedaContratosControlador implements ActionListener {
             if (camposLab == null || idLaboralBuscado == null) {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún contrato laboral con esa cédula.",
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
-                this.mongoDBbusqueda.closeMongoConnection();
+                //this.mongoDBbusqueda.closeMongoConnection();
             } else {
                 cambiarCampos(camposLab, 1);
                 formLabBus.setVisible(true);
                 formLabBus.setResizable(false);
-                this.mongoDBbusqueda.closeMongoConnection();
+                //this.mongoDBbusqueda.closeMongoConnection();
                 try {
                     MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
                     new ContratoPdfGeneratoLab().generarContratoPDF(servicio, idLaboralBuscado);
@@ -103,12 +103,12 @@ public class BusquedaContratosControlador implements ActionListener {
 
         if (e.getSource() == formCivBus.btnEliminarCivil) {
             eliminarContrato(idCivilBuscado, 0);
-            this.mongoDBbusqueda.closeMongoConnection();
+            //this.mongoDBbusqueda.closeMongoConnection();
         }
 
         if (e.getSource() == formLabBus.btnEliminarLaboral) {
             eliminarContrato(idLaboralBuscado, 1);
-            this.mongoDBbusqueda.closeMongoConnection();
+            //this.mongoDBbusqueda.closeMongoConnection();
         }
         if (e.getSource() == formCivBus.BtnEditarCivil && !isEditable){
             isEditable = setEditable(0,isEditable);
@@ -280,7 +280,23 @@ public class BusquedaContratosControlador implements ActionListener {
             formCivBus.txtCorreoArrendador.getText()
         };
             case 1:
-                
+                return new String[] {
+            formLabBus.txtCiudad.getText(),
+            formLabBus.txtFechaContrato.getText(),
+            formLabBus.txtNombreEmpleador.getText(),
+            formLabBus.txtCedulaEmpleador.getText(),
+            formLabBus.txtCiudadEmpleador.getText(),
+            formLabBus.txtNombreTrabajador.getText(),
+            formLabBus.txtCedulaTrabajador.getText(),
+            formLabBus.txtCiudadTrabajador.getText(),
+            formLabBus.txtCargoTrabajador.getText(),
+            formLabBus.txtJornadasHoras.getText(),
+            formLabBus.txtDiasTrabajo.getText(),
+            formLabBus.txtFechaInicio.getText(),
+            formLabBus.txtMonto.getText(),
+            formLabBus.txtFormaPago.getText(),
+            formLabBus.txtLugarTrabajo.getText()
+        };
         }
                 
         return null;

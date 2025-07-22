@@ -114,7 +114,7 @@ public class MongoDBBusqueda {
             }
 
             default:
-                closeMongoConnection();
+                //closeMongoConnection();
                 return null;
                 
         }
@@ -179,7 +179,7 @@ public class MongoDBBusqueda {
                 if (result.getModifiedCount() == 0) {
                     System.err.println("No se encontró el documento o no hubo cambios");
                 }
-                closeMongoConnection();
+                //closeMongoConnection();
                 break;
             case 1:
                 String[] camposLab = {
@@ -202,7 +202,7 @@ public class MongoDBBusqueda {
                 if (resultLab.getModifiedCount() == 0) {
                     System.err.println("No se encontró el documento o no hubo cambios");
                 }
-                closeMongoConnection();
+                //closeMongoConnection();
                 break;
                 
         }
