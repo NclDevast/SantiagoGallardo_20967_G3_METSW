@@ -110,13 +110,19 @@ public class BusquedaContratosControlador implements ActionListener {
             eliminarContrato(idLaboralBuscado, 1);
             //this.mongoDBbusqueda.closeMongoConnection();
         }
-        if (e.getSource() == formCivBus.BtnEditarCivil && !isEditable){
+        if (e.getSource() == formCivBus.BtnEditarCivil){
+            if(!isEditable){
             isEditable = setEditable(0,isEditable);
-        }
-        if (e.getSource() == formCivBus.BtnEditarCivil && isEditable){
+            System.out.println("Boton Editar TRUE");
+            }
+            else{
             this.mongoDBbusqueda.updateMongoDB(0, idCivilBuscado,obtenerTextosCampos(0));
             isEditable =setEditable(0,isEditable);
+            System.out.println("Boton editar FALSE");
+            }
+            
         }
+        
         if (e.getSource() == formLabBus.BtnEditarLab && !isEditable){
             isEditable = setEditable(1,isEditable);
         }
@@ -298,7 +304,6 @@ public class BusquedaContratosControlador implements ActionListener {
             formLabBus.txtLugarTrabajo.getText()
         };
         }
-                
         return null;
     }
 }

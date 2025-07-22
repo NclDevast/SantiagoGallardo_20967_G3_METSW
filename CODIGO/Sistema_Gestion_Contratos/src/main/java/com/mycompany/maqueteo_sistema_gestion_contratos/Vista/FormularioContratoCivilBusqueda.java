@@ -113,6 +113,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel5.setText("RUC:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
+        txtNombreArrendataria.setEditable(false);
         txtNombreArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         txtNombreArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,9 +125,11 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel6.setText("Representante legal:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
+        txtRucArrendataria.setEditable(false);
         txtRucArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel1.add(txtRucArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 220, -1));
 
+        txtRepresentanteArrendataria.setEditable(false);
         txtRepresentanteArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         txtRepresentanteArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +141,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel7.setText("Cargo:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
 
+        txtCargoArrendataria.setEditable(false);
         txtCargoArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel1.add(txtCargoArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 220, -1));
 
@@ -154,6 +158,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel13.setText("Nacionalidad:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
+        txtNacionalidadArrendataria.setEditable(false);
         txtNacionalidadArrendataria.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         txtNacionalidadArrendataria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,12 +169,15 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
 
         jLabel14.setText("Nacionalidad:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        txtNacionalidadArrendador.setEditable(false);
         jPanel1.add(txtNacionalidadArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 230, -1));
 
         jLabel15.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel15.setText("Antecedentes:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 30));
 
+        txtAntecedentes.setEditable(false);
         txtAntecedentes.setColumns(20);
         txtAntecedentes.setRows(5);
         jScrollPane1.setViewportView(txtAntecedentes);
@@ -180,6 +188,7 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel16.setText("Plazo:");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
+        txtFechaInicio.setEditable(false);
         txtFechaInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaInicioActionPerformed(evt);
@@ -192,6 +201,8 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
 
         jLabel18.setText("Fecha fin de contrato:");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
+
+        txtFechaFin.setEditable(false);
         jPanel1.add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 240, -1));
 
         jLabel19.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -204,12 +215,15 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
         jLabel21.setText("Forma de pago:");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
 
+        txtValorMensual.setEditable(false);
         txtValorMensual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValorMensualActionPerformed(evt);
             }
         });
         jPanel1.add(txtValorMensual, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 260, -1));
+
+        txtFormaPago.setEditable(false);
         jPanel1.add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 110, -1));
 
         jLabel22.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -224,8 +238,14 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
 
         jLabel25.setText("Representante legal:");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 271, -1, -1));
+
+        txtRepresentanteArrendador.setEditable(false);
         jPanel1.add(txtRepresentanteArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 230, -1));
+
+        txtRucArrendador.setEditable(false);
         jPanel1.add(txtRucArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 220, -1));
+
+        txtCargoArrendador.setEditable(false);
         jPanel1.add(txtCargoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 220, -1));
 
         jLabel26.setText("RUC:");
@@ -233,6 +253,8 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
 
         jLabel27.setText("Cargo:");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 266, -1, 30));
+
+        txtGarantia.setEditable(false);
         jPanel1.add(txtGarantia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 570, 260, -1));
 
         jLabel28.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -241,11 +263,17 @@ public class FormularioContratoCivilBusqueda extends javax.swing.JFrame {
 
         jLabel29.setText("Arrendataria: ");
         jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
+
+        txtCorreoArrendataria.setEditable(false);
         jPanel1.add(txtCorreoArrendataria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, 250, -1));
 
         jLabel30.setText("Arrendador/a:");
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
+
+        txtCorreoArrendador.setEditable(false);
         jPanel1.add(txtCorreoArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 230, -1));
+
+        txtNombreArrendador.setEditable(false);
         jPanel1.add(txtNombreArrendador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, -1));
 
         jButton1.setText("SALIR");
