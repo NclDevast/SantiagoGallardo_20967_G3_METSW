@@ -118,18 +118,36 @@ public class BusquedaContratosControlador implements ActionListener {
             else{
             this.mongoDBbusqueda.updateMongoDB(0, idCivilBuscado,obtenerTextosCampos(0));
             isEditable =setEditable(0,isEditable);
+            try {
+                    MongoDBCCivil servicio = new MongoDBCCivil(userModel);
+                    new ContratoPdfGeneratoCiv().generarContratoPDF(servicio, idCivilBuscado);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error al generar el PDF civil.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                    ex.printStackTrace();
+                }
             System.out.println("Boton editar FALSE");
             }
-            
         }
         
-        if (e.getSource() == formLabBus.BtnEditarLab && !isEditable){
+        if (e.getSource() == formLabBus.BtnEditarLab){
+            if(!isEditable){
             isEditable = setEditable(1,isEditable);
-        }
-        if(e.getSource() == formLabBus.BtnEditarLab && isEditable){
+            }
+            else{
             this.mongoDBbusqueda.updateMongoDB(1, idLaboralBuscado, obtenerTextosCampos(1));
             isEditable = setEditable(1,isEditable);
+            try {
+                    MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
+                    new ContratoPdfGeneratoLab().generarContratoPDF(servicio, idLaboralBuscado);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Error al generar el PDF laboral.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                    ex.printStackTrace();
+                }
+            }
         }
+        
     }
 
     private void cambiarCampos(String[] campos, int tipo) {
