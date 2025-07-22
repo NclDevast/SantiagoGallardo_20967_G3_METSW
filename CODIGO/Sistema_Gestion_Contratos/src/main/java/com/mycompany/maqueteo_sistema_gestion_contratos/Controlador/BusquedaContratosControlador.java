@@ -244,34 +244,51 @@ public class BusquedaContratosControlador implements ActionListener {
         }
         return false;
     }
-
     public void eliminarContrato(ObjectId idContrato, int tipo) {
-        if (idContrato == null) {
-            JOptionPane.showMessageDialog(null, "No se encontró el contrato para eliminar.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        try {
-            if (tipo == 0) {
-                MongoDBCCivil servicio = new MongoDBCCivil(userModel);
-                servicio.getCollection("ContratosCivil")
-                        .deleteOne(new Document("_id", idContrato));
-                JOptionPane.showMessageDialog(null, "✅ Contrato civil eliminado correctamente.");
-                formCivBus.dispose();
-            } else {
-                MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
-                servicio.getCollection("ContratosLaboral")
-                        .deleteOne(new Document("_id", idContrato));
-                JOptionPane.showMessageDialog(null, "✅ Contrato laboral eliminado correctamente.");
-                formLabBus.dispose();
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "❌ Error al eliminar el contrato: " + ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            ex.printStackTrace();
-        }
+    if (idContrato == null) {
+        JOptionPane.showMessageDialog(null,
+            "No se encontró el contrato para eliminar.",
+            "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
+
+    // 🔔 Ventana de confirmación personalizada
+    int opcion = JOptionPane.showConfirmDialog(
+        null,
+        "🗑️ ¿Estás segura que deseas eliminar este contrato?\nEsta acción no se puede deshacer.",
+        "Confirmar eliminación",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE
+    );
+
+    if (opcion != JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(null, "Operación cancelada.");
+        return;
+    }
+
+    try {
+        if (tipo == 0) {
+            MongoDBCCivil servicio = new MongoDBCCivil(userModel);
+            servicio.getCollection("ContratosCivil")
+                    .deleteOne(new Document("_id", idContrato));
+            JOptionPane.showMessageDialog(null,
+                "✅ Contrato civil eliminado correctamente.");
+            formCivBus.dispose();
+        } else {
+            MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
+            servicio.getCollection("ContratosLaboral")
+                    .deleteOne(new Document("_id", idContrato));
+            JOptionPane.showMessageDialog(null,
+                "✅ Contrato laboral eliminado correctamente.");
+            formLabBus.dispose();
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null,
+            "❌ Error al eliminar el contrato: " + ex.getMessage(),
+            "Error", JOptionPane.ERROR_MESSAGE);
+        ex.printStackTrace();
+    }
+}
 
     public void iniciarBusqueda() {
         this.menuBusqueda.setVisible(true);
