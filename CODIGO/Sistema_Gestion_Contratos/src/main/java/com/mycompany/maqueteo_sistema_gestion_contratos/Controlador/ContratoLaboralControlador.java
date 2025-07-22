@@ -36,21 +36,24 @@ public class ContratoLaboralControlador implements ActionListener{
 
     public void Validacion() {
         boolean camposVacios =
-                formLab.txtCiudad.getText().isEmpty()
-                || formLab.txtFechaContrato.getText().isEmpty()
-                || formLab.txtNombreEmpleador.getText().isEmpty()
-                || formLab.txtCedulaEmpleador.getText().isEmpty()
-                || formLab.txtCiudadEmpleador.getText().isEmpty()
-                || formLab.txtNombreTrabajador.getText().isEmpty()
-                || formLab.txtCedulaTrabajador.getText().isEmpty()
-                || formLab.txtCiudadTrabajador.getText().isEmpty()
-                || formLab.txtCargoTrabajador.getText().isEmpty()
-                || formLab.txtJornadasHoras.getText().isEmpty()
-                || formLab.txtDiasTrabajo.getText().isEmpty()
-                || formLab.txtFechaInicio.getText().isEmpty()
-                || formLab.txtMonto.getText().isEmpty()
-                || formLab.txtFormaPago.getText().isEmpty()
-                || formLab.txtLugarTrabajo.getText().isEmpty();
+        formLab.txtCiudad.getText().isEmpty()
+        || formLab.txtFechaContrato.getText().isEmpty()
+        || formLab.txtNombreEmpleador.getText().isEmpty()
+        || formLab.txtCedulaEmpleador.getText().isEmpty()
+        || formLab.txtCiudadEmpleador.getText().isEmpty()
+        || formLab.txtNombreTrabajador.getText().isEmpty()
+        || formLab.txtCedulaTrabajador.getText().isEmpty()
+        || formLab.txtCiudadTrabajador.getText().isEmpty()
+        || formLab.txtCargoTrabajador.getText().isEmpty()
+        || formLab.txtJornadasHoras.getText().isEmpty()
+        || formLab.txtDiasTrabajo.getText().isEmpty()
+        || formLab.txtFechaInicio.getText().isEmpty()
+        || formLab.txtMonto.getText().isEmpty()
+        || formLab.txtFormaPago.getText().isEmpty()
+        || formLab.txtLugarTrabajo.getText().isEmpty()
+        || !esCedulaValida(formLab.txtCedulaEmpleador.getText())
+        || !esCedulaValida(formLab.txtCedulaTrabajador.getText());
+
 
        formLab.btnGuardar.setEnabled(!camposVacios);
        resaltarCampoCedulas();
