@@ -122,6 +122,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreArrendataria">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -150,6 +151,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtRucArrendataria">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -165,6 +167,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtRepresentanteArrendataria">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -193,6 +196,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCargoArrendataria">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -251,6 +255,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNacionalidadArrendataria">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -278,6 +283,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNacionalidadArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -314,6 +322,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="txtAntecedentes">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
@@ -337,6 +346,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechaInicio">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInicioActionPerformed"/>
           </Events>
@@ -370,6 +382,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechaFin">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -413,6 +428,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtValorMensual">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorMensualActionPerformed"/>
           </Events>
@@ -426,6 +444,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFormaPago">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -479,6 +500,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtRepresentanteArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -489,6 +513,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtRucArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -499,6 +526,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCargoArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -529,6 +559,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtGarantia">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -562,6 +595,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCorreoArrendataria">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -582,6 +618,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCorreoArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -592,6 +631,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreArrendador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -614,10 +656,13 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="BtnEditarCivil">
           <Properties>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="10" y="650" width="100" height="-1"/>
