@@ -8,22 +8,42 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
 public class MongoDBBusqueda {
     private final Usuario userModel;
+    private MongoClient mongoClient = null;
 
     public MongoDBBusqueda(Usuario userModel) {
         this.userModel = userModel;
     }
 
     private MongoDatabase connectMongo(String databaseName) {
-        MongoClient mongoClient = MongoClients.create(userModel.getMongoURI());
-        return mongoClient.getDatabase(databaseName);
+        try {
+            if (mongoClient == null) {
+                mongoClient = MongoClients.create(userModel.getMongoURI());
+            }
+            return mongoClient.getDatabase(databaseName);
+        } catch (Exception e) {
+            System.err.println("Error al conectar a MongoDB: " + e.getMessage());
+            return null;
+        }
     }
 
+    public void closeMongoConnection() {
+        if (mongoClient != null) {
+            try {
+                mongoClient.close();
+            } catch (Exception e) {
+                System.err.println("Error al cerrar conexión MongoDB: " + e.getMessage());
+            }
+        }
+    }
     /**
      * Busca un contrato por clave y tipo (0: civil, 1: laboral)
      * y retorna sus campos como arreglo de Strings.
@@ -94,7 +114,9 @@ public class MongoDBBusqueda {
             }
 
             default:
+                closeMongoConnection();
                 return null;
+                
         }
     }
 
@@ -126,6 +148,63 @@ public class MongoDBBusqueda {
 
             default:
                 return null;
+        }
+    }
+    
+    public void updateMongoDB(int tipo, ObjectId id, String [] datos){
+        
+        MongoDatabase db = connectMongo("DataContratos");
+        Bson filter = Filters.eq("_id", id);
+        switch(tipo){
+            case 0: //civil
+                String[] campos = {
+            "NombreArrendataria","RucArrendataria","RepresentanteArrendataria",
+            "CargoArrendataria","NacionalidadArrendataria","NombreArrendador",
+            "RucArrendador","RepresentanteArrendador","CargoArrendador",
+            "NacionalidadArrendador","Antecedentes","FechaInicio","FechaFin",
+            "ValorMensual","FormaPago","Garantia","CorreoArrendataria",
+            "CorreoArrendador"
+        };
+               MongoCollection<Document> col = db.getCollection("ContratosCivil");
+               Document updates = new Document();
+                for (int i = 0; i < campos.length; i++) {
+                    updates.append(campos[i], datos[i]);
+                }
+                
+                UpdateResult result = col.updateOne(
+                    filter, 
+                    new Document("$set", updates)
+                );
+                
+                if (result.getModifiedCount() == 0) {
+                    System.err.println("No se encontró el documento o no hubo cambios");
+                }
+                closeMongoConnection();
+                break;
+            case 1:
+                String[] camposLab = {
+                "Ciudad", "FechaContrato", "NombreEmpleado", "CedulaEmpleado", "CiudadEmpleado",
+                "NombreTrabajador", "CedulaTrabajador", "CiudadTrabajador",  // Fixed order here
+                "CargoTrabajador", "JornadasHoras", "DiasTrabajo",
+                "FechaInicio", "Monto", "FormaPago", "LugarTrabajo"
+                };
+               MongoCollection<Document> coll = db.getCollection("ContratosLaboral");
+               Document updatesLab = new Document();
+                for (int i = 0; i < camposLab.length; i++) {
+                    updatesLab.append(camposLab[i], datos[i]);
+                }
+                
+                UpdateResult resultLab = coll.updateOne(
+                    filter, 
+                    new Document("$set", updatesLab)
+                );
+                
+                if (resultLab.getModifiedCount() == 0) {
+                    System.err.println("No se encontró el documento o no hubo cambios");
+                }
+                closeMongoConnection();
+                break;
+                
         }
     }
 }

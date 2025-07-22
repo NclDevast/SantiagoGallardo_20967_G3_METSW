@@ -30,6 +30,8 @@ public class BusquedaContratosControlador implements ActionListener {
 
     private ObjectId idCivilBuscado = null;
     private ObjectId idLaboralBuscado = null;
+    private Boolean isEditable = false;
+    
 
     public BusquedaContratosControlador(Usuario userModel) {
         this.menuBusqueda = new MenuBusqueda();
@@ -43,6 +45,8 @@ public class BusquedaContratosControlador implements ActionListener {
         this.menuBusqueda.BtnRadioCedula.addActionListener(this);
         this.formCivBus.btnEliminarCivil.addActionListener(this);
         this.formLabBus.btnEliminarLaboral.addActionListener(this);
+        this.formLabBus.BtnEditarLab.addActionListener(this);
+        this.formCivBus.BtnEditarCivil.addActionListener(this);
     }
 
     @Override
@@ -55,11 +59,12 @@ public class BusquedaContratosControlador implements ActionListener {
             if (camposCivil == null || idCivilBuscado == null) {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún contrato civil con ese RUC.",
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
+                this.mongoDBbusqueda.closeMongoConnection();
             } else {
                 cambiarCampos(camposCivil, 0);
                 formCivBus.setVisible(true);
                 formCivBus.setResizable(false);
-
+                this.mongoDBbusqueda.closeMongoConnection();
                 try {
                     MongoDBCCivil servicio = new MongoDBCCivil(userModel);
                     new ContratoPdfGeneratoCiv().generarContratoPDF(servicio, idCivilBuscado);
@@ -79,11 +84,12 @@ public class BusquedaContratosControlador implements ActionListener {
             if (camposLab == null || idLaboralBuscado == null) {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún contrato laboral con esa cédula.",
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
+                this.mongoDBbusqueda.closeMongoConnection();
             } else {
                 cambiarCampos(camposLab, 1);
                 formLabBus.setVisible(true);
                 formLabBus.setResizable(false);
-
+                this.mongoDBbusqueda.closeMongoConnection();
                 try {
                     MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
                     new ContratoPdfGeneratoLab().generarContratoPDF(servicio, idLaboralBuscado);
@@ -97,10 +103,26 @@ public class BusquedaContratosControlador implements ActionListener {
 
         if (e.getSource() == formCivBus.btnEliminarCivil) {
             eliminarContrato(idCivilBuscado, 0);
+            this.mongoDBbusqueda.closeMongoConnection();
         }
 
         if (e.getSource() == formLabBus.btnEliminarLaboral) {
             eliminarContrato(idLaboralBuscado, 1);
+            this.mongoDBbusqueda.closeMongoConnection();
+        }
+        if (e.getSource() == formCivBus.BtnEditarCivil && !isEditable){
+            isEditable = setEditable(0,isEditable);
+        }
+        if (e.getSource() == formCivBus.BtnEditarCivil && isEditable){
+            this.mongoDBbusqueda.updateMongoDB(0, idCivilBuscado,obtenerTextosCampos(0));
+            isEditable =setEditable(0,isEditable);
+        }
+        if (e.getSource() == formLabBus.BtnEditarLab && !isEditable){
+            isEditable = setEditable(1,isEditable);
+        }
+        if(e.getSource() == formLabBus.BtnEditarLab && isEditable){
+            this.mongoDBbusqueda.updateMongoDB(1, idLaboralBuscado, obtenerTextosCampos(1));
+            isEditable = setEditable(1,isEditable);
         }
     }
 
@@ -152,6 +174,52 @@ public class BusquedaContratosControlador implements ActionListener {
                 break;
         }
     }
+    
+    private boolean setEditable(int tipo, Boolean bool){
+        
+        switch(tipo){
+            case 0: //civil
+                formCivBus.txtNombreArrendataria.setEditable(!bool);
+                formCivBus.txtRucArrendataria.setEditable(!bool);
+                formCivBus.txtRepresentanteArrendataria.setEditable(!bool);
+                formCivBus.txtCargoArrendataria.setEditable(!bool);
+                formCivBus.txtNacionalidadArrendataria.setEditable(!bool);
+                formCivBus.txtCorreoArrendataria.setEditable(!bool);
+
+                formCivBus.txtNombreArrendador.setEditable(!bool);
+                formCivBus.txtRucArrendador.setEditable(!bool);
+                formCivBus.txtRepresentanteArrendador.setEditable(!bool);
+                formCivBus.txtCargoArrendador.setEditable(!bool);
+                formCivBus.txtNacionalidadArrendador.setEditable(!bool);
+                formCivBus.txtCorreoArrendador.setEditable(!bool);
+
+                formCivBus.txtAntecedentes.setEditable(!bool);
+                formCivBus.txtFechaInicio.setEditable(!bool);
+                formCivBus.txtFechaFin.setEditable(!bool);
+                formCivBus.txtValorMensual.setEditable(!bool);
+                formCivBus.txtFormaPago.setEditable(!bool);
+                formCivBus.txtGarantia.setEditable(!bool);
+                return !bool;
+            case 1: //laboral
+                    formLabBus.txtCiudad.setEditable(!bool);
+                    formLabBus.txtFechaContrato.setEditable(!bool);
+                    formLabBus.txtNombreEmpleador.setEditable(!bool);
+                    formLabBus.txtCedulaEmpleador.setEditable(!bool);
+                    formLabBus.txtCiudadEmpleador.setEditable(!bool);
+                    formLabBus.txtNombreTrabajador.setEditable(!bool);
+                    formLabBus.txtCedulaTrabajador.setEditable(!bool);
+                    formLabBus.txtCiudadTrabajador.setEditable(!bool);
+                    formLabBus.txtCargoTrabajador.setEditable(!bool);
+                    formLabBus.txtJornadasHoras.setEditable(!bool);
+                    formLabBus.txtDiasTrabajo.setEditable(!bool);
+                    formLabBus.txtFechaInicio.setEditable(!bool);
+                    formLabBus.txtMonto.setEditable(!bool);
+                    formLabBus.txtFormaPago.setEditable(!bool);
+                    formLabBus.txtLugarTrabajo.setEditable(!bool);
+                    return !bool;
+        }
+        return false;
+    }
 
     public void eliminarContrato(ObjectId idContrato, int tipo) {
         if (idContrato == null) {
@@ -185,5 +253,36 @@ public class BusquedaContratosControlador implements ActionListener {
         this.menuBusqueda.setVisible(true);
         this.menuBusqueda.setResizable(false);
         this.menuBusqueda.setLocationRelativeTo(null);
+    }
+    
+    public String[] obtenerTextosCampos(int tipo) {
+        
+        switch(tipo){
+            case 0:
+                return new String[] {
+            formCivBus.txtNombreArrendataria.getText(),
+            formCivBus.txtRucArrendataria.getText(),
+            formCivBus.txtRepresentanteArrendataria.getText(),
+            formCivBus.txtCargoArrendataria.getText(),
+            formCivBus.txtNacionalidadArrendataria.getText(),
+            formCivBus.txtNombreArrendador.getText(),
+            formCivBus.txtRucArrendador.getText(),
+            formCivBus.txtRepresentanteArrendador.getText(),
+            formCivBus.txtCargoArrendador.getText(),
+            formCivBus.txtNacionalidadArrendador.getText(),
+            formCivBus.txtAntecedentes.getText(),
+            formCivBus.txtFechaInicio.getText(),
+            formCivBus.txtFechaFin.getText(),
+            formCivBus.txtValorMensual.getText(),
+            formCivBus.txtFormaPago.getText(),
+            formCivBus.txtGarantia.getText(),
+            formCivBus.txtCorreoArrendataria.getText(),
+            formCivBus.txtCorreoArrendador.getText()
+        };
+            case 1:
+                
+        }
+                
+        return null;
     }
 }

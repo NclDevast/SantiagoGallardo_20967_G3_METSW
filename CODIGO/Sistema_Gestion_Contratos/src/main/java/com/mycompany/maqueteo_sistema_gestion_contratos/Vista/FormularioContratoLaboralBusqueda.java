@@ -73,7 +73,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         txtJornadasHoras = new javax.swing.JTextField();
         txtDiasTrabajo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        BtnEditar = new javax.swing.JButton();
+        BtnEditarLab = new javax.swing.JButton();
         btnEliminarLaboral = new javax.swing.JButton();
 
         jMenu3.setText("jMenu3");
@@ -180,6 +180,12 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        txtCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCiudadActionPerformed(evt);
+            }
+        });
         jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -232,8 +238,13 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, -1, -1));
 
-        BtnEditar.setText("EDITAR");
-        jPanel2.add(BtnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
+        BtnEditarLab.setText("EDITAR");
+        BtnEditarLab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarLabActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnEditarLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
 
         btnEliminarLaboral.setText("ELIMINAR");
         jPanel2.add(btnEliminarLaboral, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
@@ -274,6 +285,14 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txtCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCiudadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCiudadActionPerformed
+
+    private void BtnEditarLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarLabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEditarLabActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -313,7 +332,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnEditar;
+    public javax.swing.JButton BtnEditarLab;
     public javax.swing.JButton btnEliminarLaboral;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
