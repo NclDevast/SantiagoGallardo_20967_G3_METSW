@@ -88,6 +88,9 @@ public class BusquedaContratosControlador implements ActionListener {
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
                 //this.mongoDBbusqueda.closeMongoConnection();
             } else {
+                for(int i=0;i<camposLab.length;i++){
+                    System.out.println("Datos camposlab: "+camposLab[i]);
+                }
                 cambiarCampos(camposLab, 1);
                 formLabBus.setVisible(true);
                 formLabBus.setResizable(false);
@@ -206,7 +209,9 @@ if (e.getSource() == formLabBus.BtnEditarLab) {
                 break;
 
             case 1:
-                if (campos.length >= 15) {
+                if (campos.length <= 15) {
+                    for(int i =0;i>campos.length;i++)
+                        System.out.println("contenido: " + campos[i]);
                     formLabBus.txtCiudad.setText(campos[0]);
                     formLabBus.txtFechaContrato.setText(campos[1]);
                     formLabBus.txtNombreEmpleador.setText(campos[2]);
