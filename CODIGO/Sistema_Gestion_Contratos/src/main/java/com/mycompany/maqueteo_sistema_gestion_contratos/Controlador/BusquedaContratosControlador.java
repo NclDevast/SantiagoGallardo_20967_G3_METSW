@@ -13,10 +13,12 @@ import com.mycompany.maqueteo_sistema_gestion_contratos.Modelo.Usuario;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoCivilBusqueda;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.FormularioContratoLaboralBusqueda;
 import com.mycompany.maqueteo_sistema_gestion_contratos.Vista.MenuBusqueda;
+import java.awt.Color;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -110,45 +112,71 @@ public class BusquedaContratosControlador implements ActionListener {
             eliminarContrato(idLaboralBuscado, 1);
             //this.mongoDBbusqueda.closeMongoConnection();
         }
-        if (e.getSource() == formCivBus.BtnEditarCivil){
-            if(!isEditable){
-            isEditable = setEditable(0,isEditable);
-            System.out.println("Boton Editar TRUE");
-            }
-            else{
-            this.mongoDBbusqueda.updateMongoDB(0, idCivilBuscado,obtenerTextosCampos(0));
-            isEditable =setEditable(0,isEditable);
-            try {
-                    MongoDBCCivil servicio = new MongoDBCCivil(userModel);
-                    new ContratoPdfGeneratoCiv().generarContratoPDF(servicio, idCivilBuscado);
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error al generar el PDF civil.",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                    ex.printStackTrace();
-                }
-            System.out.println("Boton editar FALSE");
-            }
-        }
-        
-        if (e.getSource() == formLabBus.BtnEditarLab){
-            if(!isEditable){
-            isEditable = setEditable(1,isEditable);
-            }
-            else{
-            this.mongoDBbusqueda.updateMongoDB(1, idLaboralBuscado, obtenerTextosCampos(1));
-            isEditable = setEditable(1,isEditable);
-            try {
-                    MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
-                    new ContratoPdfGeneratoLab().generarContratoPDF(servicio, idLaboralBuscado);
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error al generar el PDF laboral.",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                    ex.printStackTrace();
-                }
-            }
-        }
-        
+if (e.getSource() == formCivBus.BtnEditarCivil) {
+    // Validar RUCs antes de editar
+    boolean ruc1Valido = esRucValido(formCivBus.txtRucArrendataria.getText());
+    boolean ruc2Valido = esRucValido(formCivBus.txtRucArrendador.getText());
+
+    resaltarCampo(formCivBus.txtRucArrendataria, ruc1Valido);
+    resaltarCampo(formCivBus.txtRucArrendador, ruc2Valido);
+
+    if (!ruc1Valido || !ruc2Valido) {
+        JOptionPane.showMessageDialog(null,
+            "RUC inválido. Debe tener 13 dígitos y terminar en 001.",
+            "Error de Validación", JOptionPane.WARNING_MESSAGE);
+        return;
     }
+
+    // Alternar modo de edición
+    if (!isEditable) {
+        isEditable = setEditable(0, isEditable);
+        System.out.println("Botón Editar activado");
+    } else {
+        mongoDBbusqueda.updateMongoDB(0, idCivilBuscado, obtenerTextosCampos(0));
+        isEditable = setEditable(0, isEditable);
+        try {
+            MongoDBCCivil servicio = new MongoDBCCivil(userModel);
+            new ContratoPdfGeneratoCiv().generarContratoPDF(servicio, idCivilBuscado);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al generar el PDF civil.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+        System.out.println("Botón Editar desactivado");
+    }
+}
+
+        
+if (e.getSource() == formLabBus.BtnEditarLab) {
+    // Validar cédulas antes de editar
+    boolean ced1Valido = esCedulaValida(formLabBus.txtCedulaEmpleador.getText());
+    boolean ced2Valido = esCedulaValida(formLabBus.txtCedulaTrabajador.getText());
+
+    resaltarCampo(formLabBus.txtCedulaEmpleador, ced1Valido);
+    resaltarCampo(formLabBus.txtCedulaTrabajador, ced2Valido);
+
+    if (!ced1Valido || !ced2Valido) {
+        JOptionPane.showMessageDialog(null,
+            "Cédula inválida. Debe tener exactamente 10 dígitos.",
+            "Error de Validación", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Alternar modo de edición
+    if (!isEditable) {
+        isEditable = setEditable(1, isEditable);
+    } else {
+        mongoDBbusqueda.updateMongoDB(1, idLaboralBuscado, obtenerTextosCampos(1));
+        isEditable = setEditable(1, isEditable);
+        try {
+            MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
+            new ContratoPdfGeneratoLab().generarContratoPDF(servicio, idLaboralBuscado);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al generar el PDF laboral.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
+}
+}
 
     private void cambiarCampos(String[] campos, int tipo) {
         switch (tipo) {
@@ -341,4 +369,16 @@ public class BusquedaContratosControlador implements ActionListener {
         }
         return null;
     }
+private boolean esRucValido(String ruc) {
+    return ruc != null && ruc.matches("^\\d{10}001$");
+}
+
+private boolean esCedulaValida(String cedula) {
+    return cedula != null && cedula.matches("^\\d{10}$");
+}
+
+private void resaltarCampo(JTextField campo, boolean esValido) {
+    campo.setBackground(esValido ? Color.WHITE : Color.PINK);
+}
+
 }
