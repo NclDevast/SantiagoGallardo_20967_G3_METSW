@@ -52,7 +52,6 @@ public void Validacion() {
         || formCivil.txtCorreoArrendador.getText().isEmpty()
         || !esRucValido(formCivil.txtRucArrendataria.getText())
         || !esRucValido(formCivil.txtRucArrendador.getText());
-    
 
     formCivil.BtnGuardar.setEnabled(!camposVacios);
     resaltarCampoRuc(); // Llama al resaltador después de validar

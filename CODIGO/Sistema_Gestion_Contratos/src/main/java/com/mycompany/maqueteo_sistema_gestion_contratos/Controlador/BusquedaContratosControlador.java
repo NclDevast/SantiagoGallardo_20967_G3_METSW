@@ -116,7 +116,7 @@ public class BusquedaContratosControlador implements ActionListener {
             //this.mongoDBbusqueda.closeMongoConnection();
         }
 if (e.getSource() == formCivBus.BtnEditarCivil) {
-    // Validar RUCs
+    // Validar RUCs antes de editar
     boolean ruc1Valido = esRucValido(formCivBus.txtRucArrendataria.getText());
     boolean ruc2Valido = esRucValido(formCivBus.txtRucArrendador.getText());
 
@@ -130,37 +130,7 @@ if (e.getSource() == formCivBus.BtnEditarCivil) {
         return;
     }
 
-    // Validar nombres, nacionalidades y correos
-    boolean camposTextoValidos =
-        contieneSoloLetras(formCivBus.txtNombreArrendataria.getText()) &&
-        contieneSoloLetras(formCivBus.txtRepresentanteArrendataria.getText()) &&
-        contieneSoloLetras(formCivBus.txtNacionalidadArrendataria.getText()) &&
-        contieneSoloLetras(formCivBus.txtNombreArrendador.getText()) &&
-        contieneSoloLetras(formCivBus.txtRepresentanteArrendador.getText()) &&
-        contieneSoloLetras(formCivBus.txtNacionalidadArrendador.getText());
-
-    boolean correosValidos =
-        correoValido(formCivBus.txtCorreoArrendataria.getText()) &&
-        correoValido(formCivBus.txtCorreoArrendador.getText());
-
-    // Resaltar
-    resaltarCampo(formCivBus.txtNombreArrendataria, contieneSoloLetras(formCivBus.txtNombreArrendataria.getText()));
-    resaltarCampo(formCivBus.txtRepresentanteArrendataria, contieneSoloLetras(formCivBus.txtRepresentanteArrendataria.getText()));
-    resaltarCampo(formCivBus.txtNacionalidadArrendataria, contieneSoloLetras(formCivBus.txtNacionalidadArrendataria.getText()));
-    resaltarCampo(formCivBus.txtNombreArrendador, contieneSoloLetras(formCivBus.txtNombreArrendador.getText()));
-    resaltarCampo(formCivBus.txtRepresentanteArrendador, contieneSoloLetras(formCivBus.txtRepresentanteArrendador.getText()));
-    resaltarCampo(formCivBus.txtNacionalidadArrendador, contieneSoloLetras(formCivBus.txtNacionalidadArrendador.getText()));
-    resaltarCampo(formCivBus.txtCorreoArrendataria, correoValido(formCivBus.txtCorreoArrendataria.getText()));
-    resaltarCampo(formCivBus.txtCorreoArrendador, correoValido(formCivBus.txtCorreoArrendador.getText()));
-
-    if (!camposTextoValidos || !correosValidos) {
-        JOptionPane.showMessageDialog(null,
-            "Error de validación:\n- Nombres y nacionalidades deben contener solo letras.\n- Correos deben incluir '@'.",
-            "Campos inválidos", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    // Alternar modo edición
+    // Alternar modo de edición
     if (!isEditable) {
         isEditable = setEditable(0, isEditable);
         System.out.println("Botón Editar activado");
@@ -177,9 +147,10 @@ if (e.getSource() == formCivBus.BtnEditarCivil) {
         System.out.println("Botón Editar desactivado");
     }
 }
+
         
 if (e.getSource() == formLabBus.BtnEditarLab) {
-    // Validar cédulas
+    // Validar cédulas antes de editar
     boolean ced1Valido = esCedulaValida(formLabBus.txtCedulaEmpleador.getText());
     boolean ced2Valido = esCedulaValida(formLabBus.txtCedulaTrabajador.getText());
 
@@ -193,22 +164,7 @@ if (e.getSource() == formLabBus.BtnEditarLab) {
         return;
     }
 
-    // Validar nombres
-    boolean nombresValidos =
-        contieneSoloLetras(formLabBus.txtNombreEmpleador.getText()) &&
-        contieneSoloLetras(formLabBus.txtNombreTrabajador.getText());
-
-    resaltarCampo(formLabBus.txtNombreEmpleador, contieneSoloLetras(formLabBus.txtNombreEmpleador.getText()));
-    resaltarCampo(formLabBus.txtNombreTrabajador, contieneSoloLetras(formLabBus.txtNombreTrabajador.getText()));
-
-    if (!nombresValidos) {
-        JOptionPane.showMessageDialog(null,
-            "Nombre inválido. Debe contener solo letras.",
-            "Error de Validación", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    // Alternar modo edición
+    // Alternar modo de edición
     if (!isEditable) {
         isEditable = setEditable(1, isEditable);
     } else {
@@ -223,7 +179,8 @@ if (e.getSource() == formLabBus.BtnEditarLab) {
         }
     }
 }
-    }
+}
+
     private void cambiarCampos(String[] campos, int tipo) {
         switch (tipo) {
             case 0:
@@ -428,11 +385,5 @@ private boolean esCedulaValida(String cedula) {
 private void resaltarCampo(JTextField campo, boolean esValido) {
     campo.setBackground(esValido ? Color.WHITE : Color.PINK);
 }
-private boolean contieneSoloLetras(String texto) {
-    return texto != null && texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$");
-}
 
-private boolean correoValido(String correo) {
-    return correo != null && correo.contains("@");
-}
 }
