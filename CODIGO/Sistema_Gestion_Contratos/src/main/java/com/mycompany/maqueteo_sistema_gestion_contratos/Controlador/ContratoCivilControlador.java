@@ -51,12 +51,18 @@ public void Validacion() {
         || formCivil.txtCorreoArrendataria.getText().isEmpty()
         || formCivil.txtCorreoArrendador.getText().isEmpty()
         || !esRucValido(formCivil.txtRucArrendataria.getText())
-        || !esRucValido(formCivil.txtRucArrendador.getText());
+        || !esRucValido(formCivil.txtRucArrendador.getText())
+        || !contieneSoloLetras(formCivil.txtNombreArrendador.getText())
+        || !contieneSoloLetras(formCivil.txtNacionalidadArrendador.getText())
+        || !contieneSoloLetras(formCivil.txtNombreArrendataria.getText())
+        || !contieneSoloLetras(formCivil.txtNacionalidadArrendataria.getText())
+        || !correoValido(formCivil.txtCorreoArrendataria.getText())
+        || !correoValido(formCivil.txtCorreoArrendador.getText());
 
     formCivil.BtnGuardar.setEnabled(!camposVacios);
-    resaltarCampoRuc(); // Llama al resaltador después de validar
+    resaltarCampoRuc();
+    resaltarErroresTexto(); // si ya agregaste este método
 }
-
     private void agregarValidacionAutomatica() {
         JTextField[] camposTexto = {
             formCivil.txtNombreArrendataria,
@@ -157,6 +163,14 @@ public void Validacion() {
     private boolean esRucValido(String ruc) {
     return ruc.matches("^\\d{10}001$");
 }
+    private boolean contieneSoloLetras(String texto) {
+    return texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$");
+}
+
+    private boolean correoValido(String correo) {
+    return correo.contains("@");
+}
+
     private void resaltarCampoRuc() {
     if (!esRucValido(formCivil.txtRucArrendataria.getText())) {
         formCivil.txtRucArrendataria.setBackground(Color.PINK);
@@ -170,4 +184,26 @@ public void Validacion() {
         formCivil.txtRucArrendador.setBackground(Color.WHITE);
     }
 }
+    private void resaltarErroresTexto() {
+    Color errorColor = Color.PINK;
+    Color normalColor = Color.WHITE;
+
+    JTextField[] soloLetrasCampos = {
+        formCivil.txtNombreArrendador, formCivil.txtNacionalidadArrendador,
+        formCivil.txtNombreArrendataria, formCivil.txtNacionalidadArrendataria
+    };
+
+    for (JTextField campo : soloLetrasCampos) {
+        campo.setBackground(contieneSoloLetras(campo.getText()) ? normalColor : errorColor);
+    }
+
+    JTextField[] correoCampos = {
+        formCivil.txtCorreoArrendataria, formCivil.txtCorreoArrendador
+    };
+
+    for (JTextField campo : correoCampos) {
+        campo.setBackground(correoValido(campo.getText()) ? normalColor : errorColor);
+    }
+}
+
 }
