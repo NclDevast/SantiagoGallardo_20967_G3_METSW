@@ -52,11 +52,13 @@ public class ContratoLaboralControlador implements ActionListener{
         || formLab.txtFormaPago.getText().isEmpty()
         || formLab.txtLugarTrabajo.getText().isEmpty()
         || !esCedulaValida(formLab.txtCedulaEmpleador.getText())
-        || !esCedulaValida(formLab.txtCedulaTrabajador.getText());
-
+        || !esCedulaValida(formLab.txtCedulaTrabajador.getText())
+        || !contieneSoloLetras(formLab.txtNombreEmpleador.getText())
+        || !contieneSoloLetras(formLab.txtNombreTrabajador.getText());
 
        formLab.btnGuardar.setEnabled(!camposVacios);
        resaltarCampoCedulas();
+       resaltarErroresTexto();
     }
 
     private void agregarValidacionAutomatica() {
@@ -120,7 +122,6 @@ public class ContratoLaboralControlador implements ActionListener{
         
     }
 
-        
         public void iniciarContrato(){
             formLab.setTitle("Contrato Laboral");
                 formLab.setVisible(true);
@@ -148,6 +149,9 @@ public class ContratoLaboralControlador implements ActionListener{
     private boolean esCedulaValida(String cedula) {
     return cedula.matches("^\\d{10}$");
 }
+    private boolean contieneSoloLetras(String texto) {
+    return texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$");
+}
     private void resaltarCampoCedulas() {
     if (!esCedulaValida(formLab.txtCedulaEmpleador.getText())) {
         formLab.txtCedulaEmpleador.setBackground(Color.PINK);
@@ -161,4 +165,17 @@ public class ContratoLaboralControlador implements ActionListener{
         formLab.txtCedulaTrabajador.setBackground(Color.WHITE);
     }
 }
+    private void resaltarErroresTexto() {
+    Color errorColor = Color.PINK;
+    Color normalColor = Color.WHITE;
+
+    JTextField[] soloLetrasCampos = {
+        formLab.txtNombreEmpleador, formLab.txtNombreTrabajador,
+        
+    };
+
+    for (JTextField campo : soloLetrasCampos) {
+        campo.setBackground(contieneSoloLetras(campo.getText()) ? normalColor : errorColor);
+        }
+    }
 }
