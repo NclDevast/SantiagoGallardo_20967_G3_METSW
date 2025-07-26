@@ -5,6 +5,7 @@
 package com.mycompany.maqueteo_sistema_gestion_contratos.Modelo;
 
 import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
@@ -25,5 +26,14 @@ public class FileIO {
             JOptionPane.showMessageDialog(null, message);
         }
         return image;
+    }
+    public static InputStream readPDFResource(Object requestor, String fileName) throws FileNotFoundException {
+        InputStream input = requestor.getClass().getResourceAsStream(fileName);
+        if (input == null) {
+            String message = "El archivo " + fileName + " no se pudo abrir";
+            JOptionPane.showMessageDialog(null, message);
+            throw new FileNotFoundException(message);
+        }
+        return input;
     }
 }

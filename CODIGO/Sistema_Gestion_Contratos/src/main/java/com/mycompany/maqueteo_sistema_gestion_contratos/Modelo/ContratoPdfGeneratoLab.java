@@ -12,12 +12,13 @@ import org.bson.types.ObjectId;
 import com.mongodb.client.MongoCollection;
 
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.Objects;
 
 public class ContratoPdfGeneratoLab {
 
-    private static final String TEMPLATE = "src/main/resources/CONTRATO LABORAL.pdf";
+    //private static final String TEMPLATE = "src/main/resources/CONTRATO LABORAL.pdf";
 
     /**
      * Genera el PDF usando el registro con id = insertedId.
@@ -57,13 +58,12 @@ public class ContratoPdfGeneratoLab {
                                   "ContratoLaboral_" + nombreEmpleado + ".pdf")
                              .toString();
 
-        PdfReader reader = null;
-        PdfStamper stamper = null;
+        InputStream pdfStream = FileIO.readPDFResource(this, "/Contratos/CONTRATO LABORAL.pdf");
 
         try {
             // 4) Leer plantilla y crear stamper
-            reader  = new PdfReader(TEMPLATE);
-            stamper = new PdfStamper(reader, new FileOutputStream(output));
+            PdfReader reader  = new PdfReader(pdfStream);
+            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(output));
             AcroFields form = stamper.getAcroFields();
 
             // 5) (Opcional) Depurar campos disponibles
@@ -100,15 +100,7 @@ public class ContratoPdfGeneratoLab {
         } catch (Exception e) {
             System.err.println("❌ Error al generar el contrato: " + e.getMessage());
             throw e;
-        } finally {
-            // Cierre seguro de recursos
-            if (stamper != null) {
-                try { stamper.close(); }
-                catch (Exception ignored) {}
-            }
-            if (reader != null) {
-                reader.close();
-            }
-        }
+        } 
+            
     }
 }
