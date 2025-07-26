@@ -133,10 +133,8 @@ public class BusquedaContratosControlador implements ActionListener {
     // Validar nombres, nacionalidades y correos
     boolean camposTextoValidos =
         contieneSoloLetras(formCivBus.txtNombreArrendataria.getText()) &&
-        contieneSoloLetras(formCivBus.txtRepresentanteArrendataria.getText()) &&
         contieneSoloLetras(formCivBus.txtNacionalidadArrendataria.getText()) &&
         contieneSoloLetras(formCivBus.txtNombreArrendador.getText()) &&
-        contieneSoloLetras(formCivBus.txtRepresentanteArrendador.getText()) &&
         contieneSoloLetras(formCivBus.txtNacionalidadArrendador.getText());
 
     boolean correosValidos =
@@ -145,10 +143,8 @@ public class BusquedaContratosControlador implements ActionListener {
 
     // Resaltar
     resaltarCampo(formCivBus.txtNombreArrendataria, contieneSoloLetras(formCivBus.txtNombreArrendataria.getText()));
-    resaltarCampo(formCivBus.txtRepresentanteArrendataria, contieneSoloLetras(formCivBus.txtRepresentanteArrendataria.getText()));
     resaltarCampo(formCivBus.txtNacionalidadArrendataria, contieneSoloLetras(formCivBus.txtNacionalidadArrendataria.getText()));
     resaltarCampo(formCivBus.txtNombreArrendador, contieneSoloLetras(formCivBus.txtNombreArrendador.getText()));
-    resaltarCampo(formCivBus.txtRepresentanteArrendador, contieneSoloLetras(formCivBus.txtRepresentanteArrendador.getText()));
     resaltarCampo(formCivBus.txtNacionalidadArrendador, contieneSoloLetras(formCivBus.txtNacionalidadArrendador.getText()));
     resaltarCampo(formCivBus.txtCorreoArrendataria, correoValido(formCivBus.txtCorreoArrendataria.getText()));
     resaltarCampo(formCivBus.txtCorreoArrendador, correoValido(formCivBus.txtCorreoArrendador.getText()));
