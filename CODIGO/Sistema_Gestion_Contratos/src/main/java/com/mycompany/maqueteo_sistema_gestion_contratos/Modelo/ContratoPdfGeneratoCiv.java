@@ -9,12 +9,13 @@ import org.bson.types.ObjectId;
 import com.mongodb.client.MongoCollection;
 
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.Objects;
 
 public class ContratoPdfGeneratoCiv {
 
-    private static final String TEMPLATE = "src/main/resources/CONTRATO CIVIL.pdf";
+    //private static final String TEMPLATE = "src/main/resources/CONTRATO CIVIL.pdf";
 
     /**
      * Genera el PDF usando el registro con id = insertedId.
@@ -51,15 +52,14 @@ public class ContratoPdfGeneratoCiv {
         String correoArrendador = doc.getString("CorreoArrendador");
 
         // Preparar ruta de salida
+        InputStream pdfStream = FileIO.readPDFResource(this, "/Contratos/CONTRATO CIVIL.pdf");
+        
         String home = System.getProperty("user.home");
         String output = Paths.get(home, "Desktop", "Contrato_" + nombreArrendataria + ".pdf").toString();
-
-        PdfReader reader = null;
-        PdfStamper stamper = null;
         
         try {
-            reader = new PdfReader(TEMPLATE);
-            stamper = new PdfStamper(reader, new FileOutputStream(output));
+            PdfReader reader = new PdfReader(pdfStream);
+            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(output));
             
             AcroFields form = stamper.getAcroFields();
             System.out.println("Campos detectados en el PDF:");
@@ -99,23 +99,12 @@ public class ContratoPdfGeneratoCiv {
             //stamper.setFormFlattening(true);
             stamper.close();
 
+            
             System.out.println("✅ Contrato generado exitosamente en: " + output);
             
         } catch (Exception e) {
             System.err.println("❌ Error al generar el contrato: " + e.getMessage());
-            throw e;
-        } finally {
-            // Cerrar recursos manualmente
-            if (stamper != null) {
-                try {
-                    stamper.close();
-                } catch (Exception e) {
-                    System.err.println("Error al cerrar PdfStamper: " + e.getMessage());
-                }
-            }
-            if (reader != null) {
-                reader.close();
-            }
+           
         }
     }
 }
