@@ -97,9 +97,9 @@ public class MongoDBBusqueda {
                 return new String[] {
                     doc.getString("Ciudad"),
                     doc.getString("FechaContrato"),
+                    doc.getString("CiudadEmpleado"),
                     doc.getString("NombreEmpleado"),
                     doc.getString("CedulaEmpleado"),
-                    doc.getString("CiudadEmpleado"),
                     doc.getString("CiudadTrabajador"),
                     doc.getString("NombreTrabajador"),
                     doc.getString("CedulaTrabajador"),
