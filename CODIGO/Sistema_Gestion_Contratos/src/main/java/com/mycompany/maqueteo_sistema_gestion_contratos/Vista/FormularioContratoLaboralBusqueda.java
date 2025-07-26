@@ -123,15 +123,18 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel6.setText("Ciudad de domicilio:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, -1, 20));
 
+        txtNombreTrabajador.setEditable(false);
         txtNombreTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtNombreTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 530, -1));
 
         jLabel7.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
+        txtCiudadTrabajador.setEditable(false);
         txtCiudadTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtCiudadTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 190, -1));
 
+        txtCedulaTrabajador.setEditable(false);
         txtCedulaTrabajador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtCedulaTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 200, -1));
 
@@ -146,6 +149,8 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel17.setText("Plazo:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
+
+        txtFechaInicio.setEditable(false);
         jPanel2.add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 500, -1));
 
         jLabel18.setText("Fecha de inicio de contrato:");
@@ -157,6 +162,8 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
 
         jLabel22.setText("Forma de pago:");
         jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, -1, -1));
+
+        txtFormaPago.setEditable(false);
         jPanel2.add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 210, -1));
 
         jLabel23.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
@@ -165,11 +172,14 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
 
         jLabel24.setText("Monto de remuneración mensual (números y letras):");
         jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 380, -1));
+
+        txtMonto.setEditable(false);
         jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 410, -1));
 
         jLabel21.setText("Objeto/Cargo del trajador:");
         jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
+        txtCargoTrabajador.setEditable(false);
         txtCargoTrabajador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCargoTrabajadorActionPerformed(evt);
@@ -181,6 +191,7 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel29.setText("Ciudad:");
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
+        txtCiudad.setEditable(false);
         txtCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCiudadActionPerformed(evt);
@@ -191,26 +202,32 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
         jLabel1.setText("Fecha de contrato:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+
+        txtFechaContrato.setEditable(false);
         jPanel2.add(txtFechaContrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 68, 180, 20));
 
         jLabel30.setText("Nombre completo:");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
+        txtNombreEmpleador.setEditable(false);
         txtNombreEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtNombreEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 530, -1));
 
         jLabel31.setText("Cédula de ciudadanía:");
         jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
+        txtCedulaEmpleador.setEditable(false);
         txtCedulaEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtCedulaEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 200, -1));
 
         jLabel32.setText("Ciudad de domicilio:");
         jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, 20));
 
+        txtCiudadEmpleador.setEditable(false);
         txtCiudadEmpleador.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jPanel2.add(txtCiudadEmpleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 190, -1));
 
+        txtLugarTrabajo.setEditable(false);
         txtLugarTrabajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLugarTrabajoActionPerformed(evt);
@@ -227,7 +244,11 @@ public class FormularioContratoLaboralBusqueda extends javax.swing.JFrame {
 
         jLabel11.setText("HORAS DE JORNADA:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        txtJornadasHoras.setEditable(false);
         jPanel2.add(txtJornadasHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
+
+        txtDiasTrabajo.setEditable(false);
         jPanel2.add(txtDiasTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 300, -1));
 
         jButton1.setText("SALIR");
