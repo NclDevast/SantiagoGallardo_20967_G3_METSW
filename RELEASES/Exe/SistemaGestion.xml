@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>Maqueteo_Sistema_Gestion_Contratos-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
+  <outfile>SistemaGestionContratos.exe</outfile>
+  <errTitle>MiApp Error</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon></icon>
+
+  <jre>
+    <path>jdk-24.0.2</path>
+    <requiresJdk>true</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>24.0.0</minVersion>
+    <maxVersion></maxVersion>
+    <initialHeapSize>256</initialHeapSize>
+    <maxHeapSize>1024</maxHeapSize>
+    <opt>-Dfile.encoding=UTF-8</opt>
+  </jre>
+</launch4jConfig>
