@@ -88,8 +88,10 @@ public class BusquedaContratosControlador implements ActionListener {
                         "Contrato no registrado", JOptionPane.WARNING_MESSAGE);
                 //this.mongoDBbusqueda.closeMongoConnection();
             } else {
+
                 for(int i=0; i<camposLab.length; i++){
                     System.out.println( "Datos camposlab:" +camposLab[i]);
+
                 }
                 cambiarCampos(camposLab, 1);
                 formLabBus.setVisible(true);
@@ -115,8 +117,10 @@ public class BusquedaContratosControlador implements ActionListener {
             eliminarContrato(idLaboralBuscado, 1);
             //this.mongoDBbusqueda.closeMongoConnection();
         }
+
         if (e.getSource() == formCivBus.BtnEditarCivil) {
     // Validar RUCs
+
     boolean ruc1Valido = esRucValido(formCivBus.txtRucArrendataria.getText());
     boolean ruc2Valido = esRucValido(formCivBus.txtRucArrendador.getText());
 
@@ -129,6 +133,7 @@ public class BusquedaContratosControlador implements ActionListener {
             "Error de Validación", JOptionPane.WARNING_MESSAGE);
         return;
     }
+
 
     // Validar nombres, nacionalidades y correos
     boolean camposTextoValidos =
@@ -176,6 +181,9 @@ public class BusquedaContratosControlador implements ActionListener {
         
  if (e.getSource() == formLabBus.BtnEditarLab) {
     // Validar cédulas
+
+
+        
     boolean ced1Valido = esCedulaValida(formLabBus.txtCedulaEmpleador.getText());
     boolean ced2Valido = esCedulaValida(formLabBus.txtCedulaTrabajador.getText());
 
@@ -217,8 +225,10 @@ public class BusquedaContratosControlador implements ActionListener {
             JOptionPane.showMessageDialog(null, "Error al generar el PDF laboral.", "Error", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
+
     }
 }
+
     }
 
     private void cambiarCampos(String[] campos, int tipo) {
@@ -250,8 +260,10 @@ public class BusquedaContratosControlador implements ActionListener {
 
             case 1:
                 if (campos.length <= 15) {
+
                     for(int i=0; i>campos.length; i++)
                         System.out.println( "contenido:" + campos[i]);
+
                     formLabBus.txtCiudad.setText(campos[0]);
                     formLabBus.txtFechaContrato.setText(campos[1]);
                     formLabBus.txtNombreEmpleador.setText(campos[2]);
@@ -317,34 +329,51 @@ public class BusquedaContratosControlador implements ActionListener {
         }
         return false;
     }
-
     public void eliminarContrato(ObjectId idContrato, int tipo) {
-        if (idContrato == null) {
-            JOptionPane.showMessageDialog(null, "No se encontró el contrato para eliminar.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        try {
-            if (tipo == 0) {
-                MongoDBCCivil servicio = new MongoDBCCivil(userModel);
-                servicio.getCollection("ContratosCivil")
-                        .deleteOne(new Document("_id", idContrato));
-                JOptionPane.showMessageDialog(null, "✅ Contrato civil eliminado correctamente.");
-                formCivBus.dispose();
-            } else {
-                MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
-                servicio.getCollection("ContratosLaboral")
-                        .deleteOne(new Document("_id", idContrato));
-                JOptionPane.showMessageDialog(null, "✅ Contrato laboral eliminado correctamente.");
-                formLabBus.dispose();
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "❌ Error al eliminar el contrato: " + ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            ex.printStackTrace();
-        }
+    if (idContrato == null) {
+        JOptionPane.showMessageDialog(null,
+            "No se encontró el contrato para eliminar.",
+            "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
+
+    // 🔔 Ventana de confirmación personalizada
+    int opcion = JOptionPane.showConfirmDialog(
+        null,
+        "🗑️ ¿Estás segura que deseas eliminar este contrato?\nEsta acción no se puede deshacer.",
+        "Confirmar eliminación",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE
+    );
+
+    if (opcion != JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(null, "Operación cancelada.");
+        return;
+    }
+
+    try {
+        if (tipo == 0) {
+            MongoDBCCivil servicio = new MongoDBCCivil(userModel);
+            servicio.getCollection("ContratosCivil")
+                    .deleteOne(new Document("_id", idContrato));
+            JOptionPane.showMessageDialog(null,
+                "✅ Contrato civil eliminado correctamente.");
+            formCivBus.dispose();
+        } else {
+            MongoDBCLaboral servicio = new MongoDBCLaboral(userModel);
+            servicio.getCollection("ContratosLaboral")
+                    .deleteOne(new Document("_id", idContrato));
+            JOptionPane.showMessageDialog(null,
+                "✅ Contrato laboral eliminado correctamente.");
+            formLabBus.dispose();
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null,
+            "❌ Error al eliminar el contrato: " + ex.getMessage(),
+            "Error", JOptionPane.ERROR_MESSAGE);
+        ex.printStackTrace();
+    }
+}
 
     public void iniciarBusqueda() {
         this.menuBusqueda.setVisible(true);
@@ -397,13 +426,16 @@ public class BusquedaContratosControlador implements ActionListener {
         }
         return null;
     }
+
     private boolean esRucValido(String ruc) {
+
     return ruc != null && ruc.matches("^\\d{10}001$");
 }
 
 private boolean esCedulaValida(String cedula) {
     return cedula != null && cedula.matches("^\\d{10}$");
 }
+
 
 private boolean contieneSoloLetras(String texto) {
     return texto != null && texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$");
