@@ -1,0 +1,21 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\pc\Desktop\PruebaJava\SistemaGestionContratos.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\pc\Desktop\PruebaJava\.
+Requires JDK:	Yes
+Requires 64-Bit: No
+Java min ver:	1.024.000_000
+Java max ver:	
+JRE paths:	jdk-24.0.2
+Check launcher:	C:\Users\pc\Desktop\PruebaJava\jdk-24.0.2\bin\javaw.exe (OK)
+Check javac:	C:\Users\pc\Desktop\PruebaJava\jdk-24.0.2\bin\javac.exe (OK)
+Version string: 1.024.000_002 / 64-Bit (OK)
+Heap -Xms:	Requested 256 MB / 0%, Available: 813 MB, Heap size: 256 MB
+Heap -Xmx:	Requested 1024 MB / 0%, Available: 813 MB, Heap size: 1024 MB
+Launcher:	C:\Users\pc\Desktop\PruebaJava\jdk-24.0.2\bin\javaw.exe
+Launcher args:	-Xms256m -Xmx1024m -Dfile.encoding=UTF-8 -jar "C:\Users\pc\Desktop\PruebaJava\SistemaGestionContratos.exe"
+Args length:	106/32768 chars
+Exit code:	0

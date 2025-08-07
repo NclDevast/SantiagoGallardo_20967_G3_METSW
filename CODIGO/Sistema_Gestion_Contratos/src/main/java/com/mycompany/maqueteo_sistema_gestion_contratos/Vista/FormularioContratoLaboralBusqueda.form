@@ -175,6 +175,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreTrabajador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -200,6 +201,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCiudadTrabajador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -215,6 +217,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCedulaTrabajador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -268,6 +271,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechaInicio">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -311,6 +317,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFormaPago">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -344,6 +353,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMonto">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -364,6 +376,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCargoTrabajador">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCargoTrabajadorActionPerformed"/>
           </Events>
@@ -390,6 +405,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCiudad">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCiudadActionPerformed"/>
           </Events>
@@ -416,6 +434,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechaContrato">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -437,6 +458,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreEmpleador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -462,6 +484,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCedulaEmpleador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -487,6 +510,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCiudadEmpleador">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Book Antiqua" size="12" style="0"/>
             </Property>
@@ -501,6 +525,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLugarTrabajo">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLugarTrabajoActionPerformed"/>
           </Events>
@@ -547,6 +574,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtJornadasHoras">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -557,6 +587,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDiasTrabajo">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

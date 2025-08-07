@@ -210,9 +210,7 @@ public class LoginControlador implements ActionListener{
 
     public int getTIEMPO_BLOQUEO() {
         return TIEMPO_BLOQUEO;
-    }
-    
-    
+    }    
 }
 
 
