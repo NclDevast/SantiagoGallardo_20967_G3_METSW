@@ -92,8 +92,6 @@ public class VistaDatosUsuario extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel5.setText("Host MongoDB:");
 
-        jTextFieldMongo.setEditable(false);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
