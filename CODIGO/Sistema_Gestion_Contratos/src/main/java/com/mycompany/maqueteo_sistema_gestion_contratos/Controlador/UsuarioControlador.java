@@ -64,6 +64,9 @@ public class UsuarioControlador implements ActionListener{
                 accion = AccionConfirmacion.CAMBIO_PASSWORD;
                 iniciarConfirmacion();  // abrir ventana de confirmación
             }
+            vistadatos.jPasswordactual.setText(null);
+            vistadatos.jPasswordnew.setText(null);
+            vistadatos.jPasswordConfir.setText(null);
         }
 
         else if (e.getSource() == confirmacion.jButtonSi) {
@@ -78,6 +81,7 @@ public class UsuarioControlador implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Contraseña cambiada exitosamente");
                 nuevaPasswordPendiente = "";
             }
+            
             confirmacion.dispose();
             accion = AccionConfirmacion.NINGUNA;
         }
@@ -95,6 +99,7 @@ public class UsuarioControlador implements ActionListener{
         vistadatos.setVisible(true);
         vistadatos.setTitle("Datos de usuario");
         vistadatos.jTextUser.setText(modelo.getNombreUsuario());
+        vistadatos.jTextFieldMongo.setText(modelo.getMongoURI());
     }
     
     public void iniciarConfirmacion(){
